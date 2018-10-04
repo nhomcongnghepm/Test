@@ -50,5 +50,20 @@ if (isset($_POST['login'])) {
     } else {
         $gender = $_POST['sex'];
     }
+	if($_POST['txtCaptcha'] == NULL)
+ 		{
+  		echo "* Bạn vui lòng nhập mã xác nhận";
+ 		}
+ 		else
+ 		{
+ 		 if($_POST['txtCaptcha'] == $_SESSION['security_code'])
+  		{
+   		echo "ma lenh hop le";
+  		}
+  		else
+  		{
+   		echo "Ma lenh khong hop le";
+  		}
+ 		}
 }
     ?>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Đăng Ký</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="bootstrap-3.3.6/dist/css/bootstrap.min.css"><script src="bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="dangky.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/jquery-1.11.1.min.js"></script>
 </head>
@@ -36,10 +36,28 @@
      <div class="col-xs-4 col-md-4"> <select  class="form-control" name="month"> <option value="month">Tháng <?php  thang();?></option></select>
      </div> 
      <div class="col-xs-4 col-md-4"> <select  class="form-control" name="year"> <option value="year">Năm <?php  nam();?></option></select>
-     </div> 
-    </div> <label class="radio-inline"><input  id="inlineCheckbox1" name="sex" value="Nam" type="radio">Nam</label> <label  class="radio-inline"><input name="sex" id="inlineCheckbox2" value="Nữ" type="radio">Nữ </label> 
+     </div>
+    </div>
+       <label for="">Quyền (Vói 1: admin, 2:Giáo viên, 3: Sinh viên)</label>
+       <div class="form-group"><select clas="form-control" name="quyen"> <option value="quyen">Mòi bạn hãy cấp quyền cho tài khoản nguòi dùng <?php quyen();?></option></select>
+       </div>
+       <label class="radio-inline"><input  id="inlineCheckbox1" name="sex" value="Nam" type="radio">Nam</label> <label  class="radio-inline"><input name="sex" id="inlineCheckbox2" value="Nữ" type="radio">Nữ </label>
     <br> 
-    <br> 
+        <tr>
+      <td align="left">
+       <label for="captcha">Mã xác nhận</label>
+      </td>
+      <td>
+       <input type="text" name="txtCaptcha" maxlength="10" size="32" />
+      </td>
+      <td>
+       <img src="capcha.php" alt="viet-ung-dung-voi-capche" />
+      </td>
+     </tr>
+     <tr>
+      <td>&nbsp;</td>    
+     <br> 
+    <br>
     <button class="btn btn-lg btn-primary btn-block"  name="login"> Đăng ký</button> 
     <br><br>
      <div class="a" <br style="color:red;"><?php include ("xulydangky_null.php")?></div>

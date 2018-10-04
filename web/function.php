@@ -24,3 +24,12 @@ for ($i = 1; $i<=12;$i++)
 }
 }
 ?>
+<?php function quyen(){
+	for($i=1;$i<=3;$i++)
+	{
+			echo '<option value="'.$i.'">'.$i,'</option>';
+	}
+}
+
+
+

@@ -10,7 +10,7 @@ if (isset($_POST['dangnhap']))
         exit;
     }
      
-    $query = mysqli_query($connect,"SELECT user, password FROM user WHERE user='$username'");
+    $query = mysqli_query($connect,"SELECT user, password, quyen FROM user WHERE user='$username'");
     if (mysqli_num_rows($query) == 0) {
         echo "Tên đăng nhập này không tồn tại. Vui lòng kiểm tra lại. <a href='javascript: history.go(-1)'>Trở lại</a>";
         exit;
@@ -23,9 +23,14 @@ if (isset($_POST['dangnhap']))
         echo "Mật khẩu không đúng. Vui lòng nhập lại. <a href='javascript: history.go(-1)'>Trở lại</a>";
         exit;
     }
-     
-    $_SESSION['username'] = $username;
-    echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='/'>Về trang chủ</a>";
+    if($row['quyen']==1) {
+        echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='/'>Về trang admin</a>";
+    }
+    else if($row['quyen']==2)
+    {
+        echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='/giaovien.php'>Vào trang giáo viên</a>";
+    }
+    else echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='/sinhvien.php'>Về trang sinh viên</a>";
     die();
 }
 ?>

@@ -11,6 +11,7 @@
         $year = $_POST['year'];
         $birthdate = $day . '-' . $month . '-' . $year;
         $repass_signup = sha1($_POST['pwd2']);
+        $quyen=$_POST['quyen'];
         if (isset($_POST['sex']) != null) {
     $gender = $_POST['sex'];
 }
@@ -45,7 +46,8 @@
 				email,
 				password,
 				birthdate,
-				Gioitinh
+				Gioitinh,
+				quyen
 			)
 			VALUE (
 				'',
@@ -55,12 +57,13 @@
 				'{$email}',
 				'{$pass_signup}',
 				'{$birthdate}',
-				'{$gender}'
+				'{$gender}',
+				'{$quyen}'
 			)
 		");
 
 		if ($addmember)
-			echo "Quá trình đăng ký thành công. Đăng nhập <a href='dangnhap.php'>tại đây</a>";
+			echo "Quá trình đăng ký thành công.";
 		else
 			echo "Có lỗi xảy ra trong quá trình đăng ký. <a href='dangky.php'>Thử lại</a>";
 		}
