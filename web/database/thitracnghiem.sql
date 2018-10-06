@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 30, 2018 at 07:17 AM
+-- Generation Time: Oct 06, 2018 at 06:11 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -36,16 +36,16 @@ CREATE TABLE `user` (
   `email` varchar(50) NOT NULL,
   `password` varchar(60) NOT NULL,
   `birthdate` text CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
-  `Gioitinh` varchar(20) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL
+  `Gioitinh` varchar(20) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
+  `quyen` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `ho`, `ten`, `user`, `email`, `password`, `birthdate`, `Gioitinh`) VALUES
-(25, 'Đặng Thành ', 'Đạt', 'dat171997', 'thanhdat010797@gmail.com', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', '1-7-1997', 'Nam'),
-(27, 'Phan Tấn ', 'Bình', 'tanbinh123', 'tanbinh@gmail.com', 'e11c1ed20e5ff63bab9d6bed63f501c5099ea789', '1-7-1997', 'Nam');
+INSERT INTO `user` (`id`, `ho`, `ten`, `user`, `email`, `password`, `birthdate`, `Gioitinh`, `quyen`) VALUES
+(36, 'Đặng Thành', 'Đạt', 'admin', 'thanhdat010797@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', '1-7-1997', 'Nam', '1');
 
 --
 -- Indexes for dumped tables
@@ -65,7 +65,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

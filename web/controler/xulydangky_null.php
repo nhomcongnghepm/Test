@@ -2,15 +2,10 @@
 if (isset($_POST['login'])) {
     if ($_POST['ho'] == null) {
         echo("* Bạn hãy nhập họ <br />");
-    } else {
-        $ho = $_POST['ho'];
-    }
+    } 
     if ($_POST['ten'] == null) {
         echo("* Bạn hãy nhập tên <br />");
-    } else {
-        $ten = $_POST['ten'];
-
-    }
+    } 
     if ($_POST['username'] == null) {
         echo("* Bạn hãy nhập tên đăng nhập <br />");
     } else if (strlen('username') < 6 || strlen('username') > 24) {
@@ -18,14 +13,10 @@ if (isset($_POST['login'])) {
 
     } else if (preg_match('/\W/', 'username')) {
         echo "* Tên đăng nhập không được chứa ký tự đặc biệt và khoảng trắng.";
-    } else {
-        $username = $_POST['username'];
-    }
+    } 
     if ($_POST['email'] == null) {
         echo("* Bạn hãy nhập email <br />");
-    } else {
-        $email = $_POST['email'];
-    }
+    } 
     if ($_POST['pwd1'] == null) {
         echo("* Bạn hãy nhập mật khẩu <br />");
     } else if ($_POST['pwd2'] == null) {
@@ -33,37 +24,24 @@ if (isset($_POST['login'])) {
     } else if ($_POST['pwd1'] != $_POST['pwd2']) {
         echo("* Mật khẩu không trùng khớp. <a href='javascript: history.go(-1)'>Trở lại</a><br /> ");
         exit;
-    } else {
-        $pass_signup = sha1(($_POST['pwd1']));
-    }
+    } 
 
     if ($_POST['day'] == "day" || $_POST['month'] == "month" || $_POST['year'] == "year") {
         echo("* Bạn hãy chọn ngày sinh <br />");
-    } else {
-        $day = $_POST['day'];
-        $month = $_POST['month'];
-        $year = $_POST['year'];
-        $birthdate = $day . '-' . $month . '-' . $year;
-    }
+    } 
     if (isset($_POST['sex']) == null) {
         echo("* Bạn hãy chọn giới tính <br />");
-    } else {
-        $gender = $_POST['sex'];
-    }
-	if($_POST['txtCaptcha'] == NULL)
- 		{
-  		echo "* Bạn vui lòng nhập mã xác nhận";
- 		}
- 		else
- 		{
- 		 if($_POST['txtCaptcha'] == $_SESSION['security_code'])
-  		{
-   		echo "ma lenh hop le";
-  		}
-  		else
-  		{
-   		echo "Ma lenh khong hop le";
-  		}
- 		}
+    } 
+	if ($_POST['quyen']=="quyen"){
+		echo "* Bạn hãy phân quyên cho user <br />";
+		}
+	if(isset($_POST['g-recaptcha-response'])){
+      $captcha = $_POST['g-recaptcha-response'];
+   	}
+   	if(!$captcha){
+      echo '* Hãy tích vào tôi không phải là người máy ';
+   	}else{
+      $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LeydXMUAAAAAO2GXuFOYC9IcMZG2_pXSFKwd1Rv-*****&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
+   }
 }
     ?>

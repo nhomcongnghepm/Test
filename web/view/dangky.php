@@ -3,10 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Đăng Ký</title>
-<link rel="stylesheet" href="bootstrap-3.3.6/dist/css/bootstrap.min.css"><script src="bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="dangky.css">
+<link rel="stylesheet" href="../assets/bootstrap-3.3.6/dist/css/bootstrap.min.css"><script src="../assets/bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../assets/dangky.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/jquery-1.11.1.min.js"></script>
-</head>
+<script src='https://www.google.com/recaptcha/api.js?hl=vi'></script></head>
 <body>
   <div class="container"> 
  <h1 class="text-center">Mời bạn đăng ký thành viên</h1> 
@@ -16,9 +16,9 @@
    </legend> 
    <legend> * Bạn vui lòng nhập đầy đủ thông tin!
    </legend> 
-   <form action="dangky.php" method="post" class="form" role="form">
+   <form action="http://localhost:81/web/view/dangky.php" method="post" class="form" role="form">
    	<div class="form-group">
-        <div class="a" <br style="color:red;"><?php include ("xulydangky.php")?></div>
+        <div class="a" <br style="color:red;"><?php include ("../controler/xulydangky.php")?></div>
        <div class="row">
      <div class="col-xs-6 col-md-6"> <input class="form-control" id="ho" name="ho" placeholder="Họ">
      </div> 
@@ -30,7 +30,7 @@
      <div class="form-group"><input class="form-control"  name="pwd1" placeholder="Mật khẩu" type="password"> <input class="form-control" id="pwd2" name="pwd2" placeholder="Nhập lại mật khẩu" type="password"></div>
     <label for=""> Ngày sinh</label> 
     <div class="row"> 
-    <?php include("function.php") ?>
+    <?php include("../controler/function.php") ?>
      <div class="col-xs-4 col-md-4"> <select  class="form-control" name="day" placeholder="day"> <option value="day">Ngày <?php day();?></option></select> 
      </div> 
      <div class="col-xs-4 col-md-4"> <select  class="form-control" name="month"> <option value="month">Tháng <?php  thang();?></option></select>
@@ -43,24 +43,12 @@
        </div>
        <label class="radio-inline"><input  id="inlineCheckbox1" name="sex" value="Nam" type="radio">Nam</label> <label  class="radio-inline"><input name="sex" id="inlineCheckbox2" value="Nữ" type="radio">Nữ </label>
     <br> 
-        <tr>
-      <td align="left">
-       <label for="captcha">Mã xác nhận</label>
-      </td>
-      <td>
-       <input type="text" name="txtCaptcha" maxlength="10" size="32" />
-      </td>
-      <td>
-       <img src="capcha.php" alt="viet-ung-dung-voi-capche" />
-      </td>
-     </tr>
-     <tr>
-      <td>&nbsp;</td>    
+       <div class="g-recaptcha" data-sitekey="6LeydXMUAAAAAEo6SkpWDcWK3jQr3j1AGXEHsK-G"></div>
      <br> 
     <br>
     <button class="btn btn-lg btn-primary btn-block"  name="login"> Đăng ký</button> 
     <br><br>
-     <div class="a" <br style="color:red;"><?php include ("xulydangky_null.php")?></div>
+     <div class="a" <br style="color:red;"><?php include ("../controler/xulydangky_null.php")?></div>
     </div>
    </form>
   </div> 

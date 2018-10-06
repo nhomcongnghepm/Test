@@ -4,8 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Đăng Nhập</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="bootstrap-3.3.6/dist/css/bootstrap.min.css"><script src="bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="dangnhap.css">
+<link rel="stylesheet" href="../assets/bootstrap-3.3.6/dist/css/bootstrap.min.css"><script src="../assets/bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../assets/dangnhap.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/jquery-1.11.1.min.js"></script>
 </head>
 <body>
@@ -14,7 +14,7 @@
   <div class="col-md-4 col-center-block login-widget"> 
    <h1 class="text-center"><i class="fa fa-dot-circle-o"></i> Đăng Nhập
    </h1> 
-        <div class="a" <br style="color:red;"><?php include ("xulydangnhap.php")?></div>
+        <div class="a" <br style="color:red;"><?php include ("../controler/xulydangnhap.php")?></div>
       <form action="dangnhap.php" method="post" class="form" role="form">
    <div> 
     <div class="form-group"> 

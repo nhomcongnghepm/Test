@@ -1,5 +1,5 @@
 <?php
- 	include ("database.php");
+ 	include ("../modal/database.php");
 if (isset($_POST['dangnhap'])) 
 {
     $username = addslashes($_POST['username']);

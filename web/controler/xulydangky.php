@@ -11,13 +11,18 @@
         $year = $_POST['year'];
         $birthdate = $day . '-' . $month . '-' . $year;
         $repass_signup = sha1($_POST['pwd2']);
-        $quyen=$_POST['quyen'];
+        if($_POST['quyen']!="quyen"){$quyen=$_POST['quyen'];}
         if (isset($_POST['sex']) != null) {
     $gender = $_POST['sex'];
 }
-        if($ho && $ten && $username && $email && $pass_signup && $birthdate && $gender)
+if(isset($_POST['g-recaptcha-response'])){
+      $captcha = $_POST['g-recaptcha-response'];
+   	}
+   	if($captcha){
+      $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LeydXMUAAAAAO2GXuFOYC9IcMZG2_pXSFKwd1Rv-*****&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
+        if($ho && $ten && $username && $email && $pass_signup && $birthdate && $gender && $quyen)
 		{
-			include ("database.php");
+			include ("../modal/database.php");
 			$taikhoantontai=mysqli_query($connect,"SELECT user FROM user WHERE user='$username'");
 			$emailtontai=mysqli_query($connect,"SELECT email FROM user WHERE email='$email'");
 		if (mysqli_num_rows($taikhoantontai) > 0){
@@ -67,5 +72,6 @@
 		else
 			echo "Có lỗi xảy ra trong quá trình đăng ký. <a href='dangky.php'>Thử lại</a>";
 		}
+	}
 	}
 ?>     
