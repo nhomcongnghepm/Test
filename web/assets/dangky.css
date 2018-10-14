@@ -1,6 +1,5 @@
 body {  
 padding-top: 0px; 
-background-image:url(../imgae/dk.jpg)
 }
 .form-control { 
 margin-bottom: 10px;
@@ -21,6 +20,10 @@ margin-right: auto;
 html,  body,  .container {  
 height: 100%;   
 width: 100%;
+background:url(../assets/image/dk.jpg);
+background-repeat: no-repeat;
+background-position: center center;
+background-size: cover;
 }
  
 .container {    

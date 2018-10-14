@@ -1,5 +1,12 @@
 <?php
- 	include ("../modal/database.php");
+$connect = new mysqli('localhost', 'root', '','thitracnghiem');
+ 
+// Kiểm tra kết nối thành công hay thất bại
+// nếu thất bại thì thông báo lỗi
+	if ($connect->connect_error) {
+		die("Kết nối thất bại: " . $conn->connect_error);
+	} else
+	{
 if (isset($_POST['dangnhap'])) 
 {
     $username = addslashes($_POST['username']);
@@ -33,4 +40,5 @@ if (isset($_POST['dangnhap']))
     else echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='/sinhvien.php'>Về trang sinh viên</a>";
     die();
 }
+	}
 ?>

@@ -1,11 +1,40 @@
 <?php
-    $ketnoi['host'] = 'localhost'; //Tên server, nếu dùng hosting free thì cần thay đổi
-    $ketnoi['dbname'] = 'thitracnghiem'; //Đây là tên của Database
-    $ketnoi['username'] = 'root'; //Tên sử dụng Database
-    $ketnoi['password'] = '';//Mật khẩu của tên sử dụng Database
-  $connect= mysqli_connect($ketnoi['host'],$ketnoi['username'] ,$ketnoi['password']) or
-        die("Không thể kết nối database");
-    mysqli_select_db($connect,$ketnoi['dbname'])    or
-        die("Không thể chọn database");
-        mysqli_set_charset($connect, 'UTF8');
-        ?>
+	class database{
+		//khai bao thuoc tinh
+	private $conn=null;
+	private $host='localhost';
+	private $username= 'root';
+	private $password= '';
+	private $database='login';
+	private $result=null;
+	
+	//khai bao cac hanh vi
+	
+	private function connect(){
+		$this->conn=new MySQLi(
+		$this->host,$this->username,$this->password,$this->database)
+		or die('can not connect');
+		$this->conn->query("SET NAMES UTF8");
+	}
+	
+	public function select ($sql){
+		$this->connect();
+		$this->result=$this->conn->query($sql);
+		return $this->result;
+	}
+	public function command($sql){
+		$this->connect();
+		$this->conn->query($sql);
+		
+	}
+	public function fetch(){
+		if($this->result->num_rows > 0){
+			$row=$this->result->fetch_assoc();
+		}
+		else{
+			$rows=0;
+		}
+		return $rows;
+	}
+}
+?>

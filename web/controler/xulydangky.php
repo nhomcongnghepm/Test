@@ -1,4 +1,12 @@
 <?php
+$connect = new mysqli('localhost', 'root', '','thitracnghiem');
+ 
+// Kiểm tra kết nối thành công hay thất bại
+// nếu thất bại thì thông báo lỗi
+	if ($connect->connect_error) {
+		die("Kết nối thất bại: " . $conn->connect_error);
+	} else
+	{
  // Nếu không phải là sự kiện đăng ký thì không xử lý
 	if (isset($_POST['login'])) {
         $ho = $_POST['ho'];
@@ -9,16 +17,25 @@
         $day = $_POST['day'];
         $month = $_POST['month'];
         $year = $_POST['year'];
+		$kiemtra=checkdate($month,$day,$year);
+		if($kiemtra==true)
+		{
         $birthdate = $day . '-' . $month . '-' . $year;
+		}
+		else
+		{
+		echo "Mời bạn kiểm tra lại ngày sinh. <a href='javascript: history.go(-1)'>Trở lại</a>";
+		exit;
+		}
         $repass_signup = sha1($_POST['pwd2']);
         if($_POST['quyen']!="quyen"){$quyen=$_POST['quyen'];}
         if (isset($_POST['sex']) != null) {
-    $gender = $_POST['sex'];
-}
-if(isset($_POST['g-recaptcha-response'])){
-      $captcha = $_POST['g-recaptcha-response'];
-   	}
-   	if($captcha){
+    	$gender = $_POST['sex'];
+		}
+		if(isset($_POST['g-recaptcha-response'])){
+      	$captcha = $_POST['g-recaptcha-response'];
+   		}
+   		if($captcha){
       $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LeydXMUAAAAAO2GXuFOYC9IcMZG2_pXSFKwd1Rv-*****&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
         if($ho && $ten && $username && $email && $pass_signup && $birthdate && $gender && $quyen)
 		{
@@ -72,6 +89,7 @@ if(isset($_POST['g-recaptcha-response'])){
 		else
 			echo "Có lỗi xảy ra trong quá trình đăng ký. <a href='dangky.php'>Thử lại</a>";
 		}
+	}
 	}
 	}
 ?>     
