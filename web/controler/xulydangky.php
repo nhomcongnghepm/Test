@@ -1,12 +1,15 @@
 <?php
-$connect = new mysqli('localhost', 'root', '','thitracnghiem');
+error_reporting(0);
+// Include database, session, general info
+require_once '../modal/init.php';
  
-// Kiểm tra kết nối thành công hay thất bại
-// nếu thất bại thì thông báo lỗi
-	if ($connect->connect_error) {
-		die("Kết nối thất bại: " . $conn->connect_error);
-	} else
-	{
+// Nếu tồn tại $user
+if ($user)
+{
+    header('Location: index.php'); // Di chuyển đến trang chủ
+}
+else
+{
  // Nếu không phải là sự kiện đăng ký thì không xử lý
 	if (isset($_POST['login'])) {
         $ho = $_POST['ho'];
@@ -18,14 +21,14 @@ $connect = new mysqli('localhost', 'root', '','thitracnghiem');
         $month = $_POST['month'];
         $year = $_POST['year'];
 		$kiemtra=checkdate($month,$day,$year);
-		if($kiemtra==true)
-		{
-        $birthdate = $day . '-' . $month . '-' . $year;
-		}
-		else
+		if($kiemtra==false)
 		{
 		echo "Mời bạn kiểm tra lại ngày sinh. <a href='javascript: history.go(-1)'>Trở lại</a>";
 		exit;
+		}
+		else
+		{
+		  $birthdate = $day . '-' . $month . '-' . $year;
 		}
         $repass_signup = sha1($_POST['pwd2']);
         if($_POST['quyen']!="quyen"){$quyen=$_POST['quyen'];}
@@ -39,7 +42,6 @@ $connect = new mysqli('localhost', 'root', '','thitracnghiem');
       $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LeydXMUAAAAAO2GXuFOYC9IcMZG2_pXSFKwd1Rv-*****&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
         if($ho && $ten && $username && $email && $pass_signup && $birthdate && $gender && $quyen)
 		{
-			include ("../modal/database.php");
 			$taikhoantontai=mysqli_query($connect,"SELECT user FROM user WHERE user='$username'");
 			$emailtontai=mysqli_query($connect,"SELECT email FROM user WHERE email='$email'");
 		if (mysqli_num_rows($taikhoantontai) > 0){
@@ -59,19 +61,7 @@ $connect = new mysqli('localhost', 'root', '','thitracnghiem');
 			exit;
 		}
 
-		$addmember = mysqli_query($connect,"
-			INSERT INTO user (
-				id,
-				ho,
-				ten,
-				user,
-				email,
-				password,
-				birthdate,
-				Gioitinh,
-				quyen
-			)
-			VALUE (
+		$addmember = "INSERT INTO user VALUE (
 				'',
 				'{$ho}',
 				'{$ten}',
@@ -81,9 +71,13 @@ $connect = new mysqli('localhost', 'root', '','thitracnghiem');
 				'{$birthdate}',
 				'{$gender}',
 				'{$quyen}'
-			)
-		");
-
+		)";
+		$db->query($addmember);
+		// Gửi dữ liệu để lưu session
+   		 $session->send($username);
+    	// Giải phóng kết nối
+    	$db->close();
+     
 		if ($addmember)
 			echo "Quá trình đăng ký thành công.";
 		else
@@ -91,5 +85,5 @@ $connect = new mysqli('localhost', 'root', '','thitracnghiem');
 		}
 	}
 	}
-	}
+}
 ?>     

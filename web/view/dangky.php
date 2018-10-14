@@ -16,7 +16,7 @@
    </legend> 
    <legend> * Bạn vui lòng nhập đầy đủ thông tin!
    </legend> 
-   <form action="http://localhost:81/web/view/dangky.php" method="post" class="form" role="form">
+   <form action="../view/dangky.php" method="post" class="form" role="form">
    	<div class="form-group">
         <div class="a" <br style="color:red;"><?php include ("../controler/xulydangky.php")?></div>
        <div class="row">
