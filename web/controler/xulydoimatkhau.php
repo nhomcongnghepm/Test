@@ -7,10 +7,10 @@ require_once '../modal/init.php';
     $pw=$row['password'];
     if(isset($_POST["dongy"]))
     {
-        $old_pw=sha1(($_POST["old_pw"]));
-    	$new_pw=sha1(($_POST["new_pw"]));
-    	$pre_pw=sha1(($_POST["pre_pw"]));
-        if($_POST[$old_pw] == null || $_POST[$new_pw] == null || $_POST[$pre_pw]== null)
+     	$old_pw=sha1(($_POST["old_pw"]));
+   	 	$new_pw=sha1(($_POST["new_pw"]));
+    	$pre_pw=sha1(($_POST["pre_pw"]));   
+        if($_POST["old_pw"] == '' || $_POST["new_pw"] == '' || $_POST["pre_pw"]== '')
         {
             echo "* Bạn phải nhập nhập đầy đủ thông tin!";
             exit;
@@ -29,9 +29,11 @@ require_once '../modal/init.php';
         else 
         {
             $sql="UPDATE user SET password='$new_pw' WHERE user='$u'";
-			$a=$db->query($sql);
-			if($a)
+			$db->query($sql);
+			if($sql)
+			{
             echo "Mật khẩu đã thay đổi";
+			}
 			else "Có lỗi xảy ra";        
 		}
     }
