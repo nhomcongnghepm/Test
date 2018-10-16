@@ -58,7 +58,15 @@
             return $row;
         }
 	}	
- 
+ 	public function row($sql=null)
+	{
+		 if ($this->cn)
+        {
+            $query = mysqli_query($this->cn, $sql);
+            $row = mysqli_fetch_row($query);
+            return $row;
+        }
+	}	
     // Hàm lấy dữ liệu
     public function fetch_assoc($sql = null, $type)
     {
