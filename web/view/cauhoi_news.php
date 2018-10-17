@@ -11,7 +11,6 @@
 <title></title>
 </head>
 <body>
-<?php include '../controler/taocauhoi.php' ?>
 <div class="form1">
 <hr size="1" color="#cadadd" style="margin:15px auto;" />
 <form action="" name="frmthemdethi" id="contact" class="contact-form" onsubmit="return checkform();" method="post" enctype="multipart/form-data">
@@ -79,6 +78,7 @@
        	 <input type="submit" name="ok" id="ok" value="Thêm câu hỏi" />
       </label>
       </td>
+     <div class="a" <br style="color:red;"><?php include '../controler/taocauhoi.php' ?></div>
     </tr>
   </table>
 </form>

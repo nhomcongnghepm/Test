@@ -23,7 +23,11 @@ require_once '../modal/init.php';
         if (isset($_POST['sex']) != null) {
     	$gender = $_POST['sex'];
 		}
-		 if($ho && $ten && $email && $birthdate && $gender)
+		 if($ho==null || $ten==null || $email==null || $gender==null)
+		{
+			echo "* Bạn vui lòng nhập đầy đủ thông tin";
+		}
+		else
 		{
 			$emailtontai=mysqli_query($connect,"SELECT email FROM user WHERE email='$email'");
 			$regex = "/([a-z0-9_]+|[a-z0-9_]+\.[a-z0-9_]+)@(([a-z0-9]|[a-z0-9]+\.[a-z0-9]+)+\.([a-z]{2,4}))/i";
