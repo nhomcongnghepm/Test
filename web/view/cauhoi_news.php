@@ -78,8 +78,9 @@
        	 <input type="submit" name="ok" id="ok" value="Thêm câu hỏi" />
       </label>
       </td>
-     <div class="a" <br style="color:red;"><?php include '../controler/taocauhoi.php' ?></div>
     </tr>
+               <div class="a" <br style="color:red;"><?php include '../controler/taocauhoi.php' ?></div>
+
   </table>
 </form>
 </div>

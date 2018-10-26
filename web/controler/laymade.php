@@ -1,7 +1,8 @@
 <?php
 // Include database, session, general info
-include '../modal/database_cauhoi.php';
-		$sql = "select * from tbl_dethi";
+require_once '../modal/database_cauhoi.php';
+		$results = mysqli_query($conn,"SELECT * FROM tbl_dethi");
+			while($rows = mysqli_fetch_array($results))
 		$rs = mysqli_query($conn,$sql);
 echo "<select name='made'>";
 while($r = mysqli_fetch_row($rs))

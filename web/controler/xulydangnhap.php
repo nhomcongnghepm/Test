@@ -38,7 +38,7 @@ if (isset($_POST['dangnhap']))
         $db->close();
 	}
 	if($row['quyen']==1) {
-        echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='/'>Về trang admin</a>";
+        echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='../view/admin.php'>Về trang admin</a>";
    		 }
     	else if($row['quyen']==2)
     	{

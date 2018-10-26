@@ -2,7 +2,6 @@
 error_reporting(0);
 // Include database, session, general info
 require_once '../modal/init.php';
- 
 // Nếu tồn tại $user
 if ($user)
 {
@@ -42,9 +41,11 @@ else
       $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LeydXMUAAAAAO2GXuFOYC9IcMZG2_pXSFKwd1Rv-*****&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
         if($ho && $ten && $username && $email && $pass_signup && $birthdate && $gender && $quyen)
 		{
-			$taikhoantontai=mysqli_query($connect,"SELECT user FROM user WHERE user='$username'");
-			$emailtontai=mysqli_query($connect,"SELECT email FROM user WHERE email='$email'");
-		if (mysqli_num_rows($taikhoantontai) > 0){
+			$sql="SELECT user FROM user WHERE user='$username'";
+			$sql1="SELECT email FROM user WHERE email='$email'";
+			$db->query($sql);
+			$db->query($sql1);
+		if ($db->num_rows($sql) > 0){
 			 echo "Tên đăng nhập này đã có người dùng. Vui lòng chọn tên đăng nhập khác. <a href='javascript: history.go(-1)'>Trở lại</a>";
 			exit;
 		}
@@ -55,7 +56,7 @@ else
 			exit;
 		}
 
-		if (mysqli_num_rows($emailtontai) > 0)
+		if ($db->num_rows($sql1) > 0)
 		{
 			 echo "Email này đã có người dùng. Vui lòng chọn Email khác. <a href='javascript: history.go(-1)'>Trở lại</a>";
 			exit;
