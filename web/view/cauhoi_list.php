@@ -45,7 +45,7 @@
 				<tr>
 					
 					<th><input type="checkbox" name="checkid[]" id="checkid" value="<?=$counts?>" onClick="CheckALL(<?=$counts?>);" /></th>
-                    <th>Mã Câu Hỏi </th>
+                    <th><div class='a' name='ma_ch' >Mã Câu Hỏi</div></th>
                     <th>Mã Đề </th>
                     <th>Tên Đề</th>
 					<th>Nội dung</th>

@@ -20,7 +20,8 @@ if (isset($_POST['dangnhap']))
         exit;
     }
      
-    $query= "SELECT user, password, quyen FROM user WHERE user='$username'" ;
+    $sql= "SELECT user, password, quyen FROM user WHERE user='$username'" ;
+    $query=$db->query($sql);
     if ($db->num_rows($query) == 0) {
         echo "Tên đăng nhập này không tồn tại. Vui lòng kiểm tra lại. <a href='javascript: history.go(-1)'>Trở lại</a>";
         exit;

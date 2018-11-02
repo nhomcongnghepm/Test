@@ -4,7 +4,7 @@
 <div style="margin:20px 70px 10px; font-size:14px;">
 <font size="2" face="Tahoma"><b><a href="?menu=dethi_list">Đề thi</a><img src="../assets/image/bl3.gif" border="0" /> Sửa thông tin đề thi</b></font></div>
 <hr size="1" color="#cadadd" style="margin:15px auto;" />
-<form action="?menu=dethi_saveedit" method="post" class="dethi_edit">
+<form action="?menu=dethi_edit" method="post" class="dethi_edit">
   <table width="600" border="0"  cellpadding="0" cellspacing="0" background="../assets/image/body.png">
     <tr>
      <td bgcolor="#CCCCCC"  height="38px"colspan="2" align="center" class="style1">Cập nhật thông tin đề thi</td>
@@ -16,11 +16,34 @@
 	<tr>
 	<td align="right">Tên đề</td>
    <td> <input size=35 type="text" name="tende" value="<?php echo $tende?>"></td>
-	 
   <tr>
-    <td align="right">Số câu</td>
-    <td><input size=35 type="text" name="socau" value="<?php echo $socau?>"/></td>
+    <?php include("../controler/function_thi.php") ?>
+		<td align="right">Ngày Thi: </td>
+          <td><span class="tbltitle">
+            <select  class="form-control" name="day">
+              <option value="day">Ngày
+                <?php day();?>
+              </option>
+            </select>
+          <select  class="form-control" name="month">
+              <option value="month">Tháng
+                <?php  thang();?>
+            </option>
+          </select>
+          <select  class="form-control" name="year">
+            <option value="year">Năm
+              <?php  nam();?>
+            </option>
+          </select>
+          </span></td>
   </tr>
+      <tr>
+          <td align="right">Thời gian Thi: </td>
+          <td><select  class="form-control" name="hour" > <option value="hour">Giờ <?php gio();?></option></select>
+              <select  class="form-control" name="minutes"> <option value="minutes">Phút <?php  phut();?></option></select>
+              <select  class="form-control" name="seconds"> <option value="seconds">Giây <?php  giay();?></option></select>
+          </td>
+      </tr>
     <tr>
       <td align="right">Thời gian</td>
       <td><input size=20 type="text" name="timer" value="<?php echo $timer?>"/></td>
@@ -30,5 +53,6 @@
         <input type="submit" name="edit" id="edit" value="Cập nhật" />
       </label></td>
     </tr>
+    <div class="a" <br style="color:red;"><?php require_once '../controler/dethi_saveedit.php';?></div>
   </table>
 </form>

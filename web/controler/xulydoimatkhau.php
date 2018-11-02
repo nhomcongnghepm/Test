@@ -2,8 +2,9 @@
 error_reporting(0);
 require_once '../modal/init.php';
     $u=$_SESSION['user'];
-    $query= "SELECT user, password, quyen FROM user WHERE user='$u'" ;
-	$row=$db->lay_rows($query);
+    $sql= "SELECT user, password, quyen FROM user WHERE user='$u'" ;
+	$query=$db->query($sql);
+    $row=$db->lay_rows($query);
     $pw=$row['password'];
     if(isset($_POST["dongy"]))
     {

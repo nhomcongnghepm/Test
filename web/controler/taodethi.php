@@ -29,7 +29,7 @@ else if(isset($_POST['ok']))
 		$kiemtra=checkdate($_POST["month"],$_POST["day"],$_POST["year"]);
 		if($kiemtra==false)
 		{
-		echo "Mời bạn kiểm tra lại ngày sinh. <a href='javascript: history.go(-1)'>Trở lại</a>";
+		echo "Mời bạn kiểm tra lại ngày thi. <a href='javascript: history.go(-1)'>Trở lại</a>";
 		exit;
 		}
 		else

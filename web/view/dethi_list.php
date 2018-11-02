@@ -45,6 +45,7 @@
                     <th>Ngày Thi</th>
                     <th>Giờ Thi</th>
 					<th>Tác giả</th>
+                    <th>Thời gian làm bài</th>
 					<th>Chỉnh sửa</th>
 				</tr>
 			</thead>

@@ -10,7 +10,7 @@
 <body>
 <hr size="1" color="#cadadd" style="margin:15px auto;" />
 <form action="" name="frmthemdethi" id="contact" class="contact-form" onsubmit="return checkform();" method="post" enctype="multipart/form-data">
-<table width="650" border="0"  cellpadding="0" cellspacing="0" background="images/body.png" id="dethi_news">
+<table width="650" border="0"  cellpadding="0" cellspacing="0" background="../view/image/body.png" id="dethi_news">
     <tr>
       <td bgcolor="#CCCCCC"  height="38px"colspan="2" align="center" class="style1">THÊM ĐỀ THI MỚI</td>
     </tr>
@@ -23,16 +23,16 @@
        <?php include("../controler/function_thi.php") ?>
 			<td height="42" align="center" class="tbltitle">Ngày Thi:</td>
 	  <td><select  class="form-control" name="day"> <option value="day">Ngày <?php day();?></option></select>
-		  <select  class="form-control" name="month"> <option value="month">Tháng <?php  thang();?></option></select>      
+		  <select  class="form-control" name="month"> <option value="month">Tháng <?php  thang();?></option></select>
 		  <select  class="form-control" name="year"> <option value="year">Năm <?php  nam();?></option></select>
 </td> <td>&nbsp;</td>
 <tr>
    <br> <br />
    			<td height="42" align="center" class="tbltitle">Thời gian thi:</td>
 	  <td><select  class="form-control" name="hour" > <option value="hour">Giờ <?php gio();?></option></select>
-		  <select  class="form-control" name="minutes"> <option value="minutes">Phút <?php  phut();?></option></select>      
+		  <select  class="form-control" name="minutes"> <option value="minutes">Phút <?php  phut();?></option></select>
 		  <select  class="form-control" name="seconds"> <option value="seconds">Giây <?php  giay();?></option></select>
-</td> <td>&nbsp;</td>
+      </td>
   </tr>
 
      <tr>

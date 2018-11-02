@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2018 at 08:41 PM
+-- Generation Time: Nov 01, 2018 at 08:55 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -46,7 +46,7 @@ CREATE TABLE `tbl_cauhoi` (
 --
 
 INSERT INTO `tbl_cauhoi` (`ma_ch`, `noidung`, `lc1`, `lc2`, `lc3`, `lc4`, `dapan`, `made`, `diem`, `trangthai`) VALUES
-(5, '<p><span style=\"font-family: arial, helvetica, sans-serif;\">C&acirc;u 1:</span></p>', 'a', 'b', 'c', 'd', 'a', 9, 0.25, 1);
+(1, '<p>C&acirc;u 1: A+B=?</p>', 'A: B', 'B: B', 'C: C', 'D: D', 'A: A', 35, 9.25, 1);
 
 -- --------------------------------------------------------
 
@@ -57,7 +57,8 @@ INSERT INTO `tbl_cauhoi` (`ma_ch`, `noidung`, `lc1`, `lc2`, `lc3`, `lc4`, `dapan
 CREATE TABLE `tbl_dethi` (
   `made` int(11) NOT NULL,
   `tende` varchar(70) CHARACTER SET utf8 NOT NULL,
-  `socau` int(10) NOT NULL,
+  `ngaythi` varchar(10) NOT NULL,
+  `giothi` varchar(10) NOT NULL,
   `tacgia` varchar(50) CHARACTER SET utf8 NOT NULL,
   `ngaydang` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `timer` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
@@ -67,9 +68,8 @@ CREATE TABLE `tbl_dethi` (
 -- Dumping data for table `tbl_dethi`
 --
 
-INSERT INTO `tbl_dethi` (`made`, `tende`, `socau`, `tacgia`, `ngaydang`, `timer`) VALUES
-(9, 'Văn', 40, 'Đặng Thành Đạt', '2018/10/16', '45 phút'),
-(19, 'Toán', 40, 'Đặng Thành Đạt', '16/10/18', '40');
+INSERT INTO `tbl_dethi` (`made`, `tende`, `ngaythi`, `giothi`, `tacgia`, `ngaydang`, `timer`) VALUES
+(35, 'Toán', '30/11/2018', '12:0:0', 'Đặng Thành Đạt', '26/10/18', '45 phút');
 
 -- --------------------------------------------------------
 
@@ -94,7 +94,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `ho`, `ten`, `user`, `email`, `password`, `birthdate`, `Gioitinh`, `quyen`) VALUES
-(38, 'Đặng Thành', 'Đạt', 'dat171997', 'thanhdat010797@gmail.com', '12ca0ce78a400209da95e4db2dbc78b3a74bccae', '1-7-1997', 'Nam', '1');
+(41, 'Đặng Thành', 'Đạt', 'admin', 'thanhdat010797@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', '1-7-1997', 'Nam', '1');
 
 --
 -- Indexes for dumped tables
@@ -127,19 +127,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `tbl_cauhoi`
 --
 ALTER TABLE `tbl_cauhoi`
-  MODIFY `ma_ch` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ma_ch` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_dethi`
 --
 ALTER TABLE `tbl_dethi`
-  MODIFY `made` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `made` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- Constraints for dumped tables

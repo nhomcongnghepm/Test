@@ -14,6 +14,7 @@ else if(isset($_POST['ok']))
 	if($_POST["noidung"]==null||$_POST["diem"]==null||$_POST["lc1"]==null||$_POST["lc2"]==null||$_POST["lc3"]==null||$_POST["lc4"]==null)
 	{
 		echo "* Bạn vui lòng nhập đầy đủ thông tin";
+		exit;
 	}
 	else
 	{

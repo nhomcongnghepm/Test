@@ -43,9 +43,9 @@ else
 		{
 			$sql="SELECT user FROM user WHERE user='$username'";
 			$sql1="SELECT email FROM user WHERE email='$email'";
-			$db->query($sql);
-			$db->query($sql1);
-		if ($db->num_rows($sql) > 0){
+			$a=$db->query($sql);
+			$b=$db->query($sql1);
+		if ($db->num_rows($a) > 0){
 			 echo "Tên đăng nhập này đã có người dùng. Vui lòng chọn tên đăng nhập khác. <a href='javascript: history.go(-1)'>Trở lại</a>";
 			exit;
 		}
@@ -56,7 +56,7 @@ else
 			exit;
 		}
 
-		if ($db->num_rows($sql1) > 0)
+		if ($db->num_rows($b) > 0)
 		{
 			 echo "Email này đã có người dùng. Vui lòng chọn Email khác. <a href='javascript: history.go(-1)'>Trở lại</a>";
 			exit;

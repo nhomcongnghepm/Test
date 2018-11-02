@@ -33,7 +33,8 @@
         // Nếu đã kết nối
         if ($this->cn){
             // Truy vấn
-            mysqli_query($this->cn, $sql);
+            $sql=mysqli_query($this->cn, $sql);
+            return $sql;
         }
     }
  
@@ -43,8 +44,7 @@
         // Nếu đã kết nối
         if ($this->cn)
         {
-            $query = mysqli_query($this->cn, $sql);
-            $row = mysqli_num_rows($query);
+            $row = mysqli_num_rows($sql);
             return $row;
         }
     }
@@ -53,19 +53,17 @@
 	{
 		 if ($this->cn)
         {
-            $query = mysqli_query($this->cn, $sql);
-            $row = mysqli_fetch_array($query);
+            $row = mysqli_fetch_array($sql);
             return $row;
         }
 	}	
  	public function row($sql=null)
 	{
 		 if ($this->cn)
-        {
-            $query = mysqli_query($this->cn, $sql);
-            $row = mysqli_fetch_row($query);
-            return $row;
-        }
+            {
+                $row = mysqli_fetch_row($sql);
+                return $row;
+            }
 	}	
     // Hàm lấy dữ liệu
     public function fetch_assoc($sql = null, $type)
@@ -73,12 +71,10 @@
         // Nếu đã kết nối
         if ($this->cn)
         {
-            // Thực thi truy vấn
-            $query = mysqli_query($this->cn, $sql);
             // Nếu tham số type = 0
             if ($type == 0)
             {
-                while ($row = mysqli_fetch_assoc($query))
+                while ($row = mysqli_fetch_assoc($sql))
                 {
                     $data[] = $row;
                 }
@@ -87,7 +83,7 @@
             // Nếu tham số type = 1
             else if ($type == 1)
             {
-                $data = mysqli_fetch_assoc($query);
+                $data = mysqli_fetch_assoc($sql);
                 return $data;
             }       
         }
