@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2018 at 08:55 AM
+-- Generation Time: Nov 02, 2018 at 04:34 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -46,7 +46,7 @@ CREATE TABLE `tbl_cauhoi` (
 --
 
 INSERT INTO `tbl_cauhoi` (`ma_ch`, `noidung`, `lc1`, `lc2`, `lc3`, `lc4`, `dapan`, `made`, `diem`, `trangthai`) VALUES
-(1, '<p>C&acirc;u 1: A+B=?</p>', 'A: B', 'B: B', 'C: C', 'D: D', 'A: A', 35, 9.25, 1);
+(1, '<p>C&acirc;u 1: A+B=?</p>', 'A: B', 'B: B', 'C: C', 'D: D', 'A: B', 35, 9.25, 1);
 
 -- --------------------------------------------------------
 
@@ -69,7 +69,7 @@ CREATE TABLE `tbl_dethi` (
 --
 
 INSERT INTO `tbl_dethi` (`made`, `tende`, `ngaythi`, `giothi`, `tacgia`, `ngaydang`, `timer`) VALUES
-(35, 'Toán', '30/11/2018', '12:0:0', 'Đặng Thành Đạt', '26/10/18', '45 phút');
+(35, 'toan', '30/10/2018', '10:9:10', 'Đặng Thành Đạt', '26/10/18', '60 phút');
 
 -- --------------------------------------------------------
 
