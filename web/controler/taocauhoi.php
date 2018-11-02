@@ -2,7 +2,6 @@
 error_reporting(0);
 // Include database, session, general info
 require_once '../modal/init.php';
-  $db = new mysqli('localhost', 'root', '', 'thitracnghiem');
 // Nếu tồn tại $user
 if (!$user)
 {
@@ -31,17 +30,17 @@ else if(isset($_POST['ok']))
 		VALUES('$_POST[noidung]','$_POST[lc1]','$_POST[lc2]','$_POST[lc3]','$_POST[lc4]','$_POST[lc4]','$_POST[made]','$_POST[diem]','$_POST[hieuluc]')";
 		if($da==1)
 		{ 
-			$db->query($sqla);
+			$a=$db->query($sqla);
 			echo "Thêm câu hỏi thành công";
 		}
 		else if($da==2)
 		{
-			$db->query($sqlb);
+			$a=$db->query($sqlb);
 			echo "Thêm câu hỏi thành công";
 		}
 		else if($da==3)
 		{
-			 $db->query($sqlc);
+			 $a=$db->query($sqlc);
 			 echo "Thêm câu hỏi thành công";
 		}
 		else
