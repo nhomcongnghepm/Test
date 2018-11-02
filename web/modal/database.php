@@ -114,5 +114,12 @@
             return mysqli_insert_id($this->cn);
         }
     }
+	  public function close() {
+        // Nếu đã kết nối
+        if ($this->cn)
+        {
+            mysqli_close($this->cn);
+        }
+    }
 }
 ?>

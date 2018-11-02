@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="febe/style.css" type="text/css" media="screen" charset="utf-8">
 <?php
-include('../modal/database_cauhoi.php');
+include('../modal/init.php');
 if(isset($_POST["bnm"]))
 		{
 			$ma_ch = $_POST["selector"];
@@ -14,14 +14,13 @@ if(isset($_POST["bnm"]))
 			 echo $delete;
 			
 		 
-			if (mysqli_query($conn,$delete)) {
+			if ($db->query($delete)) {
 				header("location:?menu=cauhoi_list");
 			}
 			else {
-				echo "<br>Error inserting database: " . mysql_error();
+				echo "<br>Error inserting database: ";
 			}
-			mysqli_close ($conn);  
-			 
+			$db->close();			 
 		}
 		else
 		{
