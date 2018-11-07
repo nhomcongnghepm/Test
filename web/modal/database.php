@@ -1,4 +1,5 @@
 <?php
+	error_reporting(0);
 	class database{
 		// Khai báo các biến dưới dạng private
     private $hostname = 'localhost',
@@ -14,7 +15,7 @@
     public function connect()
     {
         // Kết nối
-        $this->cn = mysqli_connect($this->hostname, $this->username, $this->password, $this->dbname);
+        $this->cn = mysqli_connect($this->hostname, $this->username,$this->password,$this->dbname);
 		$this->cn->query("SET NAMES UTF8");
     }
  
@@ -112,13 +113,6 @@
         {
             // Lấy ID vừa insert
             return mysqli_insert_id($this->cn);
-        }
-    }
-	  public function close() {
-        // Nếu đã kết nối
-        if ($this->cn)
-        {
-            mysqli_close($this->cn);
         }
     }
 }

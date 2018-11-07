@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="../assets/style.css" type="text/css" media="screen" charset="utf-8">
 <link rel="stylesheet" href="../assets/chinhsuadethi.css" type="text/css" media="screen" charset="utf-8">
-<?php include ('../controler/chinhsuadethi.php')?>
 <div style="margin:20px 70px 10px; font-size:14px;">
 <font size="2" face="Tahoma"><b><a href="?menu=dethi_list">Đề thi</a><img src="../assets/image/bl3.gif" border="0" /> Sửa thông tin đề thi</b></font></div>
 <hr size="1" color="#cadadd" style="margin:15px auto;" />
 <form action="?menu=dethi_edit" method="post" class="dethi_edit">
+<?php include ('../controler/chinhsuadethi.php')?>
   <table width="600" border="0"  cellpadding="0" cellspacing="0" background="../assets/image/body.png">
     <tr>
      <td bgcolor="#CCCCCC"  height="38px"colspan="2" align="center" class="style1">Cập nhật thông tin đề thi</td>

@@ -13,6 +13,6 @@
 			<td>' . $rows['timer'] . '</td>
 				<td><a href="?menu=dethi_edit&made=' . $rows['made'] . '"><img src="../assets/image/go_right.gif" /></a></td>
 			</tr>';
-                $_SESSION['made'] = $rows['made'];
+						                $_SESSION['made'] = $_POST["selector"];
             }
                 ?>

@@ -12,11 +12,11 @@ require_once '../modal/init.php';
         $month = $_POST['month'];
         $year = $_POST['year'];
 		$kiemtra=checkdate($month,$day,$year);
-		$bomon=$_POST['bomon'];
+		$lop=$_POST['lop'];
 		 if ($_POST['username'] == null) {
         echo("* Bạn hãy nhập tên đăng nhập <br /> <a href='javascript: history.go(-1)'>Trở lại</a>");
 		
-    	} else if (strlen('username') < 7) {
+    	} else if(strlen('username')<7) {
         echo "* Tên đăng nhập phải lớn hơn 7 kí tự <a href='javascript: history.go(-1)'>Trở lại</a>";
 		exit;
 		 } else if (preg_match('/\W/', 'username')) {
@@ -37,14 +37,13 @@ require_once '../modal/init.php';
         echo("* Mật khẩu không trùng khớp. <a href='javascript: history.go(-1)'>Trở lại</a><br /> ");
 		exit;
     	} 
-        if($_POST['quyen']!="quyen"){$quyen=$_POST['quyen'];}
         if (isset($_POST['sex']) != null) {
     	$gender = $_POST['sex'];
 		}
-        if($ho && $ten && $username && $email && $pass_signup && $birthdate && $gender && $bomon)
+        if($ho && $ten && $username && $email && $pass_signup && $birthdate && $gender && $lop)
 		{
-			$sql="SELECT user FROM giaovien WHERE user='$username'";
-			$sql1="SELECT email FROM giaovien WHERE email='$email'";
+			$sql="SELECT user FROM sinhvien WHERE user='$username'";
+			$sql1="SELECT email FROM sinhvien WHERE email='$email'";
 			$a=$db->query($sql);
 			$b=$db->query($sql1);
 		if ($db->num_rows($a) > 0){
@@ -69,25 +68,25 @@ và có từ 6 đến 32 ký tự <a href='javascript: history.go(-1)'>Trở l�
 			 echo "Email này đã có người dùng. Vui lòng chọn Email khác. <a href='javascript: history.go(-1)'>Trở lại</a>";
 			exit;
 		}
-		
-		$addmember = "INSERT INTO giaovien VALUE (
+
+		$addmember = "INSERT INTO sinhvien VALUE (
 				'',
 				'{$ho}',
 				'{$ten}',
 				'{$username}',
-				'{$email}',
 				'{$pass_signup}',
+				'{$email}',
 				'{$birthdate}',
 				'{$gender}',
-				'{$bomon}',
-				'{$quyen}'
+				'$lop',
+				'Học Sinh'
 		)";
 		$db->query($addmember);
-		$sql="SELECT * FROM giaovien";
+		$sql="SELECT * FROM sinhvien";
 		$results=$db->query($sql);
 		while($row =$db->lay_rows($results))
 		{
-		$id=$row['id_gv'];
+		$id=$row['id'];
 		}
 		$addmember1 = "INSERT INTO user VALUE (
 				'$id',
@@ -98,13 +97,15 @@ và có từ 6 đến 32 ký tự <a href='javascript: history.go(-1)'>Trở l�
 				'{$pass_signup}',
 				'{$birthdate}',
 				'{$gender}',
-				'{$quyen}'
+				'Học Sinh'
 		)";
 		$db->query($addmember1);
-		if ($addmember1)
+		
+     
+		if ($addmember)
 			echo "Quá trình đăng ký thành công.";
 		else
 			echo "Có lỗi xảy ra trong quá trình đăng ký. <a href='dangky.php'>Thử lại</a>";
-	}
+		}
 	}
 ?>     

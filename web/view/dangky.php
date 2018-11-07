@@ -18,7 +18,7 @@
    </legend> 
    <form action="../view/dangky.php" method="post" class="form" role="form">
    	<div class="form-group">
-        <div class="a" <br style="color:red;"><?php include ("../controler/xulydangky.php")?></div>
+        <div class="a" style="color:red;"><?php include ("../controler/xulydangky.php")?></div>
        <div class="row">
      <div class="col-xs-6 col-md-6"> <input class="form-control" id="ho" name="ho" placeholder="Họ">
      </div> 
@@ -28,6 +28,7 @@
      <div class="form-group"><input class="form-control"  name="username" placeholder="Tên đăng nhập" type="text" id="username"></div>
      <div class="form-group"><input class="form-control"  name="email" placeholder="Email" type="email"></div>
      <div class="form-group"><input class="form-control"  name="pwd1" placeholder="Mật khẩu" type="password"> <input class="form-control" id="pwd2" name="pwd2" placeholder="Nhập lại mật khẩu" type="password"></div>
+          <div class="form-group"><input class="form-control"  name="bomon" placeholder="Giáo viên bộ môn: " type="text"></div>
     <label for=""> Ngày sinh</label> 
     <div class="row"> 
     <?php include("../controler/function.php") ?>
@@ -38,14 +39,15 @@
      <div class="col-xs-4 col-md-4"> <select  class="form-control" name="year"> <option value="year">Năm <?php  nam();?></option></select>
      </div>
     </div>
-       <label for="">Quyền (Vói 1: admin, 2:Giáo viên, 3: Sinh viên)</label>
-       <div class="form-group"><select clas="form-control" name="quyen"> <option value="quyen">Mòi bạn hãy cấp quyền cho tài khoản nguòi dùng <?php quyen();?></option></select>
-       </div>
+       <label for="">Mời bạn hãy chọn quyền cho giáo viên:   <span class="a">
+         <select name="quyen" clas="form-control">
+           <option value="Giáo Viên">Giáo viên</option>
+           <option value="Trưởng bộ môn">Trưởng bộ môn</option>
+         </select>
+       </span><br />
+       </label>
+       <div class="form-group"></div>
        <label class="radio-inline"><input  id="inlineCheckbox1" name="sex" value="Nam" type="radio">Nam</label> <label  class="radio-inline"><input name="sex" id="inlineCheckbox2" value="Nữ" type="radio">Nữ </label>
-    <br> 
-       <div class="g-recaptcha" data-sitekey="6LeydXMUAAAAAEo6SkpWDcWK3jQr3j1AGXEHsK-G"></div>
-     <br> 
-    <br>
     <button class="btn btn-lg btn-primary btn-block"  name="login"> Đăng ký</button> 
     <br><br>
      <div class="a" <br style="color:red;"><?php include ("../controler/xulydangky_null.php")?></div>

@@ -18,9 +18,8 @@ if(isset($_POST["bnm"]))
 				header("location:?menu=cauhoi_list");
 			}
 			else {
-				echo "<br>Error inserting database: ";
+				echo "Có lỗi xảy ra";
 			}
-			$db->close();			 
 		}
 		else
 		{

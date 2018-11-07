@@ -12,16 +12,12 @@
 							include("cauhoi_saveedit.php");
 						}
 						
-						if($_GET['menu']=='tintuc_list'){
-							include "tintuc_list.php";
-						}else if($_GET['menu']=='tintuc_news'){
-							include("tintuc_news.php");
-						}else if($_GET['menu']=='tintuc_delete'){
-							include("tintuc_delete.php");
-						}else if($_GET['menu']=='tintuc_edit'){
-							include("tintuc_edit.php");
-						}else if($_GET['menu']=='tintuc_saveedit'){
-							include("tintuc_saveedit.php");
+						if($_GET['menu']=='quanlytaikhoan'){
+							include "quanlytaikhoan.php";
+						}else if($_GET['menu']=='capnhattaikhoan'){
+							include("doithongtin.php");
+						}else if($_GET['menu']=='taikhoan_delete'){
+							include("taikhoan_delete.php");
 						}
 						
 						if($_GET['menu']=='dethi_list'){
@@ -34,16 +30,18 @@
 							include("dethi_delete.php");
 						}else if($_GET['menu']=='dethi_news'){
 							include("dethi_news.php");
-						}else if($_GET['menu']=='thong-ke'){
-							include("thong-ke.php");
-						}else if($_GET['menu']=='nhan-vien'){
-							include("nhan-vien.php");
-						}else if($_GET['menu']=='nhanvien_news'){
-							include("nhanvien_news.php");
-						}else if($_GET['menu']=='phan-quyen'){
-							include("nhanvien-phanquyen.php");
 						}
-						
+						if($_GET['menu']=='quanlyhocsinh'){
+							include ("quanlyhocsinh.php");
+						}elseif($_GET['menu']=='hocsinh_edit'){
+							include "hocsinh_edit.php";
+						}elseif($_GET['menu']=='hocsinh_saveedit'){
+							include "hocsinh_saveedit.php";
+						}else if($_GET['menu']=='hocsinh_delete'){
+							include("hocsinh_delete.php");
+						}else if($_GET['menu']=='hocsinh_news'){
+							include("dangkysinhvien.php");
+						}
 						else if($_GET['menu']=='lout'){
 							include("../controler/xulydangxuat.php");
 						}
@@ -53,5 +51,5 @@
 						else{
 						}
 					}else
-						include "dethi_list.php";
+						include "quanlytaikhoan.php";
 				?>

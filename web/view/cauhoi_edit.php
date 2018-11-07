@@ -3,8 +3,6 @@
 <script type="text/javascript" src="../assets/tiny_mce/int.load.js"></script>
 <link rel="stylesheet" href="../assets/chinhsuacauhoi.css" type="text/css" media="screen" charset="utf-8">
 <?php require_once '../controler/chinhsuacauhoi.php';?>
--->
-</style>
 <div style="margin:20px 70px 10px; font-size:14px;">
 <font size="2" face="Tahoma"><b><a href="?menu=cauhoi_list">Câu hỏi</a><img src="../assets/image/bl3.gif" border="0" /> Cập nhật câu hỏi</b></font></div>
 <hr size="1" color="#cadadd" style="margin:15px auto;" />

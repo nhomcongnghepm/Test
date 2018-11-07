@@ -1,8 +1,9 @@
 <?php
-			include('../modal/database_cauhoi.php');
+			include('../modal/init.php');
 			$counts=0;
-			$rscount = mysqli_query($conn,"SELECT * FROM tbl_cauhoi");
-			while($rowscounts = mysqli_fetch_array($rscount))
+			$sql="SELECT * FROM tbl_cauhoi";
+			$rscount = $db->query($sql);
+			while($rowscounts = $db->lay_rows($rscount))
 			{
 				$counts++;
 			}

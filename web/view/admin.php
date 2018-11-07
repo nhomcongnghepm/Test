@@ -25,9 +25,9 @@ require_once '../modal/init.php';
                 
                 <li><a href="?menu=cauhoi_list">Quản lý câu hỏi</a></li>
                 	
-                <li><a href="">Quản lý tin tức</a></li>
+                <li><a href="?menu=quanlytaikhoan">Quản lý tài khoản</a></li>
                 	
-                <li><a href="">Quản lý nhân viên</a></li>
+                <li><a href="?menu=quanlyhocsinh">Quản lý học sinh</a></li>
              
                 <li><a href="#">Công cụ</a>
                 	<ul>

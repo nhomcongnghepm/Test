@@ -8,7 +8,6 @@ require_once '../modal/Session.php';
 $db = new database();
 // Kết nối database
 $db->connect();
- 
 // Khởi tạo object Session
 $session = new Session();
 // Bắt đầu session

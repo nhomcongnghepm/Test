@@ -33,33 +33,31 @@
 </head>
 <body>  
 <div style="margin:20px 70px 10px; font-size:14px;">
-<font size="2" face="Tahoma"><b>CÂU HỎI<img src="../assets/image/bl3.gif" border="0" /> QUẢN LÝ CÂU HỎI</b></font></div>
+<font size="2" face="Tahoma"><b>CÂU HỎI<img src="../assets/image/bl3.gif" border="0" /> QUẢN LÝ Tài Khoản</b></font></div>
 <hr size="1" color="#cadadd" style="margin:15px auto;" />
 <div style="margin:20px 70px auto;">
-<a href="?menu=cauhoi_news"><img src="../assets/image/add_new.gif" align="absmiddle" border="0" /></a> <a href="?menu=cauhoi_news">Câu hỏi mới</a>
+<a href="../view/dangky.php"><img src="../assets/image/add_new.gif" align="absmiddle" border="0" /></a> <a href="../view/dangky.php">Thêm tài khoản</a>
 </div>
 <div class='wrapper'>
-  <form action="?menu=cauhoi_delete" method="post">
+  <form action="" method="post">
     <table cellpadding="1" cellspacing="1" id="resultTable">
 			<thead>
 				<tr>
 					
 					<th><input type="checkbox" name="checkid[]" id="checkid" value="<?=$counts?>" onClick="CheckALL(<?=$counts?>);" /></th>
-                    <th><div class='a' name='ma_ch' >Mã Câu Hỏi</div></th>
-                    <th>Mã Đề </th>
-                    <th>Tên Đề</th>
-					<th>Nội dung</th>
-                    <th>LC1</th>
-					<th>LC2</th>
-					<th>LC3</th>
-					<th>LC4</th>
-					<th>Đáp án</th>
+                    <th>Họ </th>
+                    <th>Tên</th>
+					<th>Tên Đăng Nhập</th>
+                    <th>Email</th>
+					<th>Ngày Sinh</th>
+					<th>Giới Tính</th>
+					<th>Quyền</th>
 					<th>Chỉnh sửa</th>
 				</tr>
 			</thead>
         <tbody>
 		<?php
-			require_once '../controler/hienthicauhoi.php';
+			require_once '../controler/hienthiuser.php';
 		?>
         </tbody>
     </table>

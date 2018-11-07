@@ -38,14 +38,21 @@ if (isset($_POST['dangnhap']))
         // Giải phóng kết nối
         $db->close();
 	}
-	if($row['quyen']==1) {
-        echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='../view/admin.php'>Về trang admin</a>";
+	if($row['quyen']=="Admin") {
+		header('Location: admin.php');   		 }
+    	else if($row['quyen']=="Học Sinh")
+    	{
+       	 echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='/hocsinh.php'>Vào trang học sinh</a>";
    		 }
-    	else if($row['quyen']==2)
+   		 else if($row['quyen']=="Giáo Viên")
     	{
        	 echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='/giaovien.php'>Vào trang giáo viên</a>";
-   		 }
-   		 else echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='/sinhvien.php'>Về trang sinh viên</a>";
+		}
+   		 else if($row['quyen']=="Phòng dào tạo")
+    	{
+       	 echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='/pdt.php'>Vào trang phòng đào tạo</a>";
+		}
+		else echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='/truongbomon.php'>Về trang trưởng bộ môn</a>";
     	die();
 }
 }

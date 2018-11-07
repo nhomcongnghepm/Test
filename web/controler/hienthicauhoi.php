@@ -19,6 +19,6 @@
 			<td>'.$rows['dapan'].'</td>
 			<td><a href="?menu=cauhoi_edit&ma_ch='.$rows['ma_ch'].'"><img src= "../assets/image/go_right.gif" /></a></td>
 			</tr>';
-			                $_SESSION['ma_ch'] = $rows['ma_ch'];
+			                $_SESSION['ma_ch'] = $POST['ma_ch'];
 			}
 ?>
