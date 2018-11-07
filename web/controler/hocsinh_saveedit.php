@@ -3,7 +3,9 @@
 require_once '../modal/init.php';
 if(isset($_POST["edit"]))
 {
-	$id=$_POST['id'];
+	if (isset($_GET['id'])) {
+		$id = $_GET['id'];
+	}
 	$ho=$_POST['ho'];
 	$ten=$_POST['ten'];
 	$email=$_POST['email'];
@@ -38,41 +40,36 @@ if(isset($_POST["edit"]))
         if (isset($_POST['sex']) != null) {
     	$gender = $_POST['sex'];
 		}
-	else if($_POST["ho"]==null||$_POST["ten"]==null||$_POST["email"]==null||$_POST["day"]==day||$_POST["month"]==month||$_POST["year"]==year)
+	else if($_POST["day"]==day||$_POST["month"]==month||$_POST["year"]==year||$gender==null)
 	{
 		echo "* Bạn vui lòng nhập đầy đủ thông tin";
 		exit;
 	}
-	else
-	{
 	 $sql="UPDATE sinhvien SET
-	ho ='".$ho."',
-	ten ='".$ten."',
-	email ='".$email."',
-	birthdate ='".$birthdate."',
-	tenlop ='".$lop."',
-	Gioitinh ='".$gender."'
+	`ho` ='".$ho."',
+	`ten` ='".$ten."',
+	`email` ='".$email."',
+	`birthdate` ='".$birthdate."',
+	`Gioitinh` ='".$gender."',
+	`tenlop` ='".$lop."'
 	where id='".$id."'";
 	$rs=$db->query($sql);
 	
-	/*
-	$sql1="UPDATE user SET `id' =  '".$id."',
+	$sql1="UPDATE user SET 
 	`ho` ='".$ho."',
 	`ten` ='".$ten."',
 	`email` ='".$email."',
 	`birthdate` ='".$birthdate."',
 	`Gioitinh` ='".$gender."'
 	where id='".$id."'";
-	$ra=$db->query($sql1);*/
+	$ra=$db->query($sql1);
 	if($rs)
 	{
-		echo "Cập nhật thành công" ;
 		echo"<script>document.location.href='?menu=quanlyhocsinh' </script>";
 	}
 	else
 	{
 		echo "Có lỗi xảy ra";
-	}
 	}
 }
 ?>

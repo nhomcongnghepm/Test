@@ -1,12 +1,10 @@
 <?php
 error_reporting(0);
-// Include database, session, general info
 require_once '../modal/init.php';
  
-// Nếu tồn tại $user
 if (!$user)
 {
-    header('Location: dangnhap.php'); // Di chuyển đến trang chủ
+    header('Location: dangnhap.php'); 
 }
 else if(isset($_POST['ok']))
 {	  

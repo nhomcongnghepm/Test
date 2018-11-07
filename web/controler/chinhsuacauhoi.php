@@ -1,7 +1,9 @@
 <?php
 	error_reporting(0);
 	require_once '../modal/init.php';
-	$ma_ch=$_SESSION['ma_ch'];
+	if (isset($_GET['ma_ch'])) {
+		$ma_ch = $_GET['ma_ch'];
+	}	
 	$sql="SELECT * FROM tbl_cauhoi WHERE ma_ch='$ma_ch'";
 	$results=$db->query($sql);
     while($rows = $db->lay_rows($results))

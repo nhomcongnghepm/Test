@@ -25,14 +25,7 @@ if(isset($_POST["edit"]))
                 exit;
             } else {
                 $ngaythi = $day . '/' . $month . '/' . $year;
-			} if($ngaythi<$currentDate)
-		{
-			echo "* Ngày bạn chọn đã qua, mời bạn chọn ngày khác";
-			exit;
-		}
-		else
-		{
-                 $sql="UPDATE tbl_dethi SET `tende` ='".$tende."',
+				 $sql="UPDATE tbl_dethi SET `tende` ='".$tende."',
 							`ngaythi` ='".$ngaythi."',
 							`giothi` ='".$giothi."',
 							`timer` ='".$timer."'
@@ -42,6 +35,6 @@ if(isset($_POST["edit"]))
                 echo "Cập nhật thành công";
 				echo "<script>document.location.href='?menu=dethi_list' </script>";
             } else echo "Có lỗi xảy ra";
-       }
+			}
 	}
 ?>

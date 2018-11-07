@@ -1,8 +1,8 @@
 <?php
-	error_reporting(0);
+	if (isset($_GET['id'])) {
+		$id = $_GET['id'];
+	}
 	require_once '../modal/init.php';
-	echo $a;
-	$id=$a;
 	$sql="SELECT * FROM sinhvien WHERE id='$id'";
 	$results=$db->query($sql);
     while($rows = $db->lay_rows($results))
