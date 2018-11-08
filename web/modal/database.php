@@ -250,6 +250,13 @@
             return $sql;
         }
     }
+    public function laythongtinpdt($id){
+        if ($this->cn)
+        {
+            $sql= "SELECT * FROM user WHERE id='$id'" ;
+            return $sql;
+        }
+    }
 
     public function doimatkhau($u,$new_pw){
             if ($this->cn)
@@ -368,6 +375,58 @@
                 $sql="INSERT INTO tbl_cauhoi(noidung, lc1, lc2, lc3, lc4, dapan, made,diem, trangthai) VALUES ('$_POST[noidung]','$_POST[lc1]','$_POST[lc2]','$_POST[lc3]','$_POST[lc4]','$_POST[lc4]','$_POST[made]','$_POST[diem]','$_POST[hieuluc]')";
                 return $sql;
             }
+    }
+
+    public function giaovien_delete($id_gv){
+        $delete= "delete from giaovien where id_gv in(";
+        foreach($id_gv as $key=>$value)
+        {
+            $delete.="'".$value."',";
+        }
+        $delete .= "'')";
+        echo $delete;
+        return $delete;
+    }
+    public function  user_delete($id){
+        $delete = "delete from user where id in(";
+        foreach($id as $key=>$value)
+        {
+            $delete.="'".$value."',";
+        }
+        $delete .= "'')";
+        echo $delete;
+        return $delete;
+    }
+    public function hocsinh_delete($id){
+        $delete = "delete from sinhvien where id in(";
+        foreach($id as $key=>$value)
+        {
+            $delete.="'".$value."',";
+        }
+        $delete .= "'')";
+        echo $delete;
+        return $delete;
+    }
+    public function dethi_delete($made){
+        $delete= "delete from tbl_dethi where made in(";
+        foreach($made as $key=>$value)
+        {
+            $delete.="'".$value."',";
+        }
+        $delete .= "'')";
+        echo $delete;
+        return $delete;
+    }
+    public function cauhoi_delete($ma_ch){
+        $delete = "delete from tbl_cauhoi where ma_ch in(";
+        foreach($ma_ch as $key=>$value)
+        {
+            $delete.="'".$value."',";
+            //echo $value;
+        }
+        $delete .= "'')";
+        echo $delete;
+        return $delete;
     }
 }
 ?>

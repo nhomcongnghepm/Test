@@ -16,12 +16,6 @@
 							include "quanlytaikhoan.php";
 						}else if($_GET['menu']=='taikhoan_news'){
 							include("dangky_pdt.php");
-						}else if($_GET['menu']=='taikhoan_delete'){
-							include("taikhoan_delete.php");
-						}else if($_GET['menu']=='taikhoan_edit'){
-							include("taikhoan_edit.php");
-						}else if($_GET['menu']=='taikhoan_saveedit'){
-							include("taikhoan_saveedit.php");
 						}
 						
 						if($_GET['menu']=='dethi_list'){

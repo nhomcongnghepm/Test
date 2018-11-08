@@ -3,13 +3,7 @@ include('../modal/init.php');
 if(isset($_POST["bnm"]))
 		{
 			$made = $_POST["selector"];
-			$delete= "delete from tbl_dethi where made in(";
-			foreach($made as $key=>$value)
-			{
-					$delete.="'".$value."',"; 
-			}
-			$delete .= "'')";
-			 echo $delete;
+            $delete=$db->dethi_delete($made);
 			$a=$db->query($delete);
 		 
 			if ($a) {

@@ -7,8 +7,8 @@
     	<link href="../assets/style.css" media="screen" rel="stylesheet" type="text/css" />
         <script src="../assets/js/jquery.js" type="text/javascript"></script>
 	  <script src="../assets/js/facebox.js" type="text/javascript"></script>
-	
-	<script type="text/javascript">
+    <?php require_once '../controler/chonallhocsinh.php';?>
+    <script type="text/javascript">
         $(document).ready(function() {
         $("#resultTable thead tr th:first input:checkbox").click(function() {
             var checkedStatus = this.checked;
@@ -29,7 +29,6 @@
                 .css("border-width", "10px");
         });
     </script>
-    <?php require_once '../controler/chonallhocsinh.php';?>
 </head>
 <body>  
 <div style="margin:20px 70px 10px; font-size:14px;">

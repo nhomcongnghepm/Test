@@ -1,34 +1,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
 <head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Test</title>
+<title>Admin</title>
 </title>
-<!--sa poip up-->
     	<link href="../assets/style.css" media="screen" rel="stylesheet" type="text/css" />
-        <script src="../assets/js/jquery.js" type="text/javascript"></script>
-	  <script src="../assets/js/facebox.js" type="text/javascript"></script>
-	
-	<script type="text/javascript">
-        $(document).ready(function() {
-        $("#resultTable thead tr th:first input:checkbox").click(function() {
-            var checkedStatus = this.checked;
-            $("#resultTable tbody tr td:first-child input:checkbox").each(function() {
-                this.checked = checkedStatus;
-            });
-        });
-
-            $("#resultTable").selectAllRows();
-
-            $("#resultTable").selectAllRows({ column: 'last' });
-
-            $("#resultTable").selectAllRows({
-                column: '2',
-                selectTip: 'Select All Students',
-                unselectTip: 'Un-Select All Students'
-                })
-                .css("border-width", "10px");
-        });
-    </script>
     <?php require_once '../controler/chonall.php';?>
 </head>
 <body>  
@@ -39,12 +14,11 @@
 <a href="?menu=taikhoan_news"><img src="../assets/image/add_new.gif" align="absmiddle" border="0" /></a> <a href="?menu=taikhoan_news">Thêm tài khoản</a>
 </div>
 <div class='wrapper'>
-  <form action="" method="post">
+  <form action="?menu=user_delete" method="post">
     <table cellpadding="1" cellspacing="1" id="resultTable">
 			<thead>
 				<tr>
-					
-					<th><input type="checkbox" name="checkid[]" id="checkid" value="<?=$counts?>" onClick="CheckALL(<?=$counts?>);" /></th>
+                    <th>Mã tài khoản</th>
                     <th>Họ </th>
                     <th>Tên</th>
 					<th>Tên Đăng Nhập</th>
@@ -52,32 +26,15 @@
 					<th>Ngày Sinh</th>
 					<th>Giới Tính</th>
 					<th>Quyền</th>
-					<th>Chỉnh sửa</th>
 				</tr>
 			</thead>
         <tbody>
-		<?php
-			require_once '../controler/hienthiuser.php';
-		?>
+		    <?php
+			    require_once '../controler/hienthiuser.php';
+			?>
         </tbody>
     </table>
-	<input type="submit" name="bnm" value="Delete all" style="margin:3px 50px auto;">
 	</form>
 </div>
   </body>
 </html>
-<script>
-function CheckALL(counts)
-{
-	for(i=0;i<counts;i++)
-	{
-		
-	if(document.getElementById("checkid").checked!="")
-	{
-	document.getElementById("checkid").checked	='checked';
-	}else{
-	document.getElementById("checkid").checked	='';	
-	}
-	}
-}
-</script>

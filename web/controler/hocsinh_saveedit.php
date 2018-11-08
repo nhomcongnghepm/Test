@@ -47,7 +47,7 @@ if(isset($_POST["edit"]))
 		echo "* Bạn vui lòng nhập đầy đủ thông tin";
 		exit;
 	}
-	 $sql=$db->capnhathocsinh($ho,$ten,$emai,$birthdate,$gen,$lop,$id);
+	 $sql=$db->capnhathocsinh($ho,$ten,$email,$birthdate,$gender,$lop,$id);
 	$rs=$db->query($sql);
 	
 	$sql1=$db->capnhatuser($ho,$ten,$email,$birthdate,$gender,$quyen,$id);
