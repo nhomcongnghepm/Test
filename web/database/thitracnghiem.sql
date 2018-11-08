@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2018 at 07:00 AM
+-- Generation Time: Nov 08, 2018 at 01:07 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -46,8 +46,8 @@ CREATE TABLE `giaovien` (
 --
 
 INSERT INTO `giaovien` (`id_gv`, `ho`, `ten`, `user`, `password`, `email`, `birthdate`, `Gioitinh`, `bomon`, `quyen`) VALUES
-(20100018, 'Ngô Bá Vĩnh', 'Hiển', 'truongbomon1', 'truongbomon@gmail.com', '2a8f8de2c8e6b2ee1a3b120cceba47', '1-3-1993', 'Nam', 'Toán', 'Trưởng bộ môn'),
-(20100027, 'Phan Tấn ', 'Bình', 'giaovien1', 'giaovien1@gmail.com', '20f8c1759a008489346bede726f936', '1-3-1993', 'Nam', 'Toán', 'Giáo Viên');
+(20100031, 'Phan Tấn', 'Bình', 'phantanbinh', 'a32a9ae0c05f52a19c77f2da559beb', 'phantanbinh@gmail.com', '17-2-2007', 'Nam', 'Toán', 'Giáo Viên'),
+(20100032, 'Ngô Bá', 'Vĩnh Hiển', 'hien123', '2c7bc5665e3482c031f9a928038b30', 'hien123@gmail.com', '18-1-2008', 'Nam', 'Hóa', 'Trưởng bộ môn');
 
 -- --------------------------------------------------------
 
@@ -73,8 +73,7 @@ CREATE TABLE `sinhvien` (
 --
 
 INSERT INTO `sinhvien` (`id`, `ho`, `ten`, `user`, `password`, `email`, `birthdate`, `Gioitinh`, `tenlop`, `quyen`) VALUES
-(101000005, 'Thạch Cảnh ', 'Bình', 'sinhvien', '81a677028f097bb2ad02c0a5552cfdce7a04830c', 'sinhvien@gmail.com', '1-7-1997', 'Nam', '04CNTT1', 'Học Sinh'),
-(101000008, 'Đoàn Tô Thanh', 'Bình', 'binhthach', '99f2173bc9b05ad0bc72870238b0e7d22eca9f18', 'sinhvien2@gmail.com', '8-9-1993', 'Nam', '04ĐHCNTT2', 'Học Sinh');
+(101000011, 'Thạch Cảnh', 'Bình', 'canhbinh12', '11389d2abc6f51a2845e71576c6aabf337049754', 'canhbinh123@gmail.com', '3-3-1993', 'Nam', '04CNTT1', 'Học Sinh');
 
 -- --------------------------------------------------------
 
@@ -101,7 +100,7 @@ CREATE TABLE `tbl_cauhoi` (
 
 INSERT INTO `tbl_cauhoi` (`ma_ch`, `noidung`, `lc1`, `lc2`, `lc3`, `lc4`, `dapan`, `made`, `diem`, `trangthai`) VALUES
 (1, '<p>C&acirc;u 1: A+B=?</p>', 'A: B', 'B: B', 'C: C', 'D: D', 'A: B', 35, 9.25, 1),
-(2, '<p>b</p>', 'c', 'd', 'e', 'f', 'c', 35, 1, 1);
+(2, '<p>a</p>', '1', '1', '2', '3', '1', 35, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -126,7 +125,7 @@ CREATE TABLE `tbl_dethi` (
 INSERT INTO `tbl_dethi` (`made`, `tende`, `ngaythi`, `giothi`, `tacgia`, `ngaydang`, `timer`) VALUES
 (35, 'toan', '30/10/2018', '10:9:10', 'Đặng Thành Đạt', '26/10/18', '60 phút'),
 (36, 'Tiếng Anh', '19/11/2019', '6:3:5', 'Phan Tấn Bình', '07/11/18', '45 phút'),
-(37, 'Hóa', '4/3/2018', '4:1:2', 'a', '07/11/18', '1');
+(37, 'Hóa', '3/3/2019', '2:2:2', 'Ngố Bá Vĩnh Hiển', '08/11/18', '45 phút');
 
 -- --------------------------------------------------------
 
@@ -135,7 +134,7 @@ INSERT INTO `tbl_dethi` (`made`, `tende`, `ngaythi`, `giothi`, `tacgia`, `ngayda
 --
 
 CREATE TABLE `user` (
-  `id` int(10) NOT NULL,
+  `id` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `ho` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `ten` varchar(20) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
   `user` varchar(30) NOT NULL,
@@ -151,11 +150,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `ho`, `ten`, `user`, `email`, `password`, `birthdate`, `Gioitinh`, `quyen`) VALUES
-(2, 'Phòng Đào', 'Tạo', 'phongdaotao', 'phongdaotao@gmail.com', '656d1edc03406298b7d38b9336ca66d33b08be7f', '2-3-1992', 'Nam', 'Phòng dào tạo'),
-(20100018, 'Ngô Bá Vĩnh', 'Hiển', 'truongbomon1', 'truongbomon@gmail.com', '2a8f8de2c8e6b2ee1a3b120cceba4704642987ef', '1-3-1993', 'Nam', 'Trưởng bộ môn'),
-(20100027, 'Phan Tấn ', 'Bình', 'giaovien1', 'giaovien1@gmail.com', '20f8c1759a008489346bede726f936f6e9d9f477', '1-3-1993', 'Nam', 'Giáo Viên'),
-(101000005, 'Thạch Cảnh ', 'Bình', 'sinhvien', 'sinhvien@gmail.com', '81a677028f097bb2ad02c0a5552cfdce7a04830c', '1-7-1997', 'Nam', 'Học Sinh'),
-(101000008, 'Đoàn Tô Thanh', 'Bình', 'binhthach', 'sinhvien2@gmail.com', '99f2173bc9b05ad0bc72870238b0e7d22eca9f18', '8-9-1993', 'Nam', 'Học Sinh');
+('101000011', 'Thạch Cảnh', 'Bình', 'canhbinh123', 'canhbinh123@gmail.com', '11389d2abc6f51a2845e71576c6aabf337049754', '3-3-1993', 'Nam', 'Học Sinh'),
+('20100031', 'Phan Tấn', 'Bình', 'phantanbinh', 'phantanbinh@gmail.com', 'a32a9ae0c05f52a19c77f2da559beba8f9a16dee', '17-2-2007', 'Nam', 'Giáo Viên'),
+('20100032', 'Ngô Bá', 'Vĩnh Hiển', 'hien123', 'hien123@gmail.com', '2c7bc5665e3482c031f9a928038b301e068e6413', '18-1-2008', 'Nam', 'Trưởng bộ môn'),
+('AD03972', 'Đặng Thành ', 'Đạt', 'admin', 'admin@gmail.com', '2ec10e4f7cd2159e7ea65d2454f68287ecf81251', '1-7-1997', 'Nam', 'Admin'),
+('PDT82546', 'Phòng Đào ', 'Tạo', 'phongdaotao', 'phongdaotao@gmail.com', '0c6eab5510cd53354a6d7e573a6eef43f7e24678', '3-2-1991', 'Nam', 'Phòng dào tạo');
 
 --
 -- Indexes for dumped tables
@@ -200,7 +199,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `giaovien`
 --
 ALTER TABLE `giaovien`
-  MODIFY `id_gv` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20100030;
+  MODIFY `id_gv` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20100033;
 
 --
 -- AUTO_INCREMENT for table `sinhvien`
