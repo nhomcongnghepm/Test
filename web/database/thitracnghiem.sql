@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 08, 2018 at 01:07 PM
+-- Generation Time: Nov 08, 2018 at 06:30 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -46,8 +46,9 @@ CREATE TABLE `giaovien` (
 --
 
 INSERT INTO `giaovien` (`id_gv`, `ho`, `ten`, `user`, `password`, `email`, `birthdate`, `Gioitinh`, `bomon`, `quyen`) VALUES
-(20100031, 'Phan Tấn', 'Bình', 'phantanbinh', 'a32a9ae0c05f52a19c77f2da559beb', 'phantanbinh@gmail.com', '17-2-2007', 'Nam', 'Toán', 'Giáo Viên'),
-(20100032, 'Ngô Bá', 'Vĩnh Hiển', 'hien123', '2c7bc5665e3482c031f9a928038b30', 'hien123@gmail.com', '18-1-2008', 'Nam', 'Hóa', 'Trưởng bộ môn');
+(20100042, 'Phan Tấn', 'Bình', 'binh123', '8bd1c0165694ac2669228e73843d26', 'binh@gmail.com', '16-2-2005', 'Nam', 'Toán', 'Giáo Viên'),
+(20100043, 'Ngô Bá Vĩnh ', 'Hiển', 'hien123', '2c7bc5665e3482c031f9a928038b30', 'hien123@gmail.com', '14-3-2004', 'Nam', 'Hóa', 'Giáo Viên'),
+(20100044, 'Nguyễn Thanh Trường', 'Giang', 'giang123', '4e031bb475963ba73ebf552f78ae1c', 'giang@gmail.com', '16-2-2003', 'Nam', 'Vật lý', 'Trưởng bộ môn');
 
 -- --------------------------------------------------------
 
@@ -73,7 +74,7 @@ CREATE TABLE `sinhvien` (
 --
 
 INSERT INTO `sinhvien` (`id`, `ho`, `ten`, `user`, `password`, `email`, `birthdate`, `Gioitinh`, `tenlop`, `quyen`) VALUES
-(101000011, 'Thạch Cảnh', 'Bình', 'canhbinh12', '11389d2abc6f51a2845e71576c6aabf337049754', 'canhbinh123@gmail.com', '3-3-1993', 'Nam', '04CNTT1', 'Học Sinh');
+(101000013, 'Thạch Cảnh', 'Bình', 'canhbinh12', '11389d2abc6f51a2845e71576c6aabf337049754', 'canhbinh123@gmail.com', '1-3-1991', 'Nam', '12A1', 'Học Sinh');
 
 -- --------------------------------------------------------
 
@@ -150,11 +151,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `ho`, `ten`, `user`, `email`, `password`, `birthdate`, `Gioitinh`, `quyen`) VALUES
-('101000011', 'Thạch Cảnh', 'Bình', 'canhbinh123', 'canhbinh123@gmail.com', '11389d2abc6f51a2845e71576c6aabf337049754', '3-3-1993', 'Nam', 'Học Sinh'),
-('20100031', 'Phan Tấn', 'Bình', 'phantanbinh', 'phantanbinh@gmail.com', 'a32a9ae0c05f52a19c77f2da559beba8f9a16dee', '17-2-2007', 'Nam', 'Giáo Viên'),
-('20100032', 'Ngô Bá', 'Vĩnh Hiển', 'hien123', 'hien123@gmail.com', '2c7bc5665e3482c031f9a928038b301e068e6413', '18-1-2008', 'Nam', 'Trưởng bộ môn'),
+('101000013', 'Thạch Cảnh', 'Bình', 'canhbinh123', 'canhbinh123@gmail.com', '11389d2abc6f51a2845e71576c6aabf337049754', '1-3-1991', 'Nam', 'Học Sinh'),
+('20100042', 'Phan Tấn', 'Bình', 'binh123', 'binh@gmail.com', '8bd1c0165694ac2669228e73843d26341ec71905', '16-2-2005', 'Nam', 'Giáo Viên'),
+('20100043', 'Ngô Bá Vĩnh ', 'Hiển', 'hien123', 'hien123@gmail.com', '2c7bc5665e3482c031f9a928038b301e068e6413', '14-3-2004', 'Nam', 'Giáo Viên'),
+('20100044', 'Nguyễn Thanh Trường', 'Giang', 'giang123', 'giang@gmail.com', '4e031bb475963ba73ebf552f78ae1c43283af8b8', '16-2-2003', 'Nam', 'Trưởng bộ môn'),
 ('AD03972', 'Đặng Thành ', 'Đạt', 'admin', 'admin@gmail.com', '2ec10e4f7cd2159e7ea65d2454f68287ecf81251', '1-7-1997', 'Nam', 'Admin'),
-('PDT82546', 'Phòng Đào ', 'Tạo', 'phongdaotao', 'phongdaotao@gmail.com', '0c6eab5510cd53354a6d7e573a6eef43f7e24678', '3-2-1991', 'Nam', 'Phòng dào tạo');
+('PDT92654', 'Phòng Đào ', 'Tạo', 'pdt123', 'phongdaotao@gmail.com', 'de56a0a5377a2c4e333156c34912b38318cd77fe', '3-5-1993', 'Nam', 'Phòng dào tạo');
 
 --
 -- Indexes for dumped tables
@@ -199,13 +201,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `giaovien`
 --
 ALTER TABLE `giaovien`
-  MODIFY `id_gv` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20100033;
+  MODIFY `id_gv` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20100045;
 
 --
 -- AUTO_INCREMENT for table `sinhvien`
 --
 ALTER TABLE `sinhvien`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101000012;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101000015;
 
 --
 -- AUTO_INCREMENT for table `tbl_cauhoi`
