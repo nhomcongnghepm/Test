@@ -1,7 +1,7 @@
 <?php
 			error_reporting(0);
 			include('../modal/init.php');
-			$sql ="SELECT * FROM tbl_dethi";
+			$sql =$db->hienthidethi();
 			$results=$db->query($sql);
 			while($rows = $db->lay_rows($results)) {
                 echo '<tr class="teacher">

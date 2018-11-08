@@ -1,6 +1,6 @@
 <?php
 require_once '../modal/init.php';
-	if (isset($_POST['login'])) {
+if (isset($_POST['login'])) {
         $ho = $_POST['ho'];
         $ten = $_POST['ten'];
         $username = $_POST['username'];
@@ -9,8 +9,8 @@ require_once '../modal/init.php';
         $day = $_POST['day'];
         $month = $_POST['month'];
         $year = $_POST['year'];
+        $quyen=$_POST['quyen'];
 		$kiemtra=checkdate($month,$day,$year);
-		$bomon=$_POST['bomon'];
 		 if ($_POST['username'] == null) {
         echo("* Bạn hãy nhập tên đăng nhập <br /> <a href='javascript: history.go(-1)'>Trở lại</a>");
 		
@@ -35,14 +35,13 @@ require_once '../modal/init.php';
         echo("* Mật khẩu không trùng khớp. <a href='javascript: history.go(-1)'>Trở lại</a><br /> ");
 		exit;
     	} 
-        if($_POST['quyen']!="quyen"){$quyen=$_POST['quyen'];}
         if (isset($_POST['sex']) != null) {
     	$gender = $_POST['sex'];
 		}
-        if($ho && $ten && $username && $email && $pass_signup && $birthdate && $gender && $bomon)
+        if($ho && $ten && $username && $email && $pass_signup && $birthdate && $gender)
 		{
-			$sql=$db->usergiaovien($username);
-			$sql1=$db->emailgiaovien($email);
+			$sql=$db->useradmin($username);
+			$sql1=$db->emailadmin($username);
 			$a=$db->query($sql);
 			$b=$db->query($sql1);
 		if ($db->num_rows($a) > 0){
@@ -66,22 +65,31 @@ và có từ 6 đến 32 ký tự <a href='javascript: history.go(-1)'>Trở l�
 		{
 			 echo "Email này đã có người dùng. Vui lòng chọn Email khác. <a href='javascript: history.go(-1)'>Trở lại</a>";
 			exit;
-		}		
-		$addmember = $db->themgiaovien($ho,$ten,$username,$pass_signup,$email,$birthdate,$gender,$bomon,$quyen);
-		$db->query($addmember);
-		
-		$sql=$db->hienthigiaovien();
-		$results=$db->query($sql);
-		while($row =$db->lay_rows($results))
-		{
-		$id=$row['id_gv'];
 		}
-		$addmember1=$db->themuser($id,$ho,$ten,$username,$email,$pass_signup,$birthdate,$gender,$quyen);
-		$db->query($addmember1);
-		if ($addmember1)
-			echo "Quá trình đăng ký thành công.";
-		else
-			echo "Có lỗi xảy ra trong quá trình đăng ký. <a href='dangky.php'>Thử lại</a>";
-	}
+		$chars = "0123456789";
+		$size = strlen($char);
+		$str = substr(str_shuffle($chars), 0, 5);
+		for ($i = 0; $i < $length; $i++) {
+			$str .= $chars[rand(0, $size - 1)];
+		}
+		$my_string =$str;
+		$admin='AD'.$my_string;
+		$pdt='PDT'.$my_string;
+		if($quyen==Admin) {
+			$addmember=$db->themuser($admin,$ho,$ten,$username,$email,$pass_signup,$birthdate,$gender,$quyen);
+            $db->query($addmember);
+            if ($addmember)
+                echo "Quá trình đăng ký thành công.";
+            else echo "Có lỗi xảy ra trong quá trình đăng ký. <a href='dangky_pdt.php'>Thử lại</a>";
+        }
+        else
+		{
+            $addmember1=$db->themuser($pdt,$ho,$ten,$username,$email,$pass_signup,$birthdate,$gender,$quyen);
+            $db->query($addmember1);
+            if ($addmember1)
+                echo "Quá trình đăng ký thành công.";
+            else echo "Có lỗi xảy ra trong quá trình đăng ký. <a href='dangky_pdt.php'>Thử lại</a>";
+        }
+		}
 	}
 ?>     

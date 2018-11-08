@@ -17,17 +17,13 @@ else if(isset($_POST['ok']))
 	}
 	else
 	{
-	 $sqla="INSERT INTO tbl_cauhoi(noidung, lc1, lc2, lc3, lc4, dapan, made,diem, trangthai)  
-		VALUES ('$_POST[noidung]','$_POST[lc1]','$_POST[lc2]','$_POST[lc3]','$_POST[lc4]','$_POST[lc1]','$_POST[made]','$_POST[diem]','$_POST[hieuluc]')";
+	 $sqla=$db->themcauhoi1();
 		
-	 $sqlb="INSERT INTO tbl_cauhoi(noidung, lc1,lc2,lc3,lc4, dapan, made,diem, trangthai)  
-		VALUES('$_POST[noidung]','$_POST[lc1]','$_POST[lc2]','$_POST[lc3]','$_POST[lc4]','$_POST[lc2]','$_POST[made]','$_POST[diem]','$_POST[hieuluc]')";
+	 $sqlb=$db->themcauhoi2();
 		
-	 $sqlc="INSERT INTO tbl_cauhoi(noidung, lc1,lc2,lc3,lc4, dapan, made,diem, trangthai)  
-		VALUES('$_POST[noidung]','$_POST[lc1]','$_POST[lc2]','$_POST[lc3]','$_POST[lc4]','$_POST[lc3]','$_POST[made]','$_POST[diem]','$_POST[hieuluc]')";
+	 $sqlc=$db->themcauhoi3();
 		
-	 $sqld="INSERT INTO  tbl_cauhoi(noidung, lc1,lc2,lc3,lc4, dapan, made,diem, trangthai)  
-		VALUES('$_POST[noidung]','$_POST[lc1]','$_POST[lc2]','$_POST[lc3]','$_POST[lc4]','$_POST[lc4]','$_POST[made]','$_POST[diem]','$_POST[hieuluc]')";
+	 $sqld=$db->themcauhoi4();
 		if($da==1)
 		{ 
 			$a=$db->query($sqla);

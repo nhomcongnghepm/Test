@@ -1,7 +1,7 @@
 <?php
 // Include database, session, general info
 require_once '../modal/init.php';
-		$sql="SELECT * FROM tbl_dethi";
+		$sql=$db->hienthidethi();
 		$rs=$db->query($sql);
 echo "<select name='made'>";
 while($r = $db->row($rs))

@@ -11,7 +11,6 @@ if(isset($_POST["edit"]))
 	$lc4=$_POST['lc4'];
 	$dapan=$_POST['dapan'];
 	$diem=$_POST['diem'];
-	$trangthai=$_POST['hieuluc'];
 	if($_POST["noidung"]==null||$_POST["diem"]==null||$_POST["lc1"]==null||$_POST["lc2"]==null||$_POST["lc3"]==null||$_POST["lc4"]==null)
 	{
 		echo "* Bạn vui lòng nhập đầy đủ thông tin";
@@ -19,18 +18,10 @@ if(isset($_POST["edit"]))
 	}
 	else
 	{
-	 $sql="UPDATE  tbl_cauhoi SET `ma_ch` =  '".$idch."',
-	`noidung` ='".$noidung."',
-	`lc1` ='".$lc1."',
-	`lc2` ='".$lc2."',
-	`lc3` ='".$lc3."',
-	`lc4` ='".$lc4."',
-	`dapan` ='".$dapan."'
-	where ma_ch='".$idch."'";
+	 $sql=$db->capnhatcauhoi($idch,$noidung,$lc1,$lc2,$lc3,$lc4,$dapan);
 	$rs=$db->query($sql);
 	if($rs)
 	{
-		echo "Cập nhật thành công" ;
 		echo"<script>document.location.href='?menu=cauhoi_list' </script>";
 	}
 	else

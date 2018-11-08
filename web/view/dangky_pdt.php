@@ -9,17 +9,16 @@
 <body>
 <br>
 <div style="margin:20px 70px 10px; font-size:14px;">
-<font size="2" face="Tahoma"><b>Quản lý giáo viên <img src="../assets/image/bl3.gif" border="0" />Thêm giáo viên</b></font></div>
+<font size="2" face="Tahoma"><b>Quản lý tài khoản <img src="../assets/image/bl3.gif" border="0" />Thêm tài khoản</b></font></div>
   <div class="container"> 
  <div class="row"> 
   <div class="col-xs-12 col-sm-12 col-md-4 well well-sm col-md-offset-4"> 
-   <legend><a href=""><i class="glyphicon glyphicon-globe"></i></a> Đăng ký giáo viên!
+   <legend><a href=""><i class="glyphicon glyphicon-globe"></i></a> Đăng ký phòng đào tạo!   </legend> 
+   <legend> * Bạn vui lòng nhập đầy đủ các ô!
    </legend> 
-   <legend> * Bạn vui lòng nhập đầy đủ thông tin!
-   </legend> 
-   <form action="?menu=giaovien_news" method="post" class="form" role="form">
+   <form action="?menu=taikhoan_news" method="post" class="form" role="form">
    	<div class="form-group">
-        <div class="a" style="color:red;"><?php include ("../controler/xulydangky.php")?></div>
+        <div class="a" style="color:red;"><?php include ("../controler/xulydangkyadmin.php")?></div>
        <div class="row">
      <div class="col-xs-6 col-md-6"> <input class="form-control" id="ho" name="ho" placeholder="Họ">
      </div> 
@@ -29,7 +28,6 @@
      <div class="form-group"><input class="form-control"  name="username" placeholder="Tên đăng nhập" type="text" id="username"></div>
      <div class="form-group"><input class="form-control"  name="email" placeholder="Email" type="email"></div>
      <div class="form-group"><input class="form-control"  name="pwd1" placeholder="Mật khẩu" type="password"> <input class="form-control" id="pwd2" name="pwd2" placeholder="Nhập lại mật khẩu" type="password"></div>
-          <div class="form-group"><input class="form-control"  name="bomon" placeholder="Giáo viên bộ môn: " type="text"></div>
     <label for=""> Ngày sinh</label> 
     <div class="row"> 
     <?php include("../controler/function.php") ?>
@@ -42,13 +40,13 @@
     </div>
    <label for="">Mời bạn hãy chọn quyền cho giáo viên</label>
         <select name="quyen" class="form-control">
-           <option value="Giáo Viên">Giáo viên</option>
-           <option value="Trưởng bộ môn">Trưởng bộ môn</option>
+           <option value="Admin">Admin</option>
+           <option value="Phòng dào tạo">Phòng dào tạo</option>
          </select></div>
        <label for="">Giới tính</label><label class="radio-inline">&nbsp;&nbsp;<input  id="inlineCheckbox1" name="sex" value="Nam" type="radio">Nam</label> <label  class="radio-inline"><input name="sex" id="inlineCheckbox2" value="Nữ" type="radio">Nữ </label>
     <center><button class="btn btn-lg btn-primary btn-block"  name="login"> Đăng ký</button> </center>
     <br><br>
-     <div class="a" <br style="color:red;"><?php include ("../controler/xulydangky_null.php")?></div>
+     <div class="a" <br style="color:red;"><?php include ("../controler/xulydangky_nulladmin.php")?></div>
     </div>
    </form>
   </div> 

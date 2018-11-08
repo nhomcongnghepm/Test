@@ -29,20 +29,21 @@ require_once '../modal/init.php';
 		}
 		else
 		{
-			$emailtontai=mysqli_query($connect,"SELECT email FROM user WHERE email='$email'");
-			$regex = "/([a-z0-9_]+|[a-z0-9_]+\.[a-z0-9_]+)@(([a-z0-9]|[a-z0-9]+\.[a-z0-9]+)+\.([a-z]{2,4}))/i";
+		    $sql=$db->emailadmin($email);
+            $emailtontai=$db->query($sql);
+$regex = "/([a-z0-9_]+|[a-z0-9_]+\.[a-z0-9_]+)@(([a-z0-9]|[a-z0-9]+\.[a-z0-9]+)+\.([a-z]{2,4}))/i";
 		if (!preg_match($regex, $email))
 		{
 			 echo "Email này không hợp lệ. Vui long nhập email khác. <a href='javascript: history.go(-1)'>Trở lại</a>";
 			exit;
 		}
 
-		if (mysqli_num_rows($emailtontai) > 0)
+		if ($db->num_rows($emailtontai) > 0)
 		{
 			 echo "Email này đã có người dùng. Vui lòng chọn Email khác. <a href='javascript: history.go(-1)'>Trở lại</a>";
 			exit;
 		}
-		$sql= "UPDATE user SET ho='$ho', ten='$ten', email='$email', birthdate='$birthdate', Gioitinh='$gender' where user='$u'";
+		$sql=$db->capnhatthongtin($ho,$ten,$email,$birthdate,$gender,$u);
 		$db->query($sql);
 		if($sql)
 		{

@@ -28,7 +28,8 @@ require_once '../modal/init.php';
                 <li><a href="?menu=quanlytaikhoan">Quản lý tài khoản</a></li>
                 	
                 <li><a href="?menu=quanlyhocsinh">Quản lý học sinh</a></li>
-             
+             	
+                <li><a href="?menu=quanlygiaovien">Quản lý giáo viên</a></li>
                 <li><a href="#">Công cụ</a>
                 	<ul>
                         <li><a href="">kết quả thi</a></li>

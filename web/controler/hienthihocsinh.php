@@ -1,6 +1,6 @@
 <?php 
 			include('../modal/init.php');
-			$sql="SELECT*FROM sinhvien";
+			$sql=$db->hienthihocsinh();
 			$results=$db->query($sql);
 			while($rows =$db->lay_rows($results))
 			{		

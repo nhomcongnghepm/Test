@@ -2,7 +2,7 @@
 error_reporting(0);
 require_once '../modal/init.php';
     $u=$_SESSION['user'];
-    $sql= "SELECT user, password, quyen FROM user WHERE user='$u'" ;
+    $sql=$db->laythongtinuser($u);
 	$query=$db->query($sql);
     $row=$db->lay_rows($query);
     $pw=$row['password'];
@@ -29,7 +29,7 @@ require_once '../modal/init.php';
         }
         else 
         {
-            $sql="UPDATE user SET password='$new_pw' WHERE user='$u'";
+            $sql=$db->doimatkhau($u,$new_pw);
 			$db->query($sql);
 			if($sql)
 			{

@@ -29,35 +29,37 @@
                 .css("border-width", "10px");
         });
     </script>
-    <?php require_once '../controler/chonall.php';?>
+    <?php require_once '../controler/chonallgiaovien.php';?>
 </head>
 <body>  
 <div style="margin:20px 70px 10px; font-size:14px;">
-<font size="2" face="Tahoma"><b>CÂU HỎI<img src="../assets/image/bl3.gif" border="0" /> QUẢN LÝ Tài Khoản</b></font></div>
+<font size="2" face="Tahoma"><b>GIÁO VIÊN <img src="../assets/image/bl3.gif" border="0" /> QUẢN LÝ GIÁO VIÊN</b></font></div>
 <hr size="1" color="#cadadd" style="margin:15px auto;" />
 <div style="margin:20px 70px auto;">
-<a href="?menu=taikhoan_news"><img src="../assets/image/add_new.gif" align="absmiddle" border="0" /></a> <a href="?menu=taikhoan_news">Thêm tài khoản</a>
+<a href="?menu=giaovien_news"><img src="../assets/image/add_new.gif" align="absmiddle" border="0" /></a> <a href="?menu=giaovien_news">Thêm giáo viên</a>
 </div>
 <div class='wrapper'>
-  <form action="" method="post">
+  <form action="?menu=giaovien_delete" method="post">
     <table cellpadding="1" cellspacing="1" id="resultTable">
 			<thead>
 				<tr>
 					
 					<th><input type="checkbox" name="checkid[]" id="checkid" value="<?=$counts?>" onClick="CheckALL(<?=$counts?>);" /></th>
+                    <th>Mã số g.viên</th>
                     <th>Họ </th>
                     <th>Tên</th>
 					<th>Tên Đăng Nhập</th>
                     <th>Email</th>
 					<th>Ngày Sinh</th>
 					<th>Giới Tính</th>
-					<th>Quyền</th>
+					<th>Bộ môn</th>
+                    <th>Quyền</th>
 					<th>Chỉnh sửa</th>
 				</tr>
 			</thead>
         <tbody>
 		<?php
-			require_once '../controler/hienthiuser.php';
+			require_once '../controler/hienthigiaovien.php';
 		?>
         </tbody>
     </table>

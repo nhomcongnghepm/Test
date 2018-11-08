@@ -1,7 +1,7 @@
 <?php 
 			error_reporting(0);
 			include('../modal/init.php');
-			$sql="SELECT * FROM tbl_cauhoi,tbl_dethi WHERE tbl_dethi.made=tbl_cauhoi.made";
+			$sql=$db->showcauhoidethi();
 			$results=$db->query($sql);
 			while($rows =$db->lay_rows($results))
 			{

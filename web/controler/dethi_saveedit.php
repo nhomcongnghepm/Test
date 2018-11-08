@@ -2,8 +2,6 @@
 require_once '../modal/init.php';
 if(isset($_POST["edit"]))
 	{
-        $now = getdate();
-        $currentDate = $now["mday"] . "." . $now["mon"] . "." . $now["year"];
 		$idmade = $_POST['idmade'];
 		$tende=$_POST['tende'];
         $day = $_POST['day'];
@@ -25,12 +23,8 @@ if(isset($_POST["edit"]))
                 exit;
             } else {
                 $ngaythi = $day . '/' . $month . '/' . $year;
-				 $sql="UPDATE tbl_dethi SET `tende` ='".$tende."',
-							`ngaythi` ='".$ngaythi."',
-							`giothi` ='".$giothi."',
-							`timer` ='".$timer."'
-						where made='".$idmade."'";
-               $a=$db->query($sql);
+				 $sql=$db->capnhatdethi($tende,$ngaythi,$giothi,$timer,$idmade);
+                 $a=$db->query($sql);
                 if($a) {
                 echo "Cập nhật thành công";
 				echo "<script>document.location.href='?menu=dethi_list' </script>";

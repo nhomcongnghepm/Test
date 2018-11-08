@@ -42,10 +42,11 @@ require_once '../modal/init.php';
 		}
         if($ho && $ten && $username && $email && $pass_signup && $birthdate && $gender && $lop)
 		{
-			$sql="SELECT user FROM sinhvien WHERE user='$username'";
-			$sql1="SELECT email FROM sinhvien WHERE email='$email'";
+			$sql=$db->userhocsinh($username);
+			$sql1=$db->emailhocsinh($email);
 			$a=$db->query($sql);
 			$b=$db->query($sql1);
+			$a="Học Sinh";
 		if ($db->num_rows($a) > 0){
 			 echo "Tên đăng nhập này đã có người dùng. Vui lòng chọn tên đăng nhập khác. <a href='javascript: history.go(-1)'>Trở lại</a>";
 			exit;
@@ -69,36 +70,15 @@ và có từ 6 đến 32 ký tự <a href='javascript: history.go(-1)'>Trở l�
 			exit;
 		}
 
-		$addmember = "INSERT INTO sinhvien VALUE (
-				'',
-				'{$ho}',
-				'{$ten}',
-				'{$username}',
-				'{$pass_signup}',
-				'{$email}',
-				'{$birthdate}',
-				'{$gender}',
-				'$lop',
-				'Học Sinh'
-		)";
+		$addmember =$db->themhocsinh($ho,$ten,$username,$email,$pass_signup,$birthdate,$gender,$lop,$a);
 		$db->query($addmember);
-		$sql="SELECT * FROM sinhvien";
+		$sql=$db->hienthihocsinh();
 		$results=$db->query($sql);
 		while($row =$db->lay_rows($results))
 		{
 		$id=$row['id'];
 		}
-		$addmember1 = "INSERT INTO user VALUE (
-				'$id',
-				'{$ho}',
-				'{$ten}',
-				'{$username}',
-				'{$email}',
-				'{$pass_signup}',
-				'{$birthdate}',
-				'{$gender}',
-				'Học Sinh'
-		)";
+		$addmember1 =$db->themuser($id,$ho,$ten,$username,$email,$pass_signup,$birthdate,$gender,$a);
 		$db->query($addmember1);
 		
      

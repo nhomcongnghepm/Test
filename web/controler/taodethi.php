@@ -32,8 +32,7 @@ else if(isset($_POST['ok']))
 		{
 		  $ngaythi = $day . '/' . $month . '/' . $year;
 			$day=date("d/m/y");
-			$sql2="INSERT INTO tbl_dethi(made,tende,ngaythi,giothi,tacgia,ngaydang,timer)
-			VALUE('','$_POST[tende]','$ngaythi','$giothi','$_POST[tacgia]','$day', '$_POST[timer]')";
+			$sql2=$db->themdethi($ngaythi,$giothi,$day);
 			$a=$db->query($sql2);
 			if($sql2)
 			{

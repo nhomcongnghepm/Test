@@ -115,5 +115,259 @@
             return mysqli_insert_id($this->cn);
         }
     }
+	
+	public function dangnhap($username){
+		if ($this->cn)
+		{
+			$sql= "SELECT user, password, quyen FROM user WHERE user='$username'" ;
+			return $sql;
+		}
+	}
+	
+	public function usergiaovien($username){
+		if ($this->cn)
+		{
+			$sql="SELECT user FROM giaovien WHERE user='$username'";
+			return $sql;
+		}
+	}
+
+	public function useradmin($username){
+            if ($this->cn)
+            {
+                $sql="SELECT user FROM user WHERE user='$username'";
+                return $sql;
+            }
+    }
+
+    public function userhocsinh($username){
+            if ($this->cn)
+            {
+                $sql="SELECT user FROM sinhvien WHERE user='$username'";
+                return $sql;
+            }
+    }
+
+	public function emailgiaovien($email){
+		if ($this->cn)
+		{
+			$sql="SELECT email FROM giaovien WHERE email='$email'";
+			return $sql;
+		}
+	}
+
+	public function emailhocsinh($email){
+            if ($this->cn)
+            {
+                $sql="SELECT email FROM sinhvien WHERE email='$email'";
+                return $sql;
+            }
+    }
+
+	public function emailadmin($email){
+            if ($this->cn)
+            {
+                $sql="SELECT email FROM user WHERE email='$email'";
+                return $sql;
+            }
+    }
+	
+	public function hienthigiaovien(){
+		if ($this->cn)
+		{
+			$sql="SELECT * FROM giaovien";
+			return $sql;
+		}
+	}
+
+	public function hienthihocsinh(){
+		if ($this->cn)
+		{
+			$sql="SELECT * FROM sinhvien";
+			return $sql;
+		}
+	}
+
+	public function hienthicauhoi(){
+            if ($this->cn)
+            {
+                $sql="SELECT * FROM tbl_cauhoi";
+                return $sql;
+            }
+    }
+
+    public function showcauhoidethi(){
+            if ($this->cn)
+            {
+                $sql="SELECT * FROM tbl_cauhoi,tbl_dethi WHERE tbl_dethi.made=tbl_cauhoi.made";
+                return $sql;
+            }
+    }
+    public function hienthidethi(){
+            if ($this->cn)
+            {
+                $sql="SELECT * FROM tbl_dethi";
+                return $sql;
+            }
+    }
+
+    public function hienthiuser(){
+            if ($this->cn)
+            {
+                $sql="SELECT * FROM user";
+                return $sql;
+            }
+    }
+
+	public function laydethi($made){
+            if ($this->cn)
+            {
+                $sql="SELECT * FROM tbl_dethi WHERE made='$made'";
+                return $sql;
+            }
+    }
+
+    public function laythongtinsinhvien($id){
+            if ($this->cn)
+            {
+                $sql="SELECT * FROM sinhvien WHERE id='$id'";
+                return $sql;
+            }
+    }
+
+	public function laythongtingiaovien($id){
+		if ($this->cn)
+		{
+			$sql="SELECT * FROM giaovien WHERE id_gv='$id'";
+			return $sql;
+		}
+	}
+
+	public function laythongtinuser($u){
+        if ($this->cn)
+        {
+            $sql= "SELECT * FROM user WHERE user='$u'" ;
+            return $sql;
+        }
+    }
+
+    public function doimatkhau($u,$new_pw){
+            if ($this->cn)
+            {
+                $sql="UPDATE user SET password='$new_pw' WHERE user='$u'";
+                return $sql;
+            }
+    }
+    public function capnhatthongtin($ho,$ten,$email,$birthdate,$gender,$u){
+            if ($this->cn)
+            {
+                $sql= "UPDATE user SET ho='$ho', ten='$ten', email='$email', birthdate='$birthdate', Gioitinh='$gender' where user='$u'";
+                return $sql;
+            }
+    }
+
+	public function capnhatgiaovien($ho,$ten,$email,$birthdate,$gender,$bomon,$quyen,$id){
+		if ($this->cn)
+		{
+			 $sql="UPDATE giaovien SET `ho` ='".$ho."',`ten` ='".$ten."',`email` ='".$email."',`birthdate` ='".$birthdate."',`Gioitinh` ='".$gender."',`bomon` ='".$bomon."',`quyen` ='".$quyen."' where id_gv='".$id."'";
+			 return $sql;
+		}
+	}
+
+	public function capnhathocsinh($ho,$ten,$email,$birthdate,$gender,$lop,$id){
+            if ($this->cn)
+            {
+                $sql="UPDATE sinhvien SET `ho` ='".$ho."',`ten` ='".$ten."',`email` ='".$email."',`birthdate` ='".$birthdate."',`Gioitinh` ='".$gender."',`tenlop` ='".$lop."'where id='".$id."'";
+                return $sql;
+            }
+    }
+
+	public function capnhatcauhoi($idch,$noidung,$lc1,$lc2,$lc3,$lc4,$dapan){
+            if ($this->cn)
+            {
+                $sql="UPDATE  tbl_cauhoi SET `ma_ch` =  '".$idch."',`noidung` ='".$noidung."',`lc1` ='".$lc1."',`lc2` ='".$lc2."',`lc3` ='".$lc3."',`lc4` ='".$lc4."',`dapan` ='".$dapan."'where ma_ch='".$idch."'";
+                return $sql;
+            }
+        }
+	
+	public function capnhatuser($ho,$ten,$email,$birthdate,$gender,$quyen,$id){
+		if ($this->cn)
+		{
+			$sql="UPDATE user SET `ho` ='".$ho."',`ten` ='".$ten."',`email` ='".$email."',`birthdate` ='".$birthdate."',`Gioitinh` ='".$gender."',`quyen` ='".$quyen."'where id='".$id."'";
+			return $sql;
+		}
+	}
+
+	public function capnhatdethi($tende,$ngaythi,$giothi,$timer,$idmade){
+            if ($this->cn)
+            {
+                $sql="UPDATE tbl_dethi SET `tende` ='".$tende."',`ngaythi` ='".$ngaythi."',`giothi` ='".$giothi."',`timer` ='".$timer."'where made='".$idmade."'";
+                return $sql;
+            }
+    }
+
+	public function themgiaovien($ho,$ten,$username,$pass_signup,$email,$birthdate,$gender,$bomon,$quyen){
+		if ($this->cn)
+		{
+			$sql = "INSERT INTO giaovien VALUE 	('','{$ho}','{$ten}','{$username}','{$pass_signup}','{$email}','{$birthdate}','{$gender}','{$bomon}','{$quyen}')";			
+			return $sql;
+		}
+	}
+
+	public function themdethi($ngaythi,$giothi,$day){
+            if ($this->cn)
+            {
+                $sql="INSERT INTO tbl_dethi(made,tende,ngaythi,giothi,tacgia,ngaydang,timer) VALUE('','$_POST[tende]','$ngaythi','$giothi','$_POST[tacgia]','$day', '$_POST[timer]')";
+                return $sql;
+            }
+    }
+
+	public function themuser($id,$ho,$ten,$username,$email,$pass_signup,$birthdate,$gender,$quyen){
+		if ($this->cn)
+		{
+			$sql = "INSERT INTO user VALUE 	('$id','{$ho}','{$ten}','{$username}','{$email}','{$pass_signup}','{$birthdate}','{$gender}','{$quyen}')";;
+			return $sql;
+		}
+	}
+
+	public function themhocsinh($ho,$ten,$username,$email,$pass_signup,$birthdate,$gender,$lop,$a){
+            if ($this->cn)
+            {
+                $sql="INSERT INTO sinhvien VALUE ('','{$ho}','{$ten}','{$username}','{$pass_signup}','{$email}','{$birthdate}','{$gender}','$lop','$a')";
+                return $sql;
+            }
+    }
+
+	public function themcauhoi1(){
+            if ($this->cn)
+            {
+                $sql="INSERT INTO tbl_cauhoi(noidung, lc1, lc2, lc3, lc4, dapan, made,diem, trangthai) VALUES ('$_POST[noidung]','$_POST[lc1]','$_POST[lc2]','$_POST[lc3]','$_POST[lc4]','$_POST[lc1]','$_POST[made]','$_POST[diem]','$_POST[hieuluc]')";
+                return $sql;
+            }
+    }
+
+    public function themcauhoi2(){
+            if ($this->cn)
+            {
+                $sql="INSERT INTO tbl_cauhoi(noidung, lc1, lc2, lc3, lc4, dapan, made,diem, trangthai) VALUES ('$_POST[noidung]','$_POST[lc1]','$_POST[lc2]','$_POST[lc3]','$_POST[lc4]','$_POST[lc2]','$_POST[made]','$_POST[diem]','$_POST[hieuluc]')";
+                return $sql;
+            }
+    }
+
+    public function themcauhoi3(){
+            if ($this->cn)
+            {
+                $sql="INSERT INTO tbl_cauhoi(noidung, lc1, lc2, lc3, lc4, dapan, made,diem, trangthai) VALUES ('$_POST[noidung]','$_POST[lc1]','$_POST[lc2]','$_POST[lc3]','$_POST[lc4]','$_POST[lc3]','$_POST[made]','$_POST[diem]','$_POST[hieuluc]')";
+                return $sql;
+            }
+    }
+
+    public function themcauhoi4(){
+            if ($this->cn)
+            {
+                $sql="INSERT INTO tbl_cauhoi(noidung, lc1, lc2, lc3, lc4, dapan, made,diem, trangthai) VALUES ('$_POST[noidung]','$_POST[lc1]','$_POST[lc2]','$_POST[lc3]','$_POST[lc4]','$_POST[lc4]','$_POST[made]','$_POST[diem]','$_POST[hieuluc]')";
+                return $sql;
+            }
+    }
 }
 ?>

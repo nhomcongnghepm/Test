@@ -3,13 +3,13 @@
 <script type="text/javascript" src="../assets/tiny_mce/int.load.js"></script>
 <link rel="stylesheet" href="../assets/chinhsuacauhoi.css" type="text/css" media="screen" charset="utf-8">
 <div style="margin:20px 70px 10px; font-size:14px;">
-<font size="2" face="Tahoma"><b><a href="">HỌC SINH</a><img src="../assets/image/bl3.gif" border="0" /> Cập nhật thông tin học sinh</b></font></div>
+<font size="2" face="Tahoma"><b><a href="">GIÁO VIÊN</a><img src="../assets/image/bl3.gif" border="0" /> Cập nhật THÔNG TIN GIÁO VIÊN</b></font></div>
 <hr size="1" color="#cadadd" style="margin:15px auto;" />
 <form action="" method="post" class="form1">
-<?php require_once '../controler/chinhsuasinhvien.php';?>
+<?php require_once '../controler/chinhsuagiaovien.php';?>
   <table width="750" border="0"  cellpadding="0" cellspacing="0" background="../assets/image/body.png">
     <tr>
-       <td bgcolor="#CCCCCC"  height="38px"colspan="2" align="center" class="style1">CẬP NHẬT THÔNG TIN HỌC SINH</td>
+       <td bgcolor="#CCCCCC"  height="38px"colspan="2" align="center" class="style1">CẬP NHẬT THÔNG TIN GIÁO VIÊN</td>
     </tr>
    <tr>
 	<td width="20%"  align="right">Mã học sinh: </td>
@@ -28,8 +28,15 @@
     <td>&nbsp;&nbsp;<input size=35 type="text" name="email" value="<?php  echo $email ?>"/></td>
   </tr>
   <tr>
-    <td align="right">Tên lớp</td>
-    <td>&nbsp;&nbsp;<input size=35 type="text" name="lop" value="<?php  echo $lop ?>"/></td>
+    <td align="right">Tên môn giảng dạy</td>
+    <td>&nbsp;&nbsp;<input size=35 type="text" name="bomon" value="<?php  echo $bomon ?>"/></td>
+  </tr>
+  <tr>
+    <td align="right">Quyền</td>
+    <td>&nbsp;&nbsp;<select name="quyen" class="form-control">
+           <option value="Giáo Viên">Giáo viên</option>
+           <option value="Trưởng bộ môn">Trưởng bộ môn</option>
+         </select></td>
   </tr>
   <tr>
     <td align="right">Ngày Sinh</td>
@@ -57,7 +64,7 @@
       <td colspan="2" style="padding: 10px 0px 10px 0px" align="center"><label>
         <input type="submit" name="edit" id="edit" value="Cập nhật" />
       </label></td>
-          <div class="a" <br style="color:red;"><?php require_once '../controler/hocsinh_saveedit.php';?></div>
+          <div class="a" <br style="color:red;"><?php require_once '../controler/giaovien_saveedit.php';?></div>
     </tr>
   </table>
 </form>
