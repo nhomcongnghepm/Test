@@ -35,10 +35,6 @@
       </td>
   </tr>
 
-     <tr>
-			<td height="39" align="center" class="tbltitle">Giáo viên: </td>
-	   <td><input size=25 type="text" name="tacgia" value="" autocomplete = "off"/></td>
-  </tr>
    <tr>
 			<td height="51" align="center" class="tbltitle">Thời gian: </td>
 	  <td><input size=25 type="text" name="timer" value="" autocomplete = "off"/></td>

@@ -14,7 +14,7 @@
 <div class="form1">
 <hr size="1" color="#cadadd" style="margin:15px auto;" />
 <form action="" name="frmthemdethi" id="contact" class="contact-form" onsubmit="return checkform();" method="post" enctype="multipart/form-data">
-<table width="850" border="0"  cellpadding="0" cellspacing="0" background="images/body.png" id="cauhoi_news">
+<table width="850" border="0"  cellpadding="0" cellspacing="0" background="../assets/image/body.png" id="cauhoi_news">
     <tr>
      <td bgcolor="#CCCCCC"  height="38px"colspan="2" align="center" class="style1">THÊM CÂU HỎI MỚI</td>
     </tr>
@@ -62,7 +62,6 @@
 	<tr/>
     <td width="116" align="right">Điểm: <span style="color:red;font-size:22px">*</span>  </td>
 	    <td><input size=30 class="required" type="text" name="diem" value=""autocomplete = "off"/></td>
-    </tr>
    <tr>
        	<td align="right" class="tbltitle2">Trang thái: <span style="color:red;font-size:22px">*</span></td>
 		<td>

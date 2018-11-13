@@ -105,17 +105,31 @@
         }
         return $string;
     }
- 
+        // Hàm lấy ID vừa insert
+        public function insert_id() {
+            // Nếu đã kết nối
+            if ($this->cn)
+            {
+                // Lấy ID vừa insert
+                return mysqli_insert_id($this->cn);
+            }
+        }
+
     // Hàm lấy ID vừa insert
-    public function insert_id() {
+    public function duyetdethi($made,$b) {
         // Nếu đã kết nối
         if ($this->cn)
         {
-            // Lấy ID vừa insert
-            return mysqli_insert_id($this->cn);
+            $sql="UPDATE tbl_dethi SET trangthai='$b' WHERE made='$made'";
+            return $sql;
         }
     }
-	
+	public function chinhsuacauhoi($ma_ch){
+        if ($this->cn) {
+            $sql = "SELECT * FROM tbl_cauhoi WHERE ma_ch='$ma_ch'";
+            return $sql;
+        }
+    }
 	public function dangnhap($username){
 		if ($this->cn)
 		{
@@ -200,6 +214,13 @@
             if ($this->cn)
             {
                 $sql="SELECT * FROM tbl_cauhoi,tbl_dethi WHERE tbl_dethi.made=tbl_cauhoi.made";
+                return $sql;
+            }
+    }
+    public function showcauhoi_dethi($made){
+            if ($this->cn)
+            {
+                $sql="SELECT * FROM tbl_cauhoi,tbl_dethi WHERE tbl_dethi.made=tbl_cauhoi.made&&tbl_cauhoi.made=$made";
                 return $sql;
             }
     }

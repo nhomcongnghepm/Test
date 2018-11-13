@@ -14,9 +14,12 @@
 						
 						if($_GET['menu']=='quanlytaikhoan'){
 							include "quanlytaikhoan.php";
-						}else if($_GET['menu']=='taikhoan_news'){
-							include("dangky_pdt.php");
-						}
+						}else if($_GET['menu']=='taikhoan_news') {
+                            include("dangky_pdt.php");
+                        }
+                        if($_GET['menu']=='duyetdethi'){
+                            include("../view/duyetdethi.php");
+                        }
 						
 						if($_GET['menu']=='dethi_list'){
 							include ("dethi_list.php");

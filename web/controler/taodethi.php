@@ -7,7 +7,7 @@ if (!$user)
     header('Location: dangnhap.php'); 
 }
 else if(isset($_POST['ok']))
-{	  
+{
 		$day = $_POST['day'];
         $month = $_POST['month'];
         $year = $_POST['year'];

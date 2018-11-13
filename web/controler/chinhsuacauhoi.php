@@ -4,7 +4,7 @@
 	if (isset($_GET['ma_ch'])) {
 		$ma_ch = $_GET['ma_ch'];
 	}	
-	$sql="SELECT * FROM tbl_cauhoi WHERE ma_ch='$ma_ch'";
+	$sql=$db->chinhsuacauhoi($ma_ch);
 	$results=$db->query($sql);
     while($rows = $db->lay_rows($results))
 	{
