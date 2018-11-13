@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 08, 2018 at 06:30 PM
+-- Generation Time: Nov 13, 2018 at 03:54 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -101,7 +101,8 @@ CREATE TABLE `tbl_cauhoi` (
 
 INSERT INTO `tbl_cauhoi` (`ma_ch`, `noidung`, `lc1`, `lc2`, `lc3`, `lc4`, `dapan`, `made`, `diem`, `trangthai`) VALUES
 (1, '<p>C&acirc;u 1: A+B=?</p>', 'A: B', 'B: B', 'C: C', 'D: D', 'A: B', 35, 9.25, 1),
-(2, '<p>a</p>', '1', '1', '2', '3', '1', 35, 1, 1);
+(2, '<p>a</p>', '1', '1', '2', '3', '1', 35, 1, 1),
+(5, '<p>test</p>', 'test', 'test', 'test', 'test', 'test', 36, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -116,17 +117,18 @@ CREATE TABLE `tbl_dethi` (
   `giothi` varchar(10) NOT NULL,
   `tacgia` varchar(50) CHARACTER SET utf8 NOT NULL,
   `ngaydang` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `timer` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `timer` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `trangthai` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_dethi`
 --
 
-INSERT INTO `tbl_dethi` (`made`, `tende`, `ngaythi`, `giothi`, `tacgia`, `ngaydang`, `timer`) VALUES
-(35, 'toan', '30/10/2018', '10:9:10', 'Đặng Thành Đạt', '26/10/18', '60 phút'),
-(36, 'Tiếng Anh', '19/11/2019', '6:3:5', 'Phan Tấn Bình', '07/11/18', '45 phút'),
-(37, 'Hóa', '3/3/2019', '2:2:2', 'Ngố Bá Vĩnh Hiển', '08/11/18', '45 phút');
+INSERT INTO `tbl_dethi` (`made`, `tende`, `ngaythi`, `giothi`, `tacgia`, `ngaydang`, `timer`, `trangthai`) VALUES
+(35, 'Toán', '3/12/2018', '1:0:1', 'Đặng Thành Đạt', '26/10/18', '60 phút', ''),
+(36, 'Tiếng Anh', '19/11/2019', '6:3:5', 'Phan Tấn Bình', '07/11/18', '45 phút', 'Đã duyệt'),
+(37, 'Hóa', '3/3/2019', '2:2:2', 'Ngố Bá Vĩnh Hiển', '08/11/18', '45 phút', '');
 
 -- --------------------------------------------------------
 
@@ -207,19 +209,19 @@ ALTER TABLE `giaovien`
 -- AUTO_INCREMENT for table `sinhvien`
 --
 ALTER TABLE `sinhvien`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101000015;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101000014;
 
 --
 -- AUTO_INCREMENT for table `tbl_cauhoi`
 --
 ALTER TABLE `tbl_cauhoi`
-  MODIFY `ma_ch` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ma_ch` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_dethi`
 --
 ALTER TABLE `tbl_dethi`
-  MODIFY `made` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `made` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- Constraints for dumped tables
