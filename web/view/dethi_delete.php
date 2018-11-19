@@ -5,9 +5,9 @@ if(isset($_POST["bnm"]))
 			$made = $_POST["selector"];
             $delete=$db->dethi_delete($made);
 			$a=$db->query($delete);
-		 
+
 			if ($a) {
-				header("location:?menu=dethi_list");
+				header("location: ?menu=dethi_list");
 			}
 			else {
 				echo "Có lỗi xảy ra";

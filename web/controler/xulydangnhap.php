@@ -42,18 +42,18 @@ if (isset($_POST['dangnhap']))
 		header('Location: admin.php');   		 }
     	else if($row['quyen']=="Học Sinh")
     	{
-       	 echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='/hocsinh.php'>Vào trang học sinh</a>";
-   		 }
+            header('Location: hocsinh.php');
+    	}
    		 else if($row['quyen']=="Giáo Viên")
     	{
-       	 echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='/giaovien.php'>Vào trang giáo viên</a>";
-		}
+            header('Location: giaovien.php');
+    	}
    		 else if($row['quyen']=="Phòng dào tạo")
     	{
        	 echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='/pdt.php'>Vào trang phòng đào tạo</a>";
 		}
-		else echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='/truongbomon.php'>Về trang trưởng bộ môn</a>";
-    	die();
+		else header('Location: truongbomon.php');
+    die();
 }
 }
 ?>

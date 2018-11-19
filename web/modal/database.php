@@ -193,7 +193,13 @@
 			return $sql;
 		}
 	}
-
+        public function showgiaovien($i,$d){
+            if ($this->cn)
+            {
+                $sql="SELECT * FROM giaovien LIMIT $i,$d";
+                return $sql;
+            }
+        }
 	public function hienthihocsinh(){
 		if ($this->cn)
 		{
@@ -201,6 +207,13 @@
 			return $sql;
 		}
 	}
+        public function showhocsinh($i,$d){
+            if ($this->cn)
+            {
+                $sql="SELECT * FROM sinhvien LIMIT $i,$d";
+                return $sql;
+            }
+        }
 
 	public function hienthicauhoi(){
             if ($this->cn)
@@ -209,28 +222,34 @@
                 return $sql;
             }
     }
-
-    public function showcauhoidethi(){
+    public function showcauhoidethi($i,$d){
             if ($this->cn)
             {
-                $sql="SELECT * FROM tbl_cauhoi,tbl_dethi WHERE tbl_dethi.made=tbl_cauhoi.made";
-                return $sql;
+                    $sql = "SELECT * FROM tbl_cauhoi,tbl_dethi WHERE tbl_dethi.made=tbl_cauhoi.made LIMIT $i,$d";
+                    return $sql;
             }
     }
-    public function showcauhoi_dethi($made){
+    public function showcauhoi_dethi($made,$i,$d){
             if ($this->cn)
             {
-                $sql="SELECT * FROM tbl_cauhoi,tbl_dethi WHERE tbl_dethi.made=tbl_cauhoi.made&&tbl_cauhoi.made=$made";
+                $sql="SELECT * FROM tbl_cauhoi,tbl_dethi WHERE tbl_dethi.made=tbl_cauhoi.made&&tbl_cauhoi.made=$made LIMIT $i,$d";
                 return $sql;
             }
     }
     public function hienthidethi(){
+        if ($this->cn)
+        {
+            $sql="SELECT * FROM tbl_dethi";
+            return $sql;
+        }
+    }
+        public function showdethi($i,$d){
             if ($this->cn)
             {
-                $sql="SELECT * FROM tbl_dethi";
+                $sql="SELECT * FROM tbl_dethi LIMIT $i,$d";
                 return $sql;
             }
-    }
+        }
 
     public function hienthiuser(){
             if ($this->cn)
@@ -239,6 +258,13 @@
                 return $sql;
             }
     }
+        public function showuser($i,$d){
+            if ($this->cn)
+            {
+                $sql="SELECT * FROM user LIMIT $i,$d";
+                return $sql;
+            }
+        }
 
 	public function laydethi($made){
             if ($this->cn)
@@ -286,13 +312,34 @@
                 return $sql;
             }
     }
-    public function capnhatthongtin($ho,$ten,$email,$birthdate,$gender,$u){
+        public function doimatkhauhocsinh($u,$new_pw){
+            if ($this->cn)
+            {
+                $sql="UPDATE sinhvien SET password='$new_pw' WHERE user='$u'";
+                return $sql;
+            }
+        }
+        public function doimatkhaugiaovien($u,$new_pw){
+            if ($this->cn)
+            {
+                $sql="UPDATE giaovien SET password='$new_pw' WHERE user='$u'";
+                return $sql;
+            }
+        }
+        public function capnhatthongtin($ho,$ten,$email,$birthdate,$gender,$u){
             if ($this->cn)
             {
                 $sql= "UPDATE user SET ho='$ho', ten='$ten', email='$email', birthdate='$birthdate', Gioitinh='$gender' where user='$u'";
                 return $sql;
             }
-    }
+        }
+        public function luutacgia($u){
+            if ($this->cn)
+            {
+                $sql= "SELECT * FROM user where user='$u'";
+                return $sql;
+            }
+        }
 
 	public function capnhatgiaovien($ho,$ten,$email,$birthdate,$gender,$bomon,$quyen,$id){
 		if ($this->cn)
@@ -301,6 +348,21 @@
 			 return $sql;
 		}
 	}
+        public function doithongtingiaovien($ho,$ten,$email,$birthdate,$gender,$u){
+            if ($this->cn)
+            {
+                $sql="UPDATE giaovien SET `ho` ='".$ho."',`ten` ='".$ten."',`email` ='".$email."',`birthdate` ='".$birthdate."',`Gioitinh` ='".$gender."' where user='$u'";
+                return $sql;
+            }
+        }
+
+        public function doithongtinhocsinh($ho,$ten,$email,$birthdate,$gender,$u){
+            if ($this->cn)
+            {
+                $sql="UPDATE hocsinh SET `ho` ='".$ho."',`ten` ='".$ten."',`email` ='".$email."',`birthdate` ='".$birthdate."',`Gioitinh` ='".$gender."' where user='$u'";
+                return $sql;
+            }
+        }
 
 	public function capnhathocsinh($ho,$ten,$email,$birthdate,$gender,$lop,$id){
             if ($this->cn)
@@ -342,10 +404,10 @@
 		}
 	}
 
-	public function themdethi($ngaythi,$giothi,$day){
+	public function themdethi($ngaythi,$giothi,$day,$tacgia){
             if ($this->cn)
             {
-                $sql="INSERT INTO tbl_dethi(made,tende,ngaythi,giothi,tacgia,ngaydang,timer) VALUE('','$_POST[tende]','$ngaythi','$giothi','$_POST[tacgia]','$day', '$_POST[timer]')";
+                $sql="INSERT INTO tbl_dethi(made,tende,ngaythi,giothi,tacgia,ngaydang) VALUE('','$_POST[tende]','$ngaythi','$giothi','$tacgia','$day')";
                 return $sql;
             }
     }
@@ -369,7 +431,7 @@
 	public function themcauhoi1(){
             if ($this->cn)
             {
-                $sql="INSERT INTO tbl_cauhoi(noidung, lc1, lc2, lc3, lc4, dapan, made,diem, trangthai) VALUES ('$_POST[noidung]','$_POST[lc1]','$_POST[lc2]','$_POST[lc3]','$_POST[lc4]','$_POST[lc1]','$_POST[made]','$_POST[diem]','$_POST[hieuluc]')";
+                $sql="INSERT INTO tbl_cauhoi(noidung, lc1, lc2, lc3, lc4, dapan, made) VALUES ('$_POST[noidung]','$_POST[lc1]','$_POST[lc2]','$_POST[lc3]','$_POST[lc4]','$_POST[lc1]','$_POST[made]')";
                 return $sql;
             }
     }
@@ -377,7 +439,7 @@
     public function themcauhoi2(){
             if ($this->cn)
             {
-                $sql="INSERT INTO tbl_cauhoi(noidung, lc1, lc2, lc3, lc4, dapan, made,diem, trangthai) VALUES ('$_POST[noidung]','$_POST[lc1]','$_POST[lc2]','$_POST[lc3]','$_POST[lc4]','$_POST[lc2]','$_POST[made]','$_POST[diem]','$_POST[hieuluc]')";
+                $sql="INSERT INTO tbl_cauhoi(noidung, lc1, lc2, lc3, lc4, dapan, made) VALUES ('$_POST[noidung]','$_POST[lc1]','$_POST[lc2]','$_POST[lc3]','$_POST[lc4]','$_POST[lc2]','$_POST[made]')";
                 return $sql;
             }
     }
@@ -385,7 +447,7 @@
     public function themcauhoi3(){
             if ($this->cn)
             {
-                $sql="INSERT INTO tbl_cauhoi(noidung, lc1, lc2, lc3, lc4, dapan, made,diem, trangthai) VALUES ('$_POST[noidung]','$_POST[lc1]','$_POST[lc2]','$_POST[lc3]','$_POST[lc4]','$_POST[lc3]','$_POST[made]','$_POST[diem]','$_POST[hieuluc]')";
+                $sql="INSERT INTO tbl_cauhoi(noidung, lc1, lc2, lc3, lc4, dapan, made) VALUES ('$_POST[noidung]','$_POST[lc1]','$_POST[lc2]','$_POST[lc3]','$_POST[lc4]','$_POST[lc3]','$_POST[made]')";
                 return $sql;
             }
     }
@@ -393,7 +455,7 @@
     public function themcauhoi4(){
             if ($this->cn)
             {
-                $sql="INSERT INTO tbl_cauhoi(noidung, lc1, lc2, lc3, lc4, dapan, made,diem, trangthai) VALUES ('$_POST[noidung]','$_POST[lc1]','$_POST[lc2]','$_POST[lc3]','$_POST[lc4]','$_POST[lc4]','$_POST[made]','$_POST[diem]','$_POST[hieuluc]')";
+                $sql="INSERT INTO tbl_cauhoi(noidung, lc1, lc2, lc3, lc4, dapan, made) VALUES ('$_POST[noidung]','$_POST[lc1]','$_POST[lc2]','$_POST[lc3]','$_POST[lc4]','$_POST[lc4]','$_POST[made]')";
                 return $sql;
             }
     }
@@ -435,7 +497,6 @@
             $delete.="'".$value."',";
         }
         $delete .= "'')";
-        echo $delete;
         return $delete;
     }
     public function cauhoi_delete($ma_ch){
@@ -446,7 +507,6 @@
             //echo $value;
         }
         $delete .= "'')";
-        echo $delete;
         return $delete;
     }
 }

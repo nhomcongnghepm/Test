@@ -4,6 +4,10 @@
 <title>Admin</title>
 </title>
     	<link href="../assets/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="../assets/hocsinh/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/hocsinh/css/sinhvien.css">
+    <script type="text/javascript" src="../assets/hocsinh/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../assets/hocsinh/js/bootstrap.min.js"></script>
     <?php require_once '../controler/chonall.php';?>
 </head>
 <body>  
@@ -35,6 +39,15 @@
         </tbody>
     </table>
 	</form>
+</div>
+<br>
+<div class="nav navbar-right" id="DinhHuong" style="transform:translateY(-35px)" >
+<ul class="nav  pager" >
+    <li class="previous" >
+        <a href="?menu=quanlytaikhoan&page1prev=<?php echo $i?>">&larr;Trước</a>
+    </li>
+    <li class="next"><a href="?menu=quanlytaikhoan&page1=<?php echo $i?>">Sau&rarr;</a></li>
+</ul>
 </div>
   </body>
 </html>

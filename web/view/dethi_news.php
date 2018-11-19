@@ -34,11 +34,6 @@
 		  <select  class="form-control" name="seconds"> <option value="seconds">Giây <?php  giay();?></option></select>
       </td>
   </tr>
-
-   <tr>
-			<td height="51" align="center" class="tbltitle">Thời gian: </td>
-	  <td><input size=25 type="text" name="timer" value="" autocomplete = "off"/></td>
-  </tr>
     <tr>
       <td colspan="2"align="center"  style="padding:10px 0px 10px 0px"><label>
         <input type="submit" name="ok" id="ok" value="Thêm đề thi" />

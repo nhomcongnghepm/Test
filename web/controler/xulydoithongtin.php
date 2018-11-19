@@ -45,6 +45,10 @@ $regex = "/([a-z0-9_]+|[a-z0-9_]+\.[a-z0-9_]+)@(([a-z0-9]|[a-z0-9]+\.[a-z0-9]+)+
 		}
 		$sql=$db->capnhatthongtin($ho,$ten,$email,$birthdate,$gender,$u);
 		$db->query($sql);
+		$sql1=$db->doithongtingiaovien($ho,$ten,$email,$birthdate,$gender,$u);
+		$db->query($sql1);
+		$sql2=$db->doithongtinhocsinh($ho,$ten,$email,$birthdate,$gender,$u);
+		$db->query($sql2);
 		if($sql)
 		{
 			echo "Cập nhật thành công";

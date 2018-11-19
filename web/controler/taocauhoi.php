@@ -2,15 +2,10 @@
 error_reporting(0);
 // Include database, session, general info
 require_once '../modal/init.php';
-// Nếu tồn tại $user
-if (!$user)
-{
-    header('Location: ../view/dangnhap.php'); // Di chuyển đến trang chủ
-}
-else if(isset($_POST['ok']))
+if(isset($_POST['ok']))
 {	
 	$da=$_POST["dapan"];
-	if($_POST["noidung"]==null||$_POST["diem"]==null||$_POST["lc1"]==null||$_POST["lc2"]==null||$_POST["lc3"]==null||$_POST["lc4"]==null)
+	if($_POST["noidung"]==null||$_POST["lc1"]==null||$_POST["lc2"]==null||$_POST["lc3"]==null||$_POST["lc4"]==null)
 	{
 		echo "* Bạn vui lòng nhập đầy đủ thông tin";
 		exit;

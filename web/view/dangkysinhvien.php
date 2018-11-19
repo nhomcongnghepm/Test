@@ -19,7 +19,7 @@
    </legend> 
    <form action="" method="post" class="form" role="form">
    	<div class="form-group">
-        <div class="a" <br style="color:red;"><?php include ("../controler/xulydangkysinhvien.php")?></div>
+        <div class="a" style="color:red;"><?php include ("../controler/xulydangkysinhvien.php")?></div>
        <div class="row">
      <div class="col-xs-6 col-md-6"> <input class="form-control" id="ho" name="ho" placeholder="Họ">
      </div> 

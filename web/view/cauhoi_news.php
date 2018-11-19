@@ -60,17 +60,6 @@
 		<?php include '../controler/laymade.php'; ?> 
 		</td>
 	<tr/>
-    <td width="116" align="right">Điểm: <span style="color:red;font-size:22px">*</span>  </td>
-	    <td><input size=30 class="required" type="text" name="diem" value=""autocomplete = "off"/></td>
-   <tr>
-       	<td align="right" class="tbltitle2">Trang thái: <span style="color:red;font-size:22px">*</span></td>
-		<td>
-        	<select name='hieuluc'>
-			<option value='1'>1-Duyet va dang bai</option>
-			<option value='2'>2-Khong duyet</option>
-		  </select><br />
-        </td>
-     </tr> 
     <tr>
       <td colspan="2"align="center"  style="padding:10px 0px 10px 0px">
       <label>

@@ -1,21 +1,21 @@
 <?php
 error_reporting(0);
 require_once '../modal/init.php';
- 
-if (!$user)
+		$u=$_SESSION['user'];
+ if(isset($_POST['ok']))
 {
-    header('Location: dangnhap.php'); 
-}
-else if(isset($_POST['ok']))
-{
+        $sql3=$db->luutacgia($u);
+        $c=$db->query($sql3);
+        $rowws=$db->lay_rows($c);
+        $tacgia=$rowws['ho'].' '.$rowws['ten'];
 		$day = $_POST['day'];
         $month = $_POST['month'];
         $year = $_POST['year'];
 		$hour = $_POST['hour'];
         $minutes = $_POST['minutes'];
         $seconds = $_POST['seconds'];
-		$giothi=$hour.':'.$minutes.':'.$seconds;
-	if($_POST["tende"]==null||$_POST["day"]==day||$_POST["month"]==month||$_POST["year"]==year||$_POST["hour"]==hour||$_POST["minutes"]==minutes||$_POST["seconds"]==seconds||$_POST["tacgia"]==null||$_POST["timer"]==null)
+		$giothi=$hour.'h'.':'.$minutes.'p'.':'.$seconds.'s';
+	if($_POST["tende"]==null||$_POST["day"]==day||$_POST["month"]==month||$_POST["year"]==year||$_POST["hour"]==hour||$_POST["minutes"]==minutes||$_POST["seconds"]==seconds)
 	{
 		echo 'Bạn vui lòng nhập đầy đủ thông tin';
 		exit;
@@ -32,7 +32,7 @@ else if(isset($_POST['ok']))
 		{
 		  $ngaythi = $day . '/' . $month . '/' . $year;
 			$day=date("d/m/y");
-			$sql2=$db->themdethi($ngaythi,$giothi,$day);
+			$sql2=$db->themdethi($ngaythi,$giothi,$day,$tacgia);
 			$a=$db->query($sql2);
 			if($sql2)
 			{

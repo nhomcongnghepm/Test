@@ -4,8 +4,6 @@
 <hr size="1" color="#cadadd" style="margin:15px auto;" />
 <form action="?menu=duyetdethi" method="post" class="">
     <br><table width="600" border="0"  cellpadding="0" cellspacing="0" background="../assets/image/body.png">
-        <td colspan="3" style="padding: 10px 0px 10px 0px" align="center">
-            <?php include '../controler/duyetdethi.php';?></td>
         <tr>
             <td bgcolor="#CCCCCC"  height="38px"colspan="3" align="center" class="style1">Duyệt đề thi</td>
         </tr>
@@ -17,9 +15,10 @@
         <tr>
             <td colspan="3" style="padding: 10px 0px 10px 0px" align="center"><label>
                     <input type="submit" name="ok" id="ok" value="Xem đề thi " />
-                    <input type="submit" name="duyet" value=" Duyệt đề thi" />
                 </label>
             </tr>
     </table>
-    <div class="a" <br style="color:red;"><?php include '../controler/duyetdethi_saveedit.php';?></div>
+<td colspan="3" style="padding: 10px 0px 10px 0px" align="center">
+    <?php include '../controler/duyetdethi.php';?></td>
 </form>
+</div>

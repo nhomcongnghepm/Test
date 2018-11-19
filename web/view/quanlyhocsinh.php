@@ -7,6 +7,10 @@
     	<link href="../assets/style.css" media="screen" rel="stylesheet" type="text/css" />
         <script src="../assets/js/jquery.js" type="text/javascript"></script>
 	  <script src="../assets/js/facebox.js" type="text/javascript"></script>
+    <link href="../assets/hocsinh/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/hocsinh/css/sinhvien.css">
+    <script type="text/javascript" src="../assets/hocsinh/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../assets/hocsinh/js/bootstrap.min.js"></script>
     <?php require_once '../controler/chonallhocsinh.php';?>
     <script type="text/javascript">
         $(document).ready(function() {
@@ -64,6 +68,14 @@
 	<input type="submit" name="bnm" value="Delete all" style="margin:3px 50px auto;">
 	</form>
 </div>
+<div class="nav navbar-right" id="DinhHuong" style="transform:translateY(-35px)" >
+    <ul class="nav  pager" >
+        <li class="previous" >
+            <a href="?menu=quanlyhocsinh&page1prev=<?php echo $i?>">&larr;Trước</a>
+        </li>
+        <li class="next"><a href="?menu=quanlyhocsinh&page1=<?php echo $i?>">Sau&rarr;</a></li>
+    </ul>
+</div>
   </body>
 </html>
 <script>
@@ -71,12 +83,12 @@ function CheckALL(counts)
 {
 	for(i=0;i<counts;i++)
 	{
-		
+
 	if(document.getElementById("checkid").checked!="")
 	{
 	document.getElementById("checkid").checked	='checked';
 	}else{
-	document.getElementById("checkid").checked	='';	
+	document.getElementById("checkid").checked	='';
 	}
 	}
 }

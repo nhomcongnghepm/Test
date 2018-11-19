@@ -11,7 +11,13 @@
 						}else if($_GET['menu']=='cauhoi_saveedit'){
 							include("cauhoi_saveedit.php");
 						}
-						
+                        if($_GET['menu']=='capnhatthongtin'){
+                            include "doithongtin.php";
+                        }
+                        if($_GET['menu']=='doimatkhau'){
+                            include "page3_gv.php";
+                        }
+
 						if($_GET['menu']=='quanlytaikhoan'){
 							include "quanlytaikhoan.php";
 						}else if($_GET['menu']=='taikhoan_news') {

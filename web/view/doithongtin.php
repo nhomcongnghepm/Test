@@ -3,15 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Cập Nhật Thông Tin</title>
-<link rel="stylesheet" href="../assets/bootstrap-3.3.6/dist/css/bootstrap.min.css"><script src="../assets/bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
+    <link href="../assets/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../assets/bootstrap-3.3.6/dist/css/bootstrap.min.css"><script src="../assets/bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/jquery-1.11.1.min.js"></script>
 <script src='https://www.google.com/recaptcha/api.js?hl=vi'></script></head>
 <body>
 <hr size="1" color="#ffff" style="margin:15px auto;" />
   <div class="container"> 
- <h1 class="text-center">Cập Nhật Thông Tin</h1> 
+
  <div class="row"> 
-  <div class="col-xs-12 col-sm-12 col-md-4 well well-sm col-md-offset-4"> 
+  <div  class="col-xs-12 col-sm-12 col-md-4 well well-sm col-md-offset-4">
    <legend><a href=""><i class="glyphicon glyphicon-globe"></i></a> Cập Nhật Thông Tin
    </legend> 
    <legend> * Bạn vui lòng nhập đầy đủ thông tin!

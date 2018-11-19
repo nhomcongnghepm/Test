@@ -1,4 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<html xmlns:đá="http://www.w3.org/1999/xhtml" xmlns:background-color="http://www.w3.org/1999/xhtml" dir="ltr"
+      lang="en-US">
 <head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Test</title>
@@ -7,7 +8,10 @@
     	<link href="../assets/style.css" media="screen" rel="stylesheet" type="text/css" />
         <script src="../assets/js/jquery.js" type="text/javascript"></script>
 	  <script src="../assets/js/facebox.js" type="text/javascript"></script>
-	
+	<link href="../assets/hocsinh/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/hocsinh/css/sinhvien.css">
+     <script type="text/javascript" src="../assets/hocsinh/js/jquery-3.1.1.min.js"></script>
+       <script type="text/javascript" src="../assets/hocsinh/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
         $(document).ready(function() {
         $("#resultTable thead tr th:first input:checkbox").click(function() {
@@ -40,11 +44,10 @@
 </div>
 <div class='wrapper'>
   <form action="?menu=cauhoi_delete" method="post">
-    <table cellpadding="1" cellspacing="1" id="resultTable">
+          <table cellpadding="1" cellspacing="1" id="resultTable">
 			<thead>
 				<tr>
-					
-					<th><input type="checkbox" name="checkid[]" id="checkid" value="<?=$counts?>" onClick="CheckALL(<?=$counts?>);" /></th>
+                    <th><input type="checkbox" name="checkid[]" id="checkid" value="<?=$counts?>" onClick="CheckALL(<?=$counts?>);" /></th>
                     <th><div class='a' name='ma_ch' >Mã Câu Hỏi</div></th>
                     <th>Mã Đề </th>
                     <th>Tên Đề</th>
@@ -58,15 +61,23 @@
 				</tr>
 			</thead>
         <tbody>
-		<?php
+        <?php
 			require_once '../controler/hienthicauhoi.php';
 		?>
         </tbody>
     </table>
 	<input type="submit" name="bnm" value="Delete all" style="margin:3px 50px auto;">
-	</form>
-</div>
-  </body>
+  </form>
+    <div class="nav navbar-right" id="DinhHuong" style="transform:translateY(-35px)" >
+        <ul class="nav  pager" >
+            <li class="previous" >
+                <a href="?menu=cauhoi_list&pageprev=<?php echo $i?> style="background-color:#FFCCCC" data-slide="prev">&larr;Trước</a>
+            </li>
+            <li class="next"><a href="?menu=cauhoi_list&page=<?php echo $i?> style="background-color:#FFCCCC"  data-slide="next">Sau&rarr;</a></li>
+        </ul>
+    </div>
+  </div>
+ </body>
 </html>
 <script>
 function CheckALL(counts)

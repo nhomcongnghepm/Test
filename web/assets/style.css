@@ -2,6 +2,11 @@ body {
    background: #E6EBF2;
     font-size: 12px;
 }
+.well-sm {
+	 margin-left: -25px;
+	 padding: 9px;
+	 border-radius: 3px;
+ }
 pre { font-family: monospace;}
 
 	#pagewrap {
@@ -57,7 +62,7 @@ pre { font-family: monospace;}
 												font: normal 11px "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
 												letter-spacing: 2px;
 												padding: 3px 3px 3px 6px;
-												text-align: left;
+												text-align: center;
 												text-transform: uppercase;
 												color: #666;
 												cursor: pointer;

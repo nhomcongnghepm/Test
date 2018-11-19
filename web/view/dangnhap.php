@@ -35,9 +35,7 @@
     </div> 
     <div class="form-group"> 
      <button type="submit" name="dangnhap" class="btn btn-primary btn-block">Đăng nhập</button> 
-     <hr> 
-     <p class="text-center">Bạn có tài khoản không? <strong><a href="dangky.php" class="blue-text">Đăng ký ngay!</a></strong>
-     </p> 
+     <hr>
     </div> 
    </div> 
   </form>
