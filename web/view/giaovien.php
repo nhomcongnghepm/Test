@@ -158,6 +158,14 @@ else if(!$user)
         </div>
     </div>
 
+<<<<<<< HEAD
+=======
+    <!-- Unnamed (Rectangle) -->
+    <div id="u188" class="ax_default box_3">
+        <div id="u188_div" class=""></div>
+    </div>
+
+>>>>>>> d3f76e583bd73793b49b45bb903d0cdd969320ef
     <!-- Unnamed (SVG) -->
     <div id="u189" class="ax_default image1">
         <img id="u189_img" class="img " src="../assets/giaovien/images/home/u14.svg"/>
