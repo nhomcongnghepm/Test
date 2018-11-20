@@ -6,27 +6,27 @@
     <link href="../assets/style.css" media="screen" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="../assets/bootstrap-3.3.6/dist/css/bootstrap.min.css"><script src="../assets/bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/jquery-1.11.1.min.js"></script>
+<script src='https://www.google.com/recaptcha/api.js?hl=vi'></script></head>
 <body>
-<?php include ("../controler/laythongtinuser.php")?>
 <hr size="1" color="#ffff" style="margin:15px auto;" />
   <div class="container"> 
-<div class="a" <br style="color:red;"><?php include ("../controler/xulydoithongtin.php")?></div>
- <div class="row"> 
-  <div  class="col-xs-12 col-sm-12 col-md-4 well well-sm col-md-offset-4">    
 
+ <div class="row"> 
+  <div  class="col-xs-12 col-sm-12 col-md-4 well well-sm col-md-offset-4">
    <legend><a href=""><i class="glyphicon glyphicon-globe"></i></a> Cập Nhật Thông Tin
    </legend> 
    <legend> * Bạn vui lòng nhập đầy đủ thông tin!
    </legend> 
-   <form action="" method="post" class="form" role="form">
+   <form action="?menu=capnhattaikhoan" method="post" class="form" role="form">
    	<div class="form-group">
+    <div class="a" <br style="color:red;"><?php include ("../controler/xulydoithongtin.php")?></div>
        <div class="row">
-     <div class="col-xs-6 col-md-6"> <input class="form-control" id="ho" name="ho" value="<?php echo $row['ho']?>" placeholder="Họ">
+     <div class="col-xs-6 col-md-6"> <input class="form-control" id="ho" name="ho" placeholder="Họ">
      </div> 
-     <div class="col-xs-6 col-md-6"> <input class="form-control" id="ten" name="ten" value="<?php echo $row['ten']?>" placeholder="Tên" >
+     <div class="col-xs-6 col-md-6"> <input class="form-control" id="ten" name="ten" placeholder="Tên" > 
      </div> 
     </div> 
-     <div class="form-group"><input class="form-control"  name="email" placeholder="Email" value="<?php echo $row['email']?>" type="email"></div>
+     <div class="form-group"><input class="form-control"  name="email" placeholder="Email" type="email"></div>
     <label for=""> Ngày sinh</label> 
     <div class="row"> 
     <?php include("../controler/function.php") ?>
