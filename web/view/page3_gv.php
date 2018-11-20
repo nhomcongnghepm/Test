@@ -27,9 +27,13 @@
 require_once '../modal/init.php';
 ?>
 <body>
+<<<<<<< HEAD
     <!-- Unnamed (Rectangle) -->
 
         <form action="?menu=doimatkhau" method="post" class="form" role="form">
+=======
+    <form action="?menu=doimatkhau" method="post" class="form" role="form">
+>>>>>>> b72b4e03d8b0f18b4e1360005b4eb641d9c40307
                 <!-- Unnamed (Rectangle) -->
                 <div id="u140" class="ax_default shape">
                     <div id="u140_div" class=""></div>
@@ -85,8 +89,13 @@ require_once '../modal/init.php';
                     <input id="u148_input" name="pre_pw" type="password" value=""/>
                 </div>
                 <br><div class="a" <br style="color:red;"><?php include ("../controler/xulydoimatkhau.php")?></div><br>
+<<<<<<< HEAD
         </form></div>
 
 
+=======
+        </form>
+</div>
+>>>>>>> b72b4e03d8b0f18b4e1360005b4eb641d9c40307
 </body>
 </html>

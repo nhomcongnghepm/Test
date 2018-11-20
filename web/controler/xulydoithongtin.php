@@ -30,19 +30,13 @@ require_once '../modal/init.php';
 		else
 		{
 		    $sql=$db->emailadmin($email);
-            $emailtontai=$db->query($sql);
-$regex = "/([a-z0-9_]+|[a-z0-9_]+\.[a-z0-9_]+)@(([a-z0-9]|[a-z0-9]+\.[a-z0-9]+)+\.([a-z]{2,4}))/i";
+            $regex = "/([a-z0-9_]+|[a-z0-9_]+\.[a-z0-9_]+)@(([a-z0-9]|[a-z0-9]+\.[a-z0-9]+)+\.([a-z]{2,4}))/i";
 		if (!preg_match($regex, $email))
 		{
 			 echo "Email này không hợp lệ. Vui long nhập email khác. <a href='javascript: history.go(-1)'>Trở lại</a>";
 			exit;
 		}
 
-		if ($db->num_rows($emailtontai) > 0)
-		{
-			 echo "Email này đã có người dùng. Vui lòng chọn Email khác. <a href='javascript: history.go(-1)'>Trở lại</a>";
-			exit;
-		}
 		$sql=$db->capnhatthongtin($ho,$ten,$email,$birthdate,$gender,$u);
 		$db->query($sql);
 		$sql1=$db->doithongtingiaovien($ho,$ten,$email,$birthdate,$gender,$u);
@@ -51,7 +45,7 @@ $regex = "/([a-z0-9_]+|[a-z0-9_]+\.[a-z0-9_]+)@(([a-z0-9]|[a-z0-9]+\.[a-z0-9]+)+
 		$db->query($sql2);
 		if($sql)
 		{
-			echo "Cập nhật thành công";
+            echo "<script>alert('Cập nhật thông tin thành công !');window.location='?menu=capnhatthongtin'</script>";
 		}
 		else echo "Có lỗi trong quá trình cập nhật";
 	}
