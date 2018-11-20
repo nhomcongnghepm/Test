@@ -5,10 +5,28 @@
         margin:0 auto;
     }
 }
-@media screen and (min-width: 1024px){
-    .conten {
-
-        width: 1024px;
-        margin: 0 auto;
-    }
+@media screen and (max-width: 2000px){
+  #u177_div {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:1900px;
+  height:37px;
+  background:inherit;
+  background-color:rgba(124, 179, 66, 1);
+  box-sizing:border-box;
+  border-width:1px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-family:'Arial Bold', 'Arial';
+  font-weight:700;
+  font-style:normal;
+  font-size:16px;
+  color:#FFFFFF;
+}
 }
