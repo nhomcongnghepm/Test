@@ -15,6 +15,7 @@ require_once '../modal/init.php';
         $minutes = $_POST['minutes'];
         $seconds = $_POST['seconds'];
 		$giothi=$hour.'h'.':'.$minutes.'p'.':'.$seconds.'s';
+		$trangthai='Chưa duyệt';
 	if($_POST["tende"]==null||$_POST["day"]==day||$_POST["month"]==month||$_POST["year"]==year||$_POST["hour"]==hour||$_POST["minutes"]==minutes||$_POST["seconds"]==seconds)
 	{
 		echo 'Bạn vui lòng nhập đầy đủ thông tin';
@@ -32,11 +33,11 @@ require_once '../modal/init.php';
 		{
 		  $ngaythi = $day . '/' . $month . '/' . $year;
 			$day=date("d/m/y");
-			$sql2=$db->themdethi($ngaythi,$giothi,$day,$tacgia);
+			$sql2=$db->themdethi($ngaythi,$giothi,$day,$tacgia,$trangthai);
 			$a=$db->query($sql2);
 			if($sql2)
 			{
-				echo 'Tạo đề thi thành công';
+                echo "<script>alert('Thêm đề thi thành công !');window.location='?menu=dethi_list'</script>";
 			}
 			else echo 'Có lỗi xảy ra';
 		}

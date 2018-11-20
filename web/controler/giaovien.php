@@ -17,6 +17,9 @@
                         if($_GET['menu']=='doimatkhau'){
                             include "page3_gv.php";
                         }
+                        if($_GET['menu']=='giaovien'){
+                            include "Page5_gv.php";
+                        }
 
                         if($_GET['menu']=='dethi_list'){
                             include ("dethi_list.php");
@@ -30,5 +33,5 @@
                             include("dethi_news.php");
                         }
                     }else
-                        include "dethi_list.php";
+                        include "Page5_gv.php";
 				?>

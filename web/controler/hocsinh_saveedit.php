@@ -54,7 +54,7 @@ if(isset($_POST["edit"]))
 	$ra=$db->query($sql1);
 	if($rs)
 	{
-		echo"<script>document.location.href='?menu=quanlyhocsinh' </script>";
+        echo "<script>alert('Cập nhật thành công!');window.location='?menu=quanglyhocsinh'</script>";
 	}
 	else
 	{

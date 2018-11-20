@@ -49,6 +49,7 @@
                     <th>Ngày Thi</th>
                     <th>Giờ Thi</th>
 					<th>Tác giả</th>
+                    <th>Trạng Thái đề thi</th>
 					<th>Chỉnh sửa</th>
 				</tr>
 			</thead>

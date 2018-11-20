@@ -8,7 +8,8 @@ if(isset($_POST["duyet"]))
     $a=$db->query($sql);
     if($a)
     {
-        echo "Duyệt thành công";
+        echo "<script>alert('Duyệt đề thi thành công!');window.location='?menu=duyetdethi'</script>";
     }
-    else echo "Có lõi xảy ra";
+    else echo "<script>alert('Có lỗi xảy ra!');window.location='?menu=duyetdethi'</script>";
+
 }

@@ -1,16 +1,25 @@
 <?php
 error_reporting(0);
 require_once '../modal/init.php';
- 
+$u=$_SESSION['user'];
+$sql5=$db->laythongtinuser($u);
+$lay=$db->query($sql5);
+$rows=$db->lay_rows($lay);
 // Nếu tồn tại $user
 if ($user)
 {
-    header('Location: index.php'); // Di chuyển đến trang chủ
+    if($rows['quyen']=='Học Sinh') {
+        header('Location: hocsinh.php');
+    }
+    else if($rows['quyen']=='Giáo Viên'||$rows['quyen']=='Trưởng bộ môn') {
+            header('Location: truongbomon.php');
+        }
+        else if($rows['quyen']=='Phòng dào tạo') {
+            header('Location: phongdaotao.php');
+        }
+        else  header('Location: admin.php');
 }
-else
-{
- 
-if (isset($_POST['dangnhap'])) 
+else if (isset($_POST['dangnhap']))
 {
     $username = addslashes($_POST['username']);
     $password = addslashes($_POST['pwd']);
@@ -54,6 +63,5 @@ if (isset($_POST['dangnhap']))
 		}
 		else header('Location: truongbomon.php');
     die();
-}
 }
 ?>

@@ -11,5 +11,5 @@ if(isset($_GET['menu'])){
     }
 
 }else
-    include "quanlytaikhoan.php";
+    include "banghs.php";
 ?>

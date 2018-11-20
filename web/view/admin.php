@@ -10,10 +10,27 @@
 <?php
 error_reporting(0);
 require_once '../modal/init.php';
-		if(!$user) {
-            header('Location: dangnhap.php'); // Di chuyển đến trang chủ
-        }
-?>    
+$u=$_SESSION['user'];
+$sql=$db->laythongtinuser($u);
+$a=$db->query($sql);
+$rows=$db->lay_rows($a);
+if($user) {
+    if($rows['quyen']=='Giáo Viên') {
+        echo "<script>alert('Bạn không có quyền vào trang này !');window.location='giaovien.php'</script>";
+    }
+    else if($rows['quyen']=='Trưởng bộ môn') {
+        echo "<script>alert('Bạn không có quyền vào trang này !');window.location='truongbomon.php'</script>";
+    } else if($rows['quyen']=='Phòng dào tạo') {
+        echo "<script>alert('Bạn không có quyền vào trang này !');window.location='phongdaotao.php'</script>";
+    } else  if($rows['quyen']=='Học Sinh') {
+        echo "<script>alert('Bạn không có quyền vào trang này !');window.location='hocsinh.php'</script>";
+    }
+}
+else if(!$user)
+{
+    header('Location: dangnhap.php');
+}
+?>
 <div id="page-wrap">
     	<div id="header">
         	<h1 id="logo"><a href="admin.php">logo</a></h1>

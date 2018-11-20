@@ -1,5 +1,4 @@
 <script>
-
    function getHTTPObject(){
          
 	if (window.ActiveXObject) return new ActiveXObject("Microsoft.XMLHTTP");// trinh duyet ie
@@ -12,9 +11,8 @@
             function load_ajax(get)
             {
 			   var malop=document.getElementById("chonmonthi");
-			   var lanthi=document.getElementById("chonhocky");
                 xmlhttp=getHTTPObject();
-                xmlhttp.open("GET","../controler/kiemtralichthi.php?mamon="+malop.value+" && idhs="+get+" && lanthi="+lanthi.value, true);
+                xmlhttp.open("GET","../controler/kiemtralichthi.php?mamon="+malop.value+" && idhs="+get+"", true);
                 xmlhttp.send();
 				
                  xmlhttp.onreadystatechange =setOutput;
@@ -69,27 +67,14 @@
 			
 ?>
                               <option value="<?php echo $rows3['made']; ?>"><?php echo $rows3['tende']; ?></option>
-                             
+
 							  	<?php
-	
+
 }
-mysqli_close($connect);
-?>
+$db->close()?>
                             </select>
 							
                           </li >
-
-						                           <li class="col-md-2">
-                            <label >Chọn kỳ thi:</label>
-                            <select class="form-control" name="hockyselect" id="chonhocky">
-
-                              <option value="1">Học kỳ 1</option>
-                              <option value="2">Học kỳ 2</option>
-							
-                            </select>
-                          </li >
-						  
-						  
 
                           <li  class="col-md-3 col-md-offset-1"  >
                             <div type="button" id="NutKiemTra" class="btn btn-info btn-lg" onclick="load_ajax(<?php echo $_SESSION['id_hs'] ?>)" >Kiểm tra</div>

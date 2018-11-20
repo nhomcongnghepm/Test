@@ -27,8 +27,25 @@
 <?php
 error_reporting(0);
 require_once '../modal/init.php';
-if(!$user) {
-    header('Location: dangnhap.php'); // Di chuyển đến trang chủ
+$u=$_SESSION['user'];
+$sql=$db->laythongtinuser($u);
+$a=$db->query($sql);
+$rows=$db->lay_rows($a);
+if($user) {
+    if($rows['quyen']=='Giáo Viên') {
+        echo "<script>alert('Bạn không có quyền vào trang này !');window.location='giaovien.php'</script>";
+    }
+    else if($rows['quyen']=='Trưởng bộ môn') {
+        echo "<script>alert('Bạn không có quyền vào trang này !');window.location='truongbomon.php'</script>";
+    } else if($rows['quyen']=='Phòng dào tạo') {
+        echo "<script>alert('Bạn không có quyền vào trang này !');window.location='phongdaotao.php'</script>";
+    } else  if($rows['quyen']=='Admin') {
+        echo "<script>alert('Bạn không có quyền vào trang này !');window.location='admin.php'</script>";
+    }
+}
+else if(!$user)
+{
+    header('Location: dangnhap.php');
 }
 ?>
 <div id="base" class="">
@@ -83,7 +100,7 @@ if(!$user) {
             <div id="u7" class="ax_default menu_item">
                 <img id="u7_img" class="img " src="../assets/hocsinh/images/home/u7.png"/>
                 <div id="u7_text" class="text ">
-                    <a href="hocsinh.php" >    <p><span>HỌC SINH</span></p></a>
+                    <a href="hocsinh.php" >  <p><span>HỌC SINH</span></p></a>
                 </div>
             </div>
 
@@ -107,7 +124,7 @@ if(!$user) {
             <div id="u10" class="ax_default menu_item">
                 <img id="u10_img" class="img " src="../assets/hocsinh/images/home/u8.png"/>
                 <div id="u10_text" class="text ">
-                    <a href="?menu=lichthi"><p><span>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; Xem lịch thi</span></p></a>
+                    <a href="?menu=lichthi">   <p><span>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; Xem lịch thi</span></p></a>
                 </div>
             </div>
 
@@ -123,7 +140,7 @@ if(!$user) {
             <div id="u12" class="ax_default menu_item">
                 <img id="u12_img" class="img " src="../assets/hocsinh/images/home/u12.png"/>
                 <div id="u12_text" class="text ">
-                    <a href="?menu=capnhatthongtin">   <p><span>&nbsp;&nbsp; &nbsp; &nbsp; Cập nhật thông tin</span></p></a>
+                    <a href="?menu=capnhatthongtin">  <p><span>&nbsp;&nbsp; &nbsp; &nbsp; Cập nhật thông tin</span></p></a>
                 </div>
             </div>
 
@@ -131,7 +148,7 @@ if(!$user) {
             <div id="u13" class="ax_default menu_item">
                 <img id="u13_img" class="img " src="../assets/hocsinh/images/home/u13.png"/>
                 <div id="u13_text" class="text ">
-                    <a href="?menu=doimatkhau">  <p><span>&nbsp;&nbsp; &nbsp; &nbsp; Đổi mật khẩu</span></p></a>
+                    <a href="?menu=doimatkhau"> <p><span>&nbsp;&nbsp; &nbsp; &nbsp; Đổi mật khẩu</span></p></a>
                 </div>
             </div>
 
@@ -139,7 +156,7 @@ if(!$user) {
             <div id="u14" class="ax_default menu_item">
                 <img id="u14_img" class="img " src="../assets/hocsinh/images/home/u14.png"/>
                 <div id="u14_text" class="text ">
-                    <a href="../controler/xulydangxuat.php">    <p><span>&nbsp;&nbsp; &nbsp; &nbsp; Đăng xuất</span></p></a>
+                    <a href="../controler/xulydangxuat.php"> <p><span>&nbsp;&nbsp; &nbsp; &nbsp; Đăng xuất</span></p></a>
                 </div>
             </div>
         </div>
@@ -223,11 +240,6 @@ if(!$user) {
     <div id="u28" class="ax_default image1">
         <img id="u28_img" class="img " src="../assets/hocsinh/images/home/u28.svg"/>
     </div>
-
-    <!-- Unnamed (Rectangle) -->
-
-    <!-- Unnamed (Rectangle) -->
-
 </div>
 </body>
 </html>

@@ -29,11 +29,11 @@ session_start();
 			 
 			   <!--menuphai-->
               <div  class="tab-content col-md-10 danhsach1">
+              <?php require_once '../modal/init.php'; 
+			  
+			  ?>
 					 <?php  include_once("../controler/lambaithi.php"); ?>
     </div><!-- content -->
-
- 
-   
  <script type="text/javascript">
        $("#NutKiemTra").click(function(){
             var y= document.getElementById("NhapMaSoSinhVien").value.length;

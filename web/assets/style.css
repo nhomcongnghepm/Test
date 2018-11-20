@@ -1,3 +1,6 @@
+a{
+	text-decoration: none;
+}
 body {
    background: #E6EBF2;
     font-size: 12px;
@@ -7,6 +10,9 @@ body {
 	 padding: 9px;
 	 border-radius: 3px;
  }
+#sidebar{
+	width: 100%
+}
 pre { font-family: monospace;}
 
 	#pagewrap {

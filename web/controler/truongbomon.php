@@ -11,7 +11,6 @@ if(isset($_GET['menu'])){
     }else if($_GET['menu']=='cauhoi_saveedit'){
         include("cauhoi_saveedit.php");
     }
-
     if($_GET['menu']=='capnhatthongtin'){
         include "doithongtin.php";
     }
@@ -19,7 +18,8 @@ if(isset($_GET['menu'])){
         include "page3_gv.php";
     }
 
-    if($_GET['menu']=='duyetdethi'){
+
+   if($_GET['menu']=='duyetdethi'){
         include("../view/duyetdethi.php");
     }else if($_GET['menu']=='duyetdethi_list')
     {
@@ -43,5 +43,5 @@ if(isset($_GET['menu'])){
     }
 
 }else
-    include "dethi_list.php";
+    include "bangtbm.php";
 ?>

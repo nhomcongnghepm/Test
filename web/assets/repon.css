@@ -1,0 +1,14 @@
+@media screen and (min-width: 600px) {
+    .conten {
+
+        width: 800px;
+        margin:0 auto;
+    }
+}
+@media screen and (min-width: 1024px){
+    .conten {
+
+        width: 1024px;
+        margin: 0 auto;
+    }
+}

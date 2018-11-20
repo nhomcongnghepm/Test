@@ -289,7 +289,20 @@
 			return $sql;
 		}
 	}
-
+        public function laythongtin_giaovien($u){
+            if ($this->cn)
+            {
+                $sql="SELECT * FROM giaovien WHERE user='$u'";
+                return $sql;
+            }
+        }
+        public function laythongtin_hocsinh($u){
+            if ($this->cn)
+            {
+                $sql="SELECT * FROM sinhvien WHERE user='$u'";
+                return $sql;
+            }
+        }
 	public function laythongtinuser($u){
         if ($this->cn)
         {
@@ -404,10 +417,10 @@
 		}
 	}
 
-	public function themdethi($ngaythi,$giothi,$day,$tacgia){
+	public function themdethi($ngaythi,$giothi,$day,$tacgia,$a){
             if ($this->cn)
             {
-                $sql="INSERT INTO tbl_dethi(made,tende,ngaythi,giothi,tacgia,ngaydang) VALUE('','$_POST[tende]','$ngaythi','$giothi','$tacgia','$day')";
+                $sql="INSERT INTO tbl_dethi(made,tende,ngaythi,giothi,tacgia,ngaydang,trangthai) VALUE('','$_POST[tende]','$ngaythi','$giothi','$tacgia','$day',$a)";
                 return $sql;
             }
     }

@@ -7,14 +7,10 @@ if(isset($_POST["bnm"]))
 			$a=$db->query($delete);
 
 			if ($a) {
-				header("location: ?menu=dethi_list");
-			}
+                echo "<script>alert('Xóa thành công !');window.location='?menu=dethi_list'</script>";
+            }
 			else {
-				echo "Có lỗi xảy ra";
+                echo "<script>alert('Bạn vui lòng xóa câu hỏi trước khi xóa đề thi !');window.location='?menu=dethi_list'</script>";
 			}
-		}
-		else
-		{
-			echo "<script>alert('Không thể xóa dữ liệu !');window.location='?menu=dethi_list'</script>";
 		}
 ?>

@@ -26,9 +26,10 @@ if(isset($_POST["edit"]))
 				 $sql=$db->capnhatdethi($tende,$ngaythi,$giothi,$timer,$idmade);
                  $a=$db->query($sql);
                 if($a) {
-                echo "Cập nhật thành công";
-				echo "<script>document.location.href='?menu=dethi_list' </script>";
-            } else echo "Có lỗi xảy ra";
-			}
+                    echo "<script>alert('Cập nhật thành công!');window.location='?menu=dethi_list'</script>";
+
+                } else echo "<script>alert('Có lỗi xảy ra!');window.location='?menu=dethi_list'</script>";
+
+        }
 	}
 ?>

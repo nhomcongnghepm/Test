@@ -22,22 +22,22 @@ if(isset($_POST['ok']))
 		if($da==1)
 		{ 
 			$a=$db->query($sqla);
-			echo "Thêm câu hỏi thành công";
+            echo "<script>alert('Thêm đề thi thành công !');window.location='?menu=cauhoi_list'</script>";
 		}
 		else if($da==2)
 		{
 			$a=$db->query($sqlb);
-			echo "Thêm câu hỏi thành công";
+            echo "<script>alert('Thêm đề thi thành công !');window.location='?menu=cauhoi_list'</script>";
 		}
 		else if($da==3)
 		{
 			 $a=$db->query($sqlc);
-			 echo "Thêm câu hỏi thành công";
+            echo "<script>alert('Thêm đề thi thành công !');window.location='?menu=cauhoi_list'</script>";
 		}
 		else
 		{
 			 $db->query($sqld);
-			 echo "Thêm câu hỏi thành công";
+            echo "<script>alert('Thêm đề thi thành công !');window.location='?menu=cauhoi_list'</script>";
 		}
 		
 	}	

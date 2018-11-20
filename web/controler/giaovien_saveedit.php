@@ -49,7 +49,7 @@ if(isset($_POST["edit"]))
 	 	 $ra=$db->query($sql1);
 		 if($rs!=null)
 		 {
-			 		echo"<script>document.location.href='?menu=quanlygiaovien' </script>";
+             echo "<script>alert('Cập nhật thành công!');window.location='?menu=quanglygiaovien'</script>";
 		 }
 	}
 	else
