@@ -10,6 +10,7 @@ body {
   margin-left:0;
   margin-right:0;
   text-align:left;
+  background: white;
 }
 #base {
   position:absolute;

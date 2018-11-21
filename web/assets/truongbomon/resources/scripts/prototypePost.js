@@ -130,8 +130,8 @@ var BROWSER_VERSION = 5000;
                 "<div id='axureEventSenderDiv' style='display:none'></div>");
 
 		    _eventObject = window.document.createEvent('Event');
-		    _eventObject.initEvent('axureMessageSenderEvent', true, true);            
-            
+		    _eventObject.initEvent('axureMessageSenderEvent', true, true);
+
             $('#axureEventReceiverDiv').bind('axureMessageReceiverEvent', function () {
                 var request = JSON.parse($(this).text());
                 _handleRequest(request);
@@ -158,7 +158,7 @@ var BROWSER_VERSION = 5000;
             }
             _queuedMessages = [];
         }
-                
+
         // and then handle the set state messages, if necessary
         if (request.message == 'setState') {
             _state[request.data.key] = request.data.value;
@@ -479,7 +479,7 @@ $axure.internal(function($ax) {
     var _notAllowedInvisible = function (id) {
         var type = $ax.getTypeFromElementId(id);
         if ($ax.public.fn.IsReferenceDiagramObject(type) || $ax.public.fn.IsLayer(type)) return false;
-        return !($ax.public.fn.IsVector(type) && _hasCompoundImage(id)); 
+        return !($ax.public.fn.IsVector(type) && _hasCompoundImage(id));
     }
 
     var _hasCompoundImage = function (id) {

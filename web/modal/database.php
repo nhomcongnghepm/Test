@@ -401,10 +401,10 @@
 		}
 	}
 
-	public function capnhatdethi($tende,$ngaythi,$giothi,$timer,$idmade){
+	public function capnhatdethi($tende,$ngaythi,$giothi,$idmade,$date){
             if ($this->cn)
             {
-                $sql="UPDATE tbl_dethi SET `tende` ='".$tende."',`ngaythi` ='".$ngaythi."',`giothi` ='".$giothi."',`timer` ='".$timer."'where made='".$idmade."'";
+                $sql="UPDATE tbl_dethi SET `tende` ='".$tende."',`ngaythi` ='".$ngaythi."',`giothi` ='".$giothi."',`ngaydang` ='".$date."'where made='".$idmade."'";
                 return $sql;
             }
     }

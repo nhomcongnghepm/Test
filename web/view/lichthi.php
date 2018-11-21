@@ -4,6 +4,7 @@
     <link href="../assets/style.css" media="screen" rel="stylesheet" type="text/css" />
     <script src="../assets/js/jquery.js" type="text/javascript"></script>
     <script src="../assets/js/facebox.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../assets/bootstrap-3.3.6/dist/css/bootstrap.min.css">
 </head>
 <body>
 <div style="margin:20px 70px 10px; font-size:14px;">

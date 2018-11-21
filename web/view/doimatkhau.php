@@ -3,7 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Đổi Mật Khẩu</title>
-<link rel="stylesheet" href="../assets/bootstrap-3.3.6/dist/css/bootstrap.min.css"><script src="../assets/bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../assets/bootstrap-3.3.6/dist/css/bootstrap.min.css " />
+    <script src="../assets/bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/jquery-1.11.1.min.js"></script>
 <script src='https://www.google.com/recaptcha/api.js?hl=vi'></script></head>
 <body>

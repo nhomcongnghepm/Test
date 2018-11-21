@@ -3,9 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Đăng Ký</title>
-<link rel="stylesheet" href="../assets/bootstrap-3.3.6/dist/css/bootstrap.min.css"><script src="../assets/bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../assets/bootstrap-3.3.6/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../assets/dangky.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/jquery-1.11.1.min.js"></script>
 <body>
 <br>
 <div style="margin:20px 70px 10px; font-size:14px;">

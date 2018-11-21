@@ -4,8 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Cập Nhật Thông Tin</title>
     <link href="../assets/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="../assets/bootstrap-3.3.6/dist/css/bootstrap.min.css"><script src="../assets/bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="../assets/bootstrap-3.3.6/dist/css/bootstrap.min.css">
 <body>
 <?php include ("../controler/laythongtinuser.php")?>
 <hr size="1" color="#ffff" style="margin:15px auto;" />

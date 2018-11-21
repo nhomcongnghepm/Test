@@ -1,12 +1,6 @@
 a{
 	text-decoration: none;
 }
-<<<<<<< HEAD
-#u25_div{
-	margin-top: 90px;
-}
-=======
->>>>>>> d3f76e583bd73793b49b45bb903d0cdd969320ef
 body {
    background: #E6EBF2;
     font-size: 12px;
@@ -45,7 +39,7 @@ pre { font-family: monospace;}
 				#resultTable {
 					background-color: white;
 					margin-top: 8px;
-					width: 90%;
+					width: 120%;
 					color:#000000;
 					margin:0 50px auto;
 				}

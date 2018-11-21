@@ -32,8 +32,8 @@ require_once '../modal/init.php';
 		else
 		{
 		  $ngaythi = $day . '/' . $month . '/' . $year;
-			$day=date("d/m/y");
-			$sql2=$db->themdethi($ngaythi,$giothi,$day,$tacgia,$trangthai);
+			$date=date("d/m/y");
+			$sql2=$db->themdethi($ngaythi,$giothi,$date,$tacgia,$trangthai);
 			$a=$db->query($sql2);
 			if($sql2)
 			{

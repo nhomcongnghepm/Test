@@ -108,7 +108,8 @@ else if(!$user)
             <div id="u8" class="ax_default menu_item">
                 <img id="u8_img" class="img " src="../assets/hocsinh/images/home/u8.png"/>
                 <div id="u8_text" class="text ">
-                    <p><span>&nbsp;&nbsp; &nbsp; &nbsp; Thi</span></p>
+                        <img id="u26_img" class="img " src="../assets/hocsinh/images/home/u26.svg"/>
+                    <a href="?menu=thi" > <p><span>&nbsp;&nbsp; &nbsp; &nbsp; Thi</span></p></a>
                 </div>
             </div>
 
@@ -116,6 +117,7 @@ else if(!$user)
             <div id="u9" class="ax_default menu_item">
                 <img id="u9_img" class="img " src="../assets/hocsinh/images/home/u8.png"/>
                 <div id="u9_text" class="text ">
+                    <img id="u27_img" class="img " src="../assets/hocsinh/images/home/u27.svg"/>
                     <p><span>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; Xem bảng điểm</span></p>
                 </div>
             </div>
@@ -124,7 +126,8 @@ else if(!$user)
             <div id="u10" class="ax_default menu_item">
                 <img id="u10_img" class="img " src="../assets/hocsinh/images/home/u8.png"/>
                 <div id="u10_text" class="text ">
-                    <a href="?menu=lichthi">   <p><span>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; Xem lịch thi</span></p></a>
+                    <img id="u28_img" class="img " src="../assets/hocsinh/images/home/u28.svg"/>
+                    <a href="?menu=lichthi"><p><span>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; Xem lịch thi</span></p></a>
                 </div>
             </div>
 
@@ -161,12 +164,6 @@ else if(!$user)
             </div>
         </div>
     </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u15" class="ax_default box_3">
-        <div id="u15_div" class=""></div>
-    </div>
-
     <!-- Unnamed (SVG) -->
     <div id="u16" class="ax_default image1">
         <img id="u16_img" class="img " src="../assets/hocsinh/images/home/u16.svg"/>
@@ -226,19 +223,9 @@ else if(!$user)
         <div id="u25_div" class=""><?php include("../controler/hocsinh.php")?></div>
     </div>
 
-    <!-- Unnamed (SVG) -->
-    <div id="u26" class="ax_default image1">
-        <img id="u26_img" class="img " src="../assets/hocsinh/images/home/u26.svg"/>
-    </div>
-
-    <!-- Unnamed (SVG) -->
-    <div id="u27" class="ax_default image1">
-        <img id="u27_img" class="img " src="../assets/hocsinh/images/home/u27.svg"/>
-    </div>
 
     <!-- Unnamed (SVG) -->
     <div id="u28" class="ax_default image1">
-        <img id="u28_img" class="img " src="../assets/hocsinh/images/home/u28.svg"/>
     </div>
 </div>
 </body>

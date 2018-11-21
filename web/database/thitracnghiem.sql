@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2018 at 03:48 PM
+-- Generation Time: Nov 21, 2018 at 08:34 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -46,8 +46,7 @@ CREATE TABLE `giaovien` (
 --
 
 INSERT INTO `giaovien` (`id_gv`, `ho`, `ten`, `user`, `password`, `email`, `birthdate`, `Gioitinh`, `bomon`, `quyen`) VALUES
-(20100042, 'Phan Tấn', 'Bình', 'binh123', '8bd1c0165694ac2669228e73843d26', 'binh@gmail.com', '16-2-2005', 'Nam', 'Toán', 'Giáo Viên'),
-(20100043, 'Ngô Bá Vĩnh ', 'Hiển', 'hien123', '2c7bc5665e3482c031f9a928038b30', 'hien123@gmail.com', '14-3-2004', 'Nam', 'Hóa', 'Giáo Viên'),
+(20100042, 'Phan Tấn', 'Bình', 'binh123', '8bd1c0165694ac2669228e73843d26', 'binh@gmail.com', '2-1-1997', 'Nam', 'Toán', 'Giáo Viên'),
 (20100044, 'Nguyễn Thanh Trường', 'Giang', 'giang123', '4e031bb475963ba73ebf552f78ae1c', 'giang@gmail.com', '16-2-2003', 'Nam', 'Vật lý', 'Trưởng bộ môn');
 
 -- --------------------------------------------------------
@@ -67,13 +66,6 @@ CREATE TABLE `ketquathi` (
   `anh` int(10) NOT NULL,
   `tongdiem` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `ketquathi`
---
-
-INSERT INTO `ketquathi` (`stt`, `ho`, `ten`, `birthdate`, `toan`, `ly`, `hoa`, `anh`, `tongdiem`) VALUES
-(1, 'Thạch Cảnh ', 'Bình', '5-3-1999', 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -99,17 +91,7 @@ CREATE TABLE `sinhvien` (
 --
 
 INSERT INTO `sinhvien` (`id`, `ho`, `ten`, `user`, `password`, `email`, `birthdate`, `Gioitinh`, `tenlop`, `quyen`) VALUES
-(101000021, 'Thạch Cảnh', 'Bình', 'canhbinh12', 'c69f340ced75efd4373913b8ffcee96d2dd717ac', 'canhbinh@gmail.com', '17-3-2006', 'Nam', '12A1', 'Học Sinh'),
-(101000025, 'Đào Ngọc Gia ', 'Anh', 'giaanh123', 'bd753b80609e4f10d98a4655e55a1c296feb797b', 'giaanh@gmail.com', '2-2-1994', 'Nam', '12A6', 'Học Sinh'),
-(101000026, 'Nguyễn Vinh ', 'Hiển', 'hien123', '2c7bc5665e3482c031f9a928038b301e068e6413', 'hien@gmail.com', '2-2-1993', 'Nam', '12A7', 'Học Sinh'),
-(101000027, 'Đoàn Tô Thanh', 'Bình', 'thanhbinh1', '361fce041655af29b7fd5106d77b1faedd1eba5c', 'thanhbinh@gmail.com', '10-7-1997', 'Nam', '12A8', 'Học Sinh'),
-(101000028, 'Ma Đình ', 'Cường', 'cuong123', 'd53b988795aae0764a17fb8a95f40d03c8048436', 'cuong@gmail.com', '1-1-1994', 'Nam', '12A9', 'Học Sinh'),
-(101000029, 'Trần Văn', 'Bảo', 'vanbao123', '7b34fb80623ffd9d806dcae10346b5f83a9da8cf', 'vanbao@gmail.com', '1-1-1990', 'Nam', '12A8', 'Học Sinh'),
-(101000030, 'Nguyễn Hà Xuân', 'Cường', 'xuancuong1', 'ac30ae7962a3a5325b60f8defaf2e56e4a95a14a', 'xuancuong@gmail.com', '1-1-1990', 'Nam', '12A8', 'Học Sinh'),
-(101000031, 'Đặng Vũ Nhật ', 'Anh', 'anh123', '1e5bcc028d318a1a4780fa8af78e65e22c4bcde5', 'anh@gmail.com', '4-4-1993', 'Nam', '12A8', 'Học Sinh'),
-(101000032, 'Lê Thị ', 'Linh', 'linh123', 'ed3c9dba8ca23a33af1342082544922ee774e85d', 'Linh123@gmail.com', '4-4-1993', 'Nam', '12A8', 'Học Sinh'),
-(101000033, 'Huỳnh Nhật ', 'Hòa', 'hoa123', '314576f49db3e92c639ec86f1d951620ef45c34d', 'hoa123@gmail.com', '2-4-1993', 'Nam', '12A10', 'Học Sinh'),
-(101000034, 'Lê Văn ', 'Hiếu', 'hieu123', 'dc1c013e029c385578f921f9b49f0641fffd8b98', 'Hieu@gmail.com', '1-2-1992', 'Nam', '12a4', 'Học Sinh');
+(101000021, 'Thạch Cảnh', 'Bình', 'canhbinh12', 'c69f340ced75efd4373913b8ffcee96d2dd717ac', 'canhbinh@gmail.com', '17-3-2006', 'Nam', '12A1', 'Học Sinh');
 
 -- --------------------------------------------------------
 
@@ -133,7 +115,7 @@ CREATE TABLE `tbl_cauhoi` (
 --
 
 INSERT INTO `tbl_cauhoi` (`ma_ch`, `noidung`, `lc1`, `lc2`, `lc3`, `lc4`, `dapan`, `made`) VALUES
-(64, '<p>đ&aacute;</p>', 'áda', 'ádas', 'ádas', 'áda', 'áda', 46),
+(64, '<p>đas</p>', '1', '2', '3', '4', '2', 46),
 (65, '<p>&aacute;dasd</p>', 'adasd', 'ádasd', 'ádasd', 'ádas', 'adasd', 46),
 (66, '<p>&aacute;dsada</p>', 'ádasd', 'ádasd', 'ádasd', 'ádasd', 'ádasd', 46),
 (67, '<p>&aacute;dsada</p>', 'đasa', 'ádas', 'đâsdas', 'đâsds', 'đasa', 46),
@@ -162,8 +144,6 @@ CREATE TABLE `tbl_dethi` (
   `giothi` varchar(10) NOT NULL,
   `tacgia` varchar(50) CHARACTER SET utf8 NOT NULL,
   `ngaydang` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `timer` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `lanthi` int(10) NOT NULL,
   `trangthai` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -171,19 +151,19 @@ CREATE TABLE `tbl_dethi` (
 -- Dumping data for table `tbl_dethi`
 --
 
-INSERT INTO `tbl_dethi` (`made`, `tende`, `ngaythi`, `giothi`, `tacgia`, `ngaydang`, `timer`, `lanthi`, `trangthai`) VALUES
-(46, 'Toán', '3/3/2018', '4:3:3', 'Nguyễn Thanh Trường Giang', '17/11/18', '', 0, 'Đã duyệt'),
-(47, 'Tiếng Anh', '4/3/2019', '3h:2p:3s', 'Nguyễn Thanh Trường Giang', '17/11/18', '', 0, ''),
-(48, 'Hóa', '1/1/2018', '0h:0p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', '', 0, ''),
-(49, 'ád', '1/1/2018', '0h:0p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', '', 0, ''),
-(50, 'ádas', '1/1/2018', '0h:1p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', '', 0, ''),
-(51, 'ádasd', '2/1/2018', '0h:1p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', '', 0, ''),
-(52, 'bh', '1/1/2018', '1h:0p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', '', 0, ''),
-(53, 'ádasd', '1/1/2018', '0h:1p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', '', 0, ''),
-(54, 'đâs', '1/1/2018', '0h:0p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', '', 0, ''),
-(55, 'ádsa', '1/1/2018', '0h:0p:1s', 'Nguyễn Thanh Trường Giang', '19/11/18', '', 0, ''),
-(56, 'đáa', '1/1/2019', '1h:0p:1s', 'Nguyễn Thanh Trường Giang', '19/11/18', '', 0, ''),
-(57, 'đâsjdlk', '1/1/2018', '0h:0p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', '', 0, '');
+INSERT INTO `tbl_dethi` (`made`, `tende`, `ngaythi`, `giothi`, `tacgia`, `ngaydang`, `trangthai`) VALUES
+(46, 'Toán', '3/4/2018', '1h:1p:4s', 'Nguyễn Thanh Trường Giang', '21/11/18', 'Đã duyệt'),
+(47, 'Tiếng Anh', '4/3/2019', '3h:2p:3s', 'Nguyễn Thanh Trường Giang', '17/11/18', 'Chưa duyệt'),
+(48, 'Hóa', '1/1/2018', '0h:0p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', 'Chưa duyệt'),
+(49, 'ád', '1/1/2018', '0h:0p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', 'Chưa duyệt'),
+(50, 'ádas', '1/1/2018', '0h:1p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', 'Chưa duyệt'),
+(51, 'ádasd', '2/1/2018', '0h:1p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', 'Chưa duyệt'),
+(52, 'bh', '1/1/2018', '1h:0p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', 'Chưa duyệt'),
+(53, 'ádasd', '1/1/2018', '0h:1p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', 'Chưa duyệt'),
+(54, 'đâs', '1/1/2018', '0h:0p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', 'Chưa duyệt'),
+(55, 'ádsa', '1/1/2018', '0h:0p:1s', 'Nguyễn Thanh Trường Giang', '19/11/18', 'Chưa duyệt'),
+(56, 'đáa', '1/1/2019', '1h:0p:1s', 'Nguyễn Thanh Trường Giang', '19/11/18', 'Chưa duyệt'),
+(57, 'đâsjdlk', '1/1/2018', '0h:0p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', 'Chưa duyệt');
 
 -- --------------------------------------------------------
 
@@ -209,18 +189,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `ho`, `ten`, `user`, `email`, `password`, `birthdate`, `Gioitinh`, `quyen`) VALUES
 ('101000021', 'Thạch Cảnh', 'Bình', 'canhbinh12', 'canhbinh@gmail.com', 'c69f340ced75efd4373913b8ffcee96d2dd717ac', '17-3-2006', 'Nam', 'Học Sinh'),
-('101000025', 'Đào Ngọc Gia ', 'Anh', 'giaanh123', 'giaanh@gmail.com', 'bd753b80609e4f10d98a4655e55a1c296feb797b', '2-2-1994', 'Nam', 'Học Sinh'),
-('101000026', 'Nguyễn Vinh ', 'Hiển', 'hien123', 'hien@gmail.com', '2c7bc5665e3482c031f9a928038b301e068e6413', '2-2-1993', 'Nam', 'Học Sinh'),
-('101000027', 'Đoàn Tô Thanh', 'Bình', 'thanhbinh123', 'thanhbinh@gmail.com', '361fce041655af29b7fd5106d77b1faedd1eba5c', '10-7-1997', 'Nam', 'Học Sinh'),
-('101000028', 'Ma Đình ', 'Cường', 'cuong123', 'cuong@gmail.com', 'd53b988795aae0764a17fb8a95f40d03c8048436', '1-1-1994', 'Nam', 'Học Sinh'),
-('101000029', 'Trần Văn', 'Bảo', 'vanbao123', 'vanbao@gmail.com', '7b34fb80623ffd9d806dcae10346b5f83a9da8cf', '1-1-1990', 'Nam', 'Học Sinh'),
-('101000030', 'Nguyễn Hà Xuân', 'Cường', 'xuancuong123', 'xuancuong@gmail.com', 'ac30ae7962a3a5325b60f8defaf2e56e4a95a14a', '1-1-1990', 'Nam', 'Học Sinh'),
-('101000031', 'Đặng Vũ Nhật ', 'Anh', 'anh123', 'anh@gmail.com', '1e5bcc028d318a1a4780fa8af78e65e22c4bcde5', '4-4-1993', 'Nam', 'Học Sinh'),
-('101000032', 'Lê Thị ', 'Linh', 'linh123', 'Linh123@gmail.com', 'ed3c9dba8ca23a33af1342082544922ee774e85d', '4-4-1993', 'Nam', 'Học Sinh'),
-('101000033', 'Huỳnh Nhật ', 'Hòa', 'hoa123', 'hoa123@gmail.com', '314576f49db3e92c639ec86f1d951620ef45c34d', '2-4-1993', 'Nam', 'Học Sinh'),
-('101000034', 'Lê Văn ', 'Hiếu', 'hieu123', 'Hieu@gmail.com', 'dc1c013e029c385578f921f9b49f0641fffd8b98', '1-2-1992', 'Nam', 'Học Sinh'),
-('20100042', 'Phan Tấn', 'Bình', 'binh123', 'binh@gmail.com', '8bd1c0165694ac2669228e73843d26341ec71905', '16-2-2005', 'Nam', 'Giáo Viên'),
-('20100043', 'Ngô Bá Vĩnh ', 'Hiển', 'hien123', 'hien123@gmail.com', '2c7bc5665e3482c031f9a928038b301e068e6413', '14-3-2004', 'Nam', 'Giáo Viên'),
+('20100042', 'Phan Tấn', 'Bình', 'binh123', 'binh@gmail.com', '8bd1c0165694ac2669228e73843d26341ec71905', '2-1-1997', 'Nam', 'Giáo Viên'),
 ('20100044', 'Nguyễn Thanh Trường', 'Giang', 'giang123', 'giang@gmail.com', '4e031bb475963ba73ebf552f78ae1c43283af8b8', '16-2-2003', 'Nam', 'Trưởng bộ môn'),
 ('AD03972', 'Đặng Thành ', 'Đạt', 'admin', 'admin@gmail.com', '2ec10e4f7cd2159e7ea65d2454f68287ecf81251', '1-7-1997', 'Nam', 'Admin'),
 ('PDT92654', 'Phòng Đào ', 'Tạo', 'pdt123', 'phongdaotao@gmail.com', 'de56a0a5377a2c4e333156c34912b38318cd77fe', '3-5-1993', 'Nam', 'Phòng dào tạo');
@@ -274,19 +243,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `giaovien`
 --
 ALTER TABLE `giaovien`
-  MODIFY `id_gv` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20100045;
+  MODIFY `id_gv` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20100046;
 
 --
 -- AUTO_INCREMENT for table `ketquathi`
 --
 ALTER TABLE `ketquathi`
-  MODIFY `stt` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `stt` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `sinhvien`
 --
 ALTER TABLE `sinhvien`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101000035;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101000036;
 
 --
 -- AUTO_INCREMENT for table `tbl_cauhoi`

@@ -11,7 +11,7 @@ if(isset($_POST["edit"]))
 	$lc4=$_POST['lc4'];
 	$dapan=$_POST['dapan'];
 	$diem=$_POST['diem'];
-	if($_POST["noidung"]==null||$_POST["diem"]==null||$_POST["lc1"]==null||$_POST["lc2"]==null||$_POST["lc3"]==null||$_POST["lc4"]==null)
+	if($_POST["noidung"]==null||$_POST["lc1"]==null||$_POST["lc2"]==null||$_POST["lc3"]==null||$_POST["lc4"]==null)
 	{
 		echo "* Bạn vui lòng nhập đầy đủ thông tin";
 		exit;

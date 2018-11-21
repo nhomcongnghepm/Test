@@ -22,17 +22,35 @@ require_once '../modal/init.php';
                 echo "* Mật khẩu xác nhận sai!";
                 exit;
             } else {
-                $sql = $db->doimatkhau($u, $new_pw);
-                $db->query($sql);
+                $thongtin=$db->laythongtinuser($u);
+                $lay=$db->query($thongtin);
+                $cot=$db->lay_rows($lay);
+                $quyen=$cot['quyen'];
+                if($quyen='Học Sinh')
+                {
+                    $sql = $db->doimatkhau($u, $new_pw);
+                    $db->query($sql);
 
-                $sql1=$db->doimatkhauhocsinh($u,$new_pw);
-                $db->query($sql1);
-
-                $sql2=$db->doimatkhaugiaovien($u,$new_pw);
-                $db->query($sql2);
-                if ($sql) {
-                    echo "Mật khẩu đã thay đổi";
-                } else "Có lỗi xảy ra";
+                    $sql1=$db->doimatkhauhocsinh($u,$new_pw);
+                    $xu_ly1=$db->query($sql1);
+                    if ($xu_ly1) {
+                        echo "<script>alert('Đổi mật khẩu thành công !');window.location='?menu=dethi_list'</script>";
+                    } else "Có lỗi xảy ra";
+                } else if($quyen='Giáo Viên'||$quyen='Trưởng bộ môn') {
+                        $sql3 = $db->doimatkhau($u, $new_pw);
+                        $db->query($sq3);
+                        $sql2=$db->doimatkhaugiaovien($u,$new_pw);
+                        $xu_ly2=$db->query($sql2);
+                        if ($xu_ly2) {
+                            echo "<script>alert('Đổi mật khẩu thành công !');window.location='?menu=dethi_list'</script>";
+                        } else "Có lỗi xảy ra";
+            }else{
+                    $sql4 = $db->doimatkhau($u, $new_pw);
+                    $xuly3=$db->query($sql4);
+                    if ($xu_ly3) {
+                        echo "<script>alert('Đổi mật khẩu thành công !');window.location='javascript: history.go(-1)'</script>";
+                    } else "Có lỗi xảy ra";
+                }
             }
     }
 ?>
