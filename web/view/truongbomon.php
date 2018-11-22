@@ -161,12 +161,6 @@ else if(!$user)
             </div>
         </div>
     </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u54" class="ax_default box_3">
-        <div id="u54_div" class=""></div>
-    </div>
-
     <!-- Unnamed (SVG) -->
     <div id="u55" class="ax_default image1">
         <img id="u55_img" class="img " src="../assets/truongbomon/images/home/u15.svg"/>

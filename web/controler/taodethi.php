@@ -32,10 +32,10 @@ require_once '../modal/init.php';
 		else
 		{
 		  $ngaythi = $day . '/' . $month . '/' . $year;
-			$day=date("d/m/y");
-			$sql2=$db->themdethi($ngaythi,$giothi,$day,$tacgia,$trangthai);
+			$date=date("d/m/y");
+			$sql2=$db->themdethi($ngaythi,$giothi,$tacgia,$date,$trangthai);
 			$a=$db->query($sql2);
-			if($sql2)
+			if($a)
 			{
                 echo "<script>alert('Thêm đề thi thành công !');window.location='?menu=dethi_list'</script>";
 			}

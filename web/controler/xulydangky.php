@@ -11,13 +11,13 @@ require_once '../modal/init.php';
         $year = $_POST['year'];
 		$kiemtra=checkdate($month,$day,$year);
 		$bomon=$_POST['bomon'];
-		 if ($_POST['username'] == null) {
+		 if ($username== null) {
         echo("* Bạn hãy nhập tên đăng nhập <br /> <a href='javascript: history.go(-1)'>Trở lại</a>");
 		
-    	} else if (strlen('username') < 7) {
-        echo "* Tên đăng nhập phải lớn hơn 7 kí tự <a href='javascript: history.go(-1)'>Trở lại</a>";
+    	} else if (strlen($username) < 6) {
+        echo "* Tên đăng nhập phải lớn hơn 6 kí tự <a href='javascript: history.go(-1)'>Trở lại</a>";
 		exit;
-		 } else if (preg_match('/\W/', 'username')) {
+		 } else if (preg_match('/\W/', $username)) {
         echo "* Tên đăng nhập không được chứa ký tự đặc biệt và khoảng trắng. <a href='javascript: history.go(-1)'>Trở lại</a>";
 		exit;
    		} 
@@ -79,7 +79,7 @@ và có từ 6 đến 32 ký tự <a href='javascript: history.go(-1)'>Trở l�
 		$addmember1=$db->themuser($id,$ho,$ten,$username,$email,$pass_signup,$birthdate,$gender,$quyen);
 		$db->query($addmember1);
 		if ($addmember1)
-			echo "Quá trình đăng ký thành công.";
+            echo "<script>alert('Đăng ký thành công !');window.location='?menu=quanlygiaovien'</script>";
 		else
 			echo "Có lỗi xảy ra trong quá trình đăng ký. <a href='dangky.php'>Thử lại</a>";
 	}

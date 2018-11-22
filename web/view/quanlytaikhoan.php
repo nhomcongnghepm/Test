@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Admin</title>
 </title>
-    	<link href="../assets/style.css" media="screen" rel="stylesheet" type="text/css" />
+    	<link href="../assets/style2.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="../assets/hocsinh/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/hocsinh/css/sinhvien.css">
     <script type="text/javascript" src="../assets/hocsinh/js/jquery-3.1.1.min.js"></script>

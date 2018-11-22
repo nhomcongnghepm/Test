@@ -14,10 +14,10 @@ if (isset($_POST['login'])) {
 		 if ($_POST['username'] == null) {
         echo("* Bạn hãy nhập tên đăng nhập <br /> <a href='javascript: history.go(-1)'>Trở lại</a>");
 		
-    	} else if (strlen('username') < 7) {
+    	} else if (strlen($username) < 7) {
         echo "* Tên đăng nhập phải lớn hơn 7 kí tự <a href='javascript: history.go(-1)'>Trở lại</a>";
 		exit;
-		 } else if (preg_match('/\W/', 'username')) {
+		 } else if (preg_match('/\W/', $username)) {
         echo "* Tên đăng nhập không được chứa ký tự đặc biệt và khoảng trắng. <a href='javascript: history.go(-1)'>Trở lại</a>";
 		exit;
    		} 
@@ -79,7 +79,7 @@ và có từ 6 đến 32 ký tự <a href='javascript: history.go(-1)'>Trở l�
 			$addmember=$db->themuser($admin,$ho,$ten,$username,$email,$pass_signup,$birthdate,$gender,$quyen);
             $db->query($addmember);
             if ($addmember)
-                echo "Quá trình đăng ký thành công.";
+                echo "<script>alert('Đăng ký thành công !');window.location='?menu=quanlytaikhoan'</script>";
             else echo "Có lỗi xảy ra trong quá trình đăng ký. <a href='dangky_pdt.php'>Thử lại</a>";
         }
         else
@@ -87,7 +87,7 @@ và có từ 6 đến 32 ký tự <a href='javascript: history.go(-1)'>Trở l�
             $addmember1=$db->themuser($pdt,$ho,$ten,$username,$email,$pass_signup,$birthdate,$gender,$quyen);
             $db->query($addmember1);
             if ($addmember1)
-                echo "Quá trình đăng ký thành công.";
+                echo "<script>alert('Đăng ký thành công !');window.location='?menu=quanlytaikhoan'</script>";
             else echo "Có lỗi xảy ra trong quá trình đăng ký. <a href='dangky_pdt.php'>Thử lại</a>";
         }
 		}

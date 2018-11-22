@@ -10,11 +10,10 @@ if(isset($_POST["edit"]))
         $hour = $_POST['hour'];
         $minutes = $_POST['minutes'];
         $seconds = $_POST['seconds'];
-        $giothi = $hour . ':' . $minutes . ':' . $seconds;
-		$timer=$_POST['timer'];
+        $giothi = $hour .'h'. ':' . $minutes .'p'. ':' . $seconds.'s';
         $kiemtra = checkdate($month,$day,$year);
-
-        if ($_POST["tende"] == null || $_POST["day"] == day || $_POST["month"] == month || $_POST["year"] == year || $_POST["hour"] == hour || $_POST["minutes"] == minutes || $_POST["seconds"] == seconds || $_POST["timer"] == null)
+        $date=date("d/m/y");
+        if ($_POST["tende"] == null || $_POST["day"] == day || $_POST["month"] == month || $_POST["year"] == year || $_POST["hour"] == hour || $_POST["minutes"] == minutes || $_POST["seconds"] == seconds)
         {
             echo "* Bạn vui lòng nhập đầy đủ thông tin";
             exit;
@@ -23,7 +22,7 @@ if(isset($_POST["edit"]))
                 exit;
             } else {
                 $ngaythi = $day . '/' . $month . '/' . $year;
-				 $sql=$db->capnhatdethi($tende,$ngaythi,$giothi,$timer,$idmade);
+				 $sql=$db->capnhatdethi($tende,$ngaythi,$giothi,$idmade,$date);
                  $a=$db->query($sql);
                 if($a) {
                     echo "<script>alert('Cập nhật thành công!');window.location='?menu=dethi_list'</script>";

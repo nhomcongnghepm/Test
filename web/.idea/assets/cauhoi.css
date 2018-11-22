@@ -1,0 +1,27 @@
+.style1 {
+	font-size: 18px;
+	font-weight: bold;
+	color: #000;
+}
+.style2 { padding:10px 0px 10px 0px; color: #808000}
+.ten_field{
+padding:10px;
+}
+.form1 {
+	margin:0px 0px 0px 20px;
+}
+#cauhoi_news{
+	margin:20px 50px auto;
+	border: 1px solid #C1DAD7;
+
+	
+}
+.tbltitle
+{
+	margin:0px 10px;	
+	
+}
+.ma_de
+{
+	width:500px;
+}

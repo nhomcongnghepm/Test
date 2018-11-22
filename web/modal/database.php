@@ -401,10 +401,10 @@
 		}
 	}
 
-	public function capnhatdethi($tende,$ngaythi,$giothi,$timer,$idmade){
+	public function capnhatdethi($tende,$ngaythi,$giothi,$idmade,$date){
             if ($this->cn)
             {
-                $sql="UPDATE tbl_dethi SET `tende` ='".$tende."',`ngaythi` ='".$ngaythi."',`giothi` ='".$giothi."',`timer` ='".$timer."'where made='".$idmade."'";
+                $sql="UPDATE tbl_dethi SET `tende` ='".$tende."',`ngaythi` ='".$ngaythi."',`giothi` ='".$giothi."',`ngaydang` ='".$date."'where made='".$idmade."'";
                 return $sql;
             }
     }
@@ -417,10 +417,10 @@
 		}
 	}
 
-	public function themdethi($ngaythi,$giothi,$day,$tacgia,$a){
+	public function themdethi($ngaythi,$giothi,$tacgia,$day,$a){
             if ($this->cn)
             {
-                $sql="INSERT INTO tbl_dethi(made,tende,ngaythi,giothi,tacgia,ngaydang,trangthai) VALUE('','$_POST[tende]','$ngaythi','$giothi','$tacgia','$day',$a)";
+                $sql="INSERT INTO tbl_dethi(made,tende,ngaythi,giothi,tacgia,ngaydang,trangthai) VALUE('','$_POST[tende]','$ngaythi','$giothi','$tacgia','$day','$a')";
                 return $sql;
             }
     }

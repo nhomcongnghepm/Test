@@ -2,10 +2,10 @@
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 19, 2018 at 03:48 PM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.11
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th10 21, 2018 lúc 07:11 PM
+-- Phiên bản máy phục vụ: 10.1.35-MariaDB
+-- Phiên bản PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `thitracnghiem`
+-- Cơ sở dữ liệu: `thitracnghiem`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `giaovien`
+-- Cấu trúc bảng cho bảng `giaovien`
 --
 
 CREATE TABLE `giaovien` (
@@ -42,18 +42,18 @@ CREATE TABLE `giaovien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `giaovien`
+-- Đang đổ dữ liệu cho bảng `giaovien`
 --
 
 INSERT INTO `giaovien` (`id_gv`, `ho`, `ten`, `user`, `password`, `email`, `birthdate`, `Gioitinh`, `bomon`, `quyen`) VALUES
-(20100042, 'Phan Tấn', 'Bình', 'binh123', '8bd1c0165694ac2669228e73843d26', 'binh@gmail.com', '16-2-2005', 'Nam', 'Toán', 'Giáo Viên'),
-(20100043, 'Ngô Bá Vĩnh ', 'Hiển', 'hien123', '2c7bc5665e3482c031f9a928038b30', 'hien123@gmail.com', '14-3-2004', 'Nam', 'Hóa', 'Giáo Viên'),
-(20100044, 'Nguyễn Thanh Trường', 'Giang', 'giang123', '4e031bb475963ba73ebf552f78ae1c', 'giang@gmail.com', '16-2-2003', 'Nam', 'Vật lý', 'Trưởng bộ môn');
+(20100042, 'Phan Tấn', 'Bình', 'binh123', '8bd1c0165694ac2669228e73843d26', 'tanbinh@gmail.com', '3-4-1992', 'Nam', 'Toán', 'Giáo Viên'),
+(20100044, 'Nguyễn Thanh Trường', 'Giang', 'giang123', '4e031bb475963ba73ebf552f78ae1c', 'giang@gmail.com', '16-2-2003', 'Nam', 'Vật lý', 'Trưởng bộ môn'),
+(20100046, 'Nguyễn', 'Thúy Vi', 'vi12345', '615b746283ad0a3d19ee42a0bd9403', 'thuyvi@gmail.com', '6-9-1990', 'Nữ', 'Toán', 'Trưởng bộ môn');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ketquathi`
+-- Cấu trúc bảng cho bảng `ketquathi`
 --
 
 CREATE TABLE `ketquathi` (
@@ -68,17 +68,10 @@ CREATE TABLE `ketquathi` (
   `tongdiem` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `ketquathi`
---
-
-INSERT INTO `ketquathi` (`stt`, `ho`, `ten`, `birthdate`, `toan`, `ly`, `hoa`, `anh`, `tongdiem`) VALUES
-(1, 'Thạch Cảnh ', 'Bình', '5-3-1999', 0, 0, 0, 0, 0);
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sinhvien`
+-- Cấu trúc bảng cho bảng `sinhvien`
 --
 
 CREATE TABLE `sinhvien` (
@@ -95,26 +88,16 @@ CREATE TABLE `sinhvien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `sinhvien`
+-- Đang đổ dữ liệu cho bảng `sinhvien`
 --
 
 INSERT INTO `sinhvien` (`id`, `ho`, `ten`, `user`, `password`, `email`, `birthdate`, `Gioitinh`, `tenlop`, `quyen`) VALUES
-(101000021, 'Thạch Cảnh', 'Bình', 'canhbinh12', 'c69f340ced75efd4373913b8ffcee96d2dd717ac', 'canhbinh@gmail.com', '17-3-2006', 'Nam', '12A1', 'Học Sinh'),
-(101000025, 'Đào Ngọc Gia ', 'Anh', 'giaanh123', 'bd753b80609e4f10d98a4655e55a1c296feb797b', 'giaanh@gmail.com', '2-2-1994', 'Nam', '12A6', 'Học Sinh'),
-(101000026, 'Nguyễn Vinh ', 'Hiển', 'hien123', '2c7bc5665e3482c031f9a928038b301e068e6413', 'hien@gmail.com', '2-2-1993', 'Nam', '12A7', 'Học Sinh'),
-(101000027, 'Đoàn Tô Thanh', 'Bình', 'thanhbinh1', '361fce041655af29b7fd5106d77b1faedd1eba5c', 'thanhbinh@gmail.com', '10-7-1997', 'Nam', '12A8', 'Học Sinh'),
-(101000028, 'Ma Đình ', 'Cường', 'cuong123', 'd53b988795aae0764a17fb8a95f40d03c8048436', 'cuong@gmail.com', '1-1-1994', 'Nam', '12A9', 'Học Sinh'),
-(101000029, 'Trần Văn', 'Bảo', 'vanbao123', '7b34fb80623ffd9d806dcae10346b5f83a9da8cf', 'vanbao@gmail.com', '1-1-1990', 'Nam', '12A8', 'Học Sinh'),
-(101000030, 'Nguyễn Hà Xuân', 'Cường', 'xuancuong1', 'ac30ae7962a3a5325b60f8defaf2e56e4a95a14a', 'xuancuong@gmail.com', '1-1-1990', 'Nam', '12A8', 'Học Sinh'),
-(101000031, 'Đặng Vũ Nhật ', 'Anh', 'anh123', '1e5bcc028d318a1a4780fa8af78e65e22c4bcde5', 'anh@gmail.com', '4-4-1993', 'Nam', '12A8', 'Học Sinh'),
-(101000032, 'Lê Thị ', 'Linh', 'linh123', 'ed3c9dba8ca23a33af1342082544922ee774e85d', 'Linh123@gmail.com', '4-4-1993', 'Nam', '12A8', 'Học Sinh'),
-(101000033, 'Huỳnh Nhật ', 'Hòa', 'hoa123', '314576f49db3e92c639ec86f1d951620ef45c34d', 'hoa123@gmail.com', '2-4-1993', 'Nam', '12A10', 'Học Sinh'),
-(101000034, 'Lê Văn ', 'Hiếu', 'hieu123', 'dc1c013e029c385578f921f9b49f0641fffd8b98', 'Hieu@gmail.com', '1-2-1992', 'Nam', '12a4', 'Học Sinh');
+(101000021, 'Thạch Cảnh', 'Bình', 'canhbinh12', 'c69f340ced75efd4373913b8ffcee96d2dd717ac', 'canhbinh@gmail.com', '17-3-2006', 'Nam', '12A1', 'Học Sinh');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_cauhoi`
+-- Cấu trúc bảng cho bảng `tbl_cauhoi`
 --
 
 CREATE TABLE `tbl_cauhoi` (
@@ -129,30 +112,55 @@ CREATE TABLE `tbl_cauhoi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_cauhoi`
+-- Đang đổ dữ liệu cho bảng `tbl_cauhoi`
 --
 
 INSERT INTO `tbl_cauhoi` (`ma_ch`, `noidung`, `lc1`, `lc2`, `lc3`, `lc4`, `dapan`, `made`) VALUES
-(64, '<p>đ&aacute;</p>', 'áda', 'ádas', 'ádas', 'áda', 'áda', 46),
-(65, '<p>&aacute;dasd</p>', 'adasd', 'ádasd', 'ádasd', 'ádas', 'adasd', 46),
-(66, '<p>&aacute;dsada</p>', 'ádasd', 'ádasd', 'ádasd', 'ádasd', 'ádasd', 46),
-(67, '<p>&aacute;dsada</p>', 'đasa', 'ádas', 'đâsdas', 'đâsds', 'đasa', 46),
-(68, '<p>&aacute;dasd</p>', 'ádasdas', 'ádasd', 'ấdsad', 'ádasd', 'ádasdas', 46),
-(69, '<p>&aacute;dsad</p>', 'ádas', 'ádasd', 'ádas', 'ádas', 'ádas', 46),
-(70, '<p>&aacute;dasd</p>', 'ádsa', 'ádas', 'ádas', 'ádas', 'ádsa', 46),
-(71, '<p>&aacute;&aacute;dasd</p>', 'ád', 'áda', 'ád', 'ád', 'ád', 46),
-(72, '<p>&aacute;dsa</p>', 'ádasd', 'ádas', 'ádasd', 'ádad', 'ádasd', 46),
-(73, '<p>&aacute;dadas</p>', 'ádasda', 'ádasd', 'ádasdasd', 'ádadasda', 'ádasda', 46),
-(74, '<p>d&acirc;sda</p>', 'ádasda', 'sdasdada', 'ádad', 'ádas', 'sdasdada', 46),
-(75, '<p>&aacute;dsadas</p>', 'ádasdas', 'đâsd', 'ádasas', 'dá', 'dá', 46),
-(76, '<p>&aacute;dasdasd</p>', 'ádasd', 'ádasda', 'sdada', 'ádas', 'ádasd', 46),
-(77, '<p>đ&acirc;sd</p>', 'ád', 'ádas', 'ádasd', 'ád', 'ád', 46),
-(78, '<p>&aacute;das</p>', 'ádasd', 'ádasd', 'ádasd', 'ádasd', 'ádasd', 46);
+(80, '<p>&nbsp;Trong kh&ocirc;ng gian với hệ tọa độ Oxyz , mặt phẳng (P) chứa trục Oy v&agrave; đi qua điểm M(1;1; -1) c&oacute; phương tr&igrave;nh l&agrave; :</p>', 'x + z = 0', 'x - y = 0', 'x - z =0', 'y + z =0', 'x + z = 0', 58),
+(81, '<p>Cho số phức z =(1-2i)<sup>2</sup> , số phức li&ecirc;n hợp của z l&agrave;</p>', '3 - 4i', '-3 + 4i  ', '-3 - 4i', '1 + 2i', '-3 + 4i  ', 58),
+(82, '<p>&nbsp;Trong kh&ocirc;ng gian với hệ tọa độ Oxyz , cho ba điểm A(1;0;0), B(0;1;0), C(0;0; 2)&nbsp; . V&eacute;ctơ n&agrave;o dưới đ&acirc;y l&agrave; v&eacute;ctơ ph&aacute;p tuyến của mặt phẳng (ABC)</p>', 'n= (2;2; -1)', 'n= (-2;2;1)', 'n= (2;-2;-1)', 'n= (1;1;-2)', 'n= (2;2; -1)', 58),
+(83, '<p>&nbsp;H&igrave;nh n&oacute;n c&oacute; thể t&iacute;ch bằng 16 pi v&agrave; b&aacute;n k&iacute;nh đ&aacute;y bằng 4. Diện t&iacute;ch xung quanh của h&igrave;nh n&oacute;n đ&atilde; cho bằng :</p>', '12 ', '24', '20', '10', '20', 58),
+(84, '<p>&nbsp;Diện t&iacute;ch của h&igrave;nh phẳng giới hạn bởi đồ thị h&agrave;m số y = 3x<sup>2</sup>&nbsp;+ 1, trục ho&agrave;nh v&agrave; hai đường thẳng x = 0 , x = 2 l&agrave;&nbsp;</p>', 'S = 8', 'S = 12', 'S = 10', 'S = 9', 'S = 10', 58),
+(85, '<p>&nbsp;Thầy An c&oacute; 200 triệu đồng gửi ng&acirc;n h&agrave;ng đ&atilde; được hai năm với l&atilde;i suất kh&ocirc;ng đổi 0,45%/th&aacute;ng. Biết rằng số tiền l&atilde;i sau mỗi th&aacute;ng được nhập v&agrave;o vốn ban đầu để t&iacute;nh l&atilde;i cho th&aacute;ng tiếp theo. Nh&acirc;n dịp đầu Xu&acirc;n một h&atilde;ng &ocirc; t&ocirc; c&oacute; chương tr&igrave;nh khuyễn mại trả g&oacute;p 0% trong 12 th&aacute;ng. Thầy quyết định lấy to&agrave;n bộ số tiền đ&oacute; (cả vốn lẫn l&atilde;i) để mua một chiếc &ocirc; t&ocirc;&nbsp; với gi&aacute; 300 triệu đồng, số tiền c&ograve;n nợ thầy sẽ chia đều trả g&oacute;p trong 12 th&aacute;ng. Số tiền thầy An phải trả g&oacute;p h&agrave;ng th&aacute;ng gần với số&nbsp; n&agrave;o nhất trong c&aacute;c số sau</p>', ' 6.547.000 đồng', ' 6.345.000 đồng', ' 6.432.000 đồng', ' 6.437.000 đồng', ' 6.437.000 đồng', 58),
+(86, '<p>&nbsp;Gi&aacute; trị lớn nhất của h&agrave;m số y = 2cos<sup>2</sup>x +sinx +1 bằng&nbsp;</p>', '2', '11/4', '1', '9/4', '9/', 58),
+(87, '<p>&nbsp;T&iacute;ch tất cả c&aacute;c nghiệm của phương tr&igrave;nh (1+ log<sub>2</sub>x)log<sub>4</sub>2x = 2 bằng</p>', '1/8', '1', '1/4', '1/2', '1/4', 58),
+(88, '<p>&nbsp;Trong kh&ocirc;ng gian với hệ tọa độ Oxyz , cho hai điểm A(1; -3;0), B(-5;1;2) AB . Phương tr&igrave;nh mặt phẳng trung trực của đoạn thẳng AB l&agrave;&nbsp;</p>', '-3x - 2y + z - 5 = 0', '-3x - 2y - z + 5 = 0', '3x + 2y - z + 5 = 0', '-3x + 2y - z + 1 = 0', '-3x - 2y - z + 5 = 0', 58),
+(89, '<p>Gọi z<sub>1</sub> ,<sub>&nbsp;</sub>z<sub>2&nbsp;</sub>l&agrave; c&aacute;c nghiệm phức của phương tr&igrave;nh 2z<sup>2</sup> - 2z&nbsp;+5 = 0 . M&ocirc; đun của số phức w = 4 - z<sub>1</sub><sup>2</sup> + z<sub>2</sub><sup>2</sup> bằng</p>', '3', '5', '15', '25', '5', 58),
+(90, '<p>C&oacute; bao nhi&ecirc;u gi&aacute; trị nguy&ecirc;n dương của tham số m để phương tr&igrave;nh 4<sup>1+x</sup> + 4<sup>1-x</sup> = (6 - m)(2<sup>2+x</sup> - 2<sup>2-x</sup>) c&oacute; nghiệm thuộc đoạn [0;1] ?</p>', '4', '3', '1', '2', '3', 58),
+(91, '<p>Cho h&agrave;m số f(x) = x<sup>3</sup> - 3x +1. Số nghiệm của phương tr&igrave;nh [f(x)]<sup>3</sup> -3f(x) + 1 = 0 l&agrave;</p>', '3', '7', '5', '6', '7', 58),
+(92, '<p>C&oacute; bao nhi&ecirc;u gi&aacute; trị nguy&ecirc;n của tham số m để h&agrave;m số y=1 /3|x<sup>3</sup>| -(3 - m)x<sup>2</sup> +(3m +7)|x| -1 c&oacute; 5 điểm cực trị</p>\r\n<p>&nbsp;</p>', '3', '5', '2', '4', '3', 58),
+(93, '<p>Cho phương tr&igrave;nh mx<sup>2</sup> + 4pi<sup>2</sup> = 4pi<sup>2</sup>cos x .&nbsp;&nbsp;Tổng tất cả c&aacute;c gi&aacute; trị nguy&ecirc;n của tham số m để phương tr&igrave;nh c&oacute; nghiệm thuộc khoảng [0;pi/ 2] bằng</p>', '-54', '35', '-35', '51', '-54', 58),
+(94, '<p>Cho z<sub>1</sub> , z<sub>2</sub> l&agrave; c&aacute;c số phức thỏa m&atilde;n |z<sub>1</sub>| = |z<sub>2</sub>| =1&nbsp; v&agrave; |z<sub>1</sub>&nbsp;- 2z<sub>2</sub>| =&radic;6</p>', 'P = 2', 'P = 4', 'P = 3', 'P = 1', 'P = 2', 58),
+(95, '<p>&nbsp;Trong kh&ocirc;ng gian với hệ tọa độ Oxyz , cho mặt phẳng (P ): x + 2y + z -8 = 0 v&agrave; điểm ba điểm A(0; -1;0)&nbsp; , B(2;3;0) , C(0; -5;2)&nbsp; . Gọi M( x<sub>0</sub> , y<sub>0 </sub>, z<sub>0</sub>)&nbsp; l&agrave; điểm thuộc mặt phẳng (P) sao cho MA = MB = MC . Tổng S = x<sub>0</sub> + y<sub>0</sub> + z<sub>0</sub> bằng&nbsp;</p>', '-12', '5', '12', '9', '9', 58),
+(96, '<p>&nbsp;Gọi S l&agrave; tổng tất cả c&aacute;c gi&aacute; trị của tham số m để h&agrave;m số y =x<sup>3</sup> +(m<sup>2</sup> +1)x -m +1&nbsp;&nbsp;c&oacute;&nbsp; gi&aacute; trị lớn nhất tr&ecirc;n đoạn [0;1] bằng 9. Gi&aacute; trị của S bằng<span style=\"font-size: 8.33333px;\"><br /></span></p>', 'S = 5', 'S = -1', 'S = -5', 'S = 1', 'S = 1', 58),
+(97, '<p>&nbsp;Cho h&igrave;nh ch&oacute;p S. ABCD c&oacute; đ&aacute;y l&agrave; h&igrave;nh chữ nhật ABCD, biết AB = 2,&nbsp; AD = 3 , SD = 14 . Tam gi&aacute;c SAB c&acirc;n tại S v&agrave; nằm trong mặt phẳng vu&ocirc;ng g&oacute;c với mặt đ&aacute;y. Gọi M l&agrave; trung điểm của SC . C&ocirc;sin của g&oacute;c tạo bởi hai mặt phẳng (SBD) v&agrave; (MBD) bằng&nbsp;</p>', '3/5', '43/61', '5/7', '2/3', '43/61', 58),
+(98, '<p>&nbsp;Trong kh&ocirc;ng gian với hệ tọa độ Oxyz , cho mặt phẳng (P ): x +y - z -1 = 0 v&agrave; điểm A(1;0;0) thuộc (P) . Đường thẳng&nbsp;&Delta; đi qua A nằm trong mặt phẳng (P) v&agrave; tạo với trục Oz một g&oacute;c nhỏ nhất. Gọi M(x<sub>0</sub>; y<sub>0</sub>; z<sub>0</sub>)&nbsp;l&agrave; giao điểm của đường thẳng&nbsp;&Delta; với mặt phẳng (Q ): 2x + y -2z + 1 = 0 . Tổng S = x<sub>0</sub> + <sub></sub>y<sub>0</sub> + z<sub>0</sub> bằng</p>', '-5', '12', '-2', '13', '13', 58),
+(99, '<p>Trong kh&ocirc;ng gian với hệ tọa độ Oxyz , cho mặt phẳng (&alpha;) : x + y +z - 4 = 0 ,mặt cầu (S) : x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup> - 8x - 6y - 6z + 18 = 0 v&agrave; điểm M(1;1;2) thuộc&nbsp;(&alpha;) .Đường thẳng d đi qua M nằm trong mặt phẳng (&alpha;)&nbsp; v&agrave; cắt mặt cầu (S) tại hai điểm ph&acirc;n biệt A, B sao cho d&acirc;y cung AB c&oacute; độ d&agrave;i nhỏ nhất. Đường thẳng d c&oacute; một v&eacute;ctơ chỉ phương l&agrave;</p>', 'u1 = (2;-1;-1)', 'u3 = (1;1;-2)', 'u2 = (1;-2;1)', 'u4 = (0;1;-1)', 'u2 = (1;-2;1)', 58),
+(100, '<p>&nbsp;Một hộp đựng 15 c&aacute;i thẻ được đ&aacute;nh số từ 1 đến 15. R&uacute;t ngẫu nhi&ecirc;n ba thẻ, x&aacute;c suất để tổng ba số ghi tr&ecirc;n ba thẻ được r&uacute;t chia hết cho 3 bằng&nbsp;</p>', '25/91', '32/91', '31/91', '11/27', '31/91', 58),
+(101, '<p>&nbsp;Cho h&agrave;m số f(x) = x<sup>3</sup> + 3x<sup>2</sup> + mx + 1. Gọi S l&agrave; tổng tất cả gi&aacute; trị của tham số m để đồ thị h&agrave;m số y = f(x) cắt đường thằng y = 1 tại ba điểm ph&acirc;n biệtAA(0;1), B, C sao cho c&aacute;c tiếp tuyến của đồ thị h&agrave;m số y = f(x)&nbsp; tại B, C vu&ocirc;ng g&oacute;c với nhau. Gi&aacute; trị của S bằng&nbsp;</p>', '11/5', '9/2', '9/5', '9/4', '9/4', 58),
+(102, '<p>Cho h&agrave;m số y = f(x) l&agrave; h&agrave;m số chẵn v&agrave; li&ecirc;n tục tr&ecirc;n đoạn [ -&prod;; &prod;]&nbsp; thỏa m&atilde;n&nbsp;<sup>&prod;</sup>&int;<sub>0</sub>f(x)dx = 2018 . T&iacute;ch ph&acirc;n&nbsp;<sup>&prod;</sup>&int;<span style=\"font-size: 8.33333px;\">-&prod;&nbsp;f(x)/ (2018<sup>x</sup> +1 )dx bằng<br /></span></p>', '2018', '4036', '0', '1/2018', '2018', 58),
+(103, '<p>&nbsp;Họ nguy&ecirc;n h&agrave;m của h&agrave;m số f(x) = c<sup>x</sup> + c<sup>-x</sup> l&agrave;</p>', 'c^x + c^-x + C', 'c^x - c^-x + C', 'c^-x - c^x + C', '2c^-x + C', 'c^x - c^-x + C', 58),
+(104, '<p>&nbsp;Cho tứ diện OABC c&oacute; OA, OB, OC đ&ocirc;i một vu&ocirc;ng g&oacute;c v&agrave; OA = a, OB = b, OC = c&nbsp; . Thể t&iacute;ch tứ diện OABC l&agrave;&nbsp;</p>', 'V = (abc)/12', 'V = (abc)/4', 'V = (abc)/3', 'V= (abc)/6', 'V= (abc)/6', 58),
+(105, '<p>&nbsp;Với số thực dương b bất kỳ. Đ&aacute;p &aacute;n n&agrave;o dưới đ&acirc;y đ&uacute;ng về biến đổi lg10b<sup>2</sup>&nbsp;?&nbsp;</p>', '1 + 2lgb', '2+ lgb', '1 + 10logb', '1 + 2logb', '1 + 2lgb', 58),
+(106, '<p>lim<sub>x -&gt; -1</sub>[(x<sup>2</sup> -2x -3)/(x+1) ] bằng</p>', '0', '-4', '-3', '1', '-4', 58),
+(107, '<p><span>Một nh&oacute;m c&oacute; 5 nam v&agrave; 3 nữ. Chọn ra 3 người sao cho trong đ&oacute; c&oacute; &iacute;t nhất 1 nữ. Hỏi c&oacute; bao nhi&ecirc;u c&aacute;ch</span></p>', '40', '43', '44', '46', '46', 58),
+(108, '<p><span>Một nh&oacute;m c&ocirc;ng nh&acirc;n gồm 15 nam v&agrave; 5 nữ. Người ta muốn chọn từ nh&oacute;m ra 5 người để lập th&agrave;nh một tổ c&ocirc;ng t&aacute;c sao cho phải c&oacute; 1 tổ trưởng nam, 1 tổ ph&oacute; nam v&agrave; c&oacute; &iacute;t nhất 1 nữ. Hỏi c&oacute; bao nhi&ecirc;u c&aacute;ch lập tổ c&ocirc;ng t&aacute;c</span></p>', '111300', '111200', '100500', '111600', '111300', 58),
+(109, '<p><span>Từ 20 c&acirc;u hỏi trắc nghiệm gồm 9 c&acirc;u dễ, 7 c&acirc;u trung b&igrave;nh v&agrave; 4 c&acirc;u kh&oacute; người ta chọn ra 10 c&acirc;u để l&agrave;m đề kiểm tra sao cho phải c&oacute; đủ cả 3 loại dễ, trung b&igrave;nh v&agrave; kh&oacute;. Hỏi c&oacute; thể lập được bao nhi&ecirc;u đề kiểm tra.</span></p>', '176451', '176420', '165412', '182120', '176451', 58),
+(110, '<p><span>Trong c&aacute;c khẳng định sau, khẳng định n&agrave;o đ&uacute;ng?</span></p>', 'Qua 2 điểm phân biệt có duy nhất một mặt phẳng', 'Qua 3 điểm phân biệt bất kì có duy nhất một mặt phẳng', 'Qua 3 điểm không thẳng hàng có duy nhất một mặt phẳng', ' Qua 4 điểm phân biệt bất kì có duy nhất một mặt phẳng', 'Qua 3 điểm không thẳng hàng có duy nhất một mặt phẳng', 58),
+(111, '<p><span>C&oacute; bao nhi&ecirc;u mặt phẳng song song với mặt phẳng (P) : x + y +z = 0 v&agrave; tiếp x&uacute;c với mặt cầu (S) : x<span><sup>2</sup> +&nbsp; y<span><sup>2</sup><span>+ z<span><sup>2</sup><span> - 2x - 2y -2z = 0</span></span></span></span></span></span></p>', '1', 'vô số', '4', '2', '1', 58),
+(112, '<p>T&igrave;m tất cả gi&aacute; trị thực của tham số m sao cho h&agrave;m số y = (tan x - 2)/ (tan x -m) đồng biến tr&ecirc;n khoảng (0;&prod;/4)</p>', 'm<= 0', '1<= m <2', 'm<=0 hoặc 1<= m <2', 'm>=2', 'm<=0 hoặc 1<= m <2', 58),
+(113, '<p>Phương tr&igrave;nh ch&iacute;nh tắc của parabol m&agrave; khoảng c&aacute;ch từ đỉnh tới ti&ecirc;u điểm bằng 3/4 l&agrave;<br /><br /></p>', 'y^2 = 3/4x', 'y^2 = 6x', 'y^2 = 3x', 'y^2 = 3/2x', 'y^2 = 3/2x', 58),
+(114, '<p>Một điểm A thuộc Parabol (P): y<sup>2</sup> = 4x . Nếu khoảng c&aacute;ch từ A đến đường chuẩn bằng 5 th&igrave; khoảng c&aacute;ch từ A đến trục ho&agrave;nh bằng bao nhi&ecirc;u ?</p>', '4', '3', '5', '8', '4', 58),
+(115, '<p>Cho điểm A(3 ; 0) , gọi M l&agrave; một điểm tuỳ &yacute; tr&ecirc;n (P) : y<sup>2</sup> = x . T&igrave;m gi&aacute; trị nhỏ nhất của AM</p>', '4', '9/2', 'sqrt(11)/2', '5/2', 'sqrt(11)/2', 58),
+(116, '<p>Cho Parabol (P) c&oacute; phương tr&igrave;nh ch&iacute;nh tắc y<sup>2</sup>= 4x . Một đường thẳng đi qua ti&ecirc;u điểm F của (P) cắt (P) tại 2 điểm A v&agrave; B, Nếu A(1 ; -2) th&igrave; tọa độ của B bằng bao nhi&ecirc;u ?</p>', '(1;2)', '(4;4)', '(-1;2)', '(2;2)', '(1;2)', 58),
+(117, '<p>Đường Hyperbol (x<sup>2</sup>/20) - (y<sup>2</sup>/16) = 1&nbsp;c&oacute; ti&ecirc;u cự bằng :</p>', '12', '2', '4', '6', '12', 58),
+(118, '<p>Đường thẳng qua M(1 ; 1) v&agrave; cắt el&iacute;p (E) : 4x<sup>2</sup>+ 9y<sup>2</sup>&nbsp;= 36 tại hai điểm M1 , M2 sao cho MM1 = MM2 c&oacute; phương tr&igrave;nh l&agrave;</p>', '2x + 4y – 5 = 0', '4x + 9y – 13 = 0', 'x + y + 5 = 0', '16x – 15y + 100 = 0', '4x + 9y – 13 = 0', 58),
+(119, '<p>Khoảng c&aacute;ch từ điểm M(-1;1) đến đường thẳng 3x &ndash; 4y &ndash; 3 = 0 bằng bao nhi&ecirc;u?</p>', '2/5', '2', '4/5', '4/25', '2', 58);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_dethi`
+-- Cấu trúc bảng cho bảng `tbl_dethi`
 --
 
 CREATE TABLE `tbl_dethi` (
@@ -162,33 +170,20 @@ CREATE TABLE `tbl_dethi` (
   `giothi` varchar(10) NOT NULL,
   `tacgia` varchar(50) CHARACTER SET utf8 NOT NULL,
   `ngaydang` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `timer` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `lanthi` int(10) NOT NULL,
   `trangthai` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_dethi`
+-- Đang đổ dữ liệu cho bảng `tbl_dethi`
 --
 
-INSERT INTO `tbl_dethi` (`made`, `tende`, `ngaythi`, `giothi`, `tacgia`, `ngaydang`, `timer`, `lanthi`, `trangthai`) VALUES
-(46, 'Toán', '3/3/2018', '4:3:3', 'Nguyễn Thanh Trường Giang', '17/11/18', '', 0, 'Đã duyệt'),
-(47, 'Tiếng Anh', '4/3/2019', '3h:2p:3s', 'Nguyễn Thanh Trường Giang', '17/11/18', '', 0, ''),
-(48, 'Hóa', '1/1/2018', '0h:0p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', '', 0, ''),
-(49, 'ád', '1/1/2018', '0h:0p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', '', 0, ''),
-(50, 'ádas', '1/1/2018', '0h:1p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', '', 0, ''),
-(51, 'ádasd', '2/1/2018', '0h:1p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', '', 0, ''),
-(52, 'bh', '1/1/2018', '1h:0p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', '', 0, ''),
-(53, 'ádasd', '1/1/2018', '0h:1p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', '', 0, ''),
-(54, 'đâs', '1/1/2018', '0h:0p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', '', 0, ''),
-(55, 'ádsa', '1/1/2018', '0h:0p:1s', 'Nguyễn Thanh Trường Giang', '19/11/18', '', 0, ''),
-(56, 'đáa', '1/1/2019', '1h:0p:1s', 'Nguyễn Thanh Trường Giang', '19/11/18', '', 0, ''),
-(57, 'đâsjdlk', '1/1/2018', '0h:0p:0s', 'Nguyễn Thanh Trường Giang', '19/11/18', '', 0, '');
+INSERT INTO `tbl_dethi` (`made`, `tende`, `ngaythi`, `giothi`, `tacgia`, `ngaydang`, `trangthai`) VALUES
+(58, 'Toán', '22/11/2018', '12h:40p:0s', 'Phan Tấn Bình', '22/11/18', 'Đã duyệt');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Cấu trúc bảng cho bảng `user`
 --
 
 CREATE TABLE `user` (
@@ -204,108 +199,98 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Đang đổ dữ liệu cho bảng `user`
 --
 
 INSERT INTO `user` (`id`, `ho`, `ten`, `user`, `email`, `password`, `birthdate`, `Gioitinh`, `quyen`) VALUES
 ('101000021', 'Thạch Cảnh', 'Bình', 'canhbinh12', 'canhbinh@gmail.com', 'c69f340ced75efd4373913b8ffcee96d2dd717ac', '17-3-2006', 'Nam', 'Học Sinh'),
-('101000025', 'Đào Ngọc Gia ', 'Anh', 'giaanh123', 'giaanh@gmail.com', 'bd753b80609e4f10d98a4655e55a1c296feb797b', '2-2-1994', 'Nam', 'Học Sinh'),
-('101000026', 'Nguyễn Vinh ', 'Hiển', 'hien123', 'hien@gmail.com', '2c7bc5665e3482c031f9a928038b301e068e6413', '2-2-1993', 'Nam', 'Học Sinh'),
-('101000027', 'Đoàn Tô Thanh', 'Bình', 'thanhbinh123', 'thanhbinh@gmail.com', '361fce041655af29b7fd5106d77b1faedd1eba5c', '10-7-1997', 'Nam', 'Học Sinh'),
-('101000028', 'Ma Đình ', 'Cường', 'cuong123', 'cuong@gmail.com', 'd53b988795aae0764a17fb8a95f40d03c8048436', '1-1-1994', 'Nam', 'Học Sinh'),
-('101000029', 'Trần Văn', 'Bảo', 'vanbao123', 'vanbao@gmail.com', '7b34fb80623ffd9d806dcae10346b5f83a9da8cf', '1-1-1990', 'Nam', 'Học Sinh'),
-('101000030', 'Nguyễn Hà Xuân', 'Cường', 'xuancuong123', 'xuancuong@gmail.com', 'ac30ae7962a3a5325b60f8defaf2e56e4a95a14a', '1-1-1990', 'Nam', 'Học Sinh'),
-('101000031', 'Đặng Vũ Nhật ', 'Anh', 'anh123', 'anh@gmail.com', '1e5bcc028d318a1a4780fa8af78e65e22c4bcde5', '4-4-1993', 'Nam', 'Học Sinh'),
-('101000032', 'Lê Thị ', 'Linh', 'linh123', 'Linh123@gmail.com', 'ed3c9dba8ca23a33af1342082544922ee774e85d', '4-4-1993', 'Nam', 'Học Sinh'),
-('101000033', 'Huỳnh Nhật ', 'Hòa', 'hoa123', 'hoa123@gmail.com', '314576f49db3e92c639ec86f1d951620ef45c34d', '2-4-1993', 'Nam', 'Học Sinh'),
-('101000034', 'Lê Văn ', 'Hiếu', 'hieu123', 'Hieu@gmail.com', 'dc1c013e029c385578f921f9b49f0641fffd8b98', '1-2-1992', 'Nam', 'Học Sinh'),
-('20100042', 'Phan Tấn', 'Bình', 'binh123', 'binh@gmail.com', '8bd1c0165694ac2669228e73843d26341ec71905', '16-2-2005', 'Nam', 'Giáo Viên'),
-('20100043', 'Ngô Bá Vĩnh ', 'Hiển', 'hien123', 'hien123@gmail.com', '2c7bc5665e3482c031f9a928038b301e068e6413', '14-3-2004', 'Nam', 'Giáo Viên'),
+('20100042', 'Phan Tấn', 'Bình', 'binh123', 'tanbinh@gmail.com', '42b702f32c19bcfa66b18f53630512357c4fa283', '3-4-1992', 'Nam', 'Giáo Viên'),
 ('20100044', 'Nguyễn Thanh Trường', 'Giang', 'giang123', 'giang@gmail.com', '4e031bb475963ba73ebf552f78ae1c43283af8b8', '16-2-2003', 'Nam', 'Trưởng bộ môn'),
+('20100046', 'Nguyễn', 'Thúy Vi', 'vi12345', 'thuyvi@gmail.com', '615b746283ad0a3d19ee42a0bd940328faad4cdb', '6-9-1990', 'Nữ', 'Trưởng bộ môn'),
 ('AD03972', 'Đặng Thành ', 'Đạt', 'admin', 'admin@gmail.com', '2ec10e4f7cd2159e7ea65d2454f68287ecf81251', '1-7-1997', 'Nam', 'Admin'),
 ('PDT92654', 'Phòng Đào ', 'Tạo', 'pdt123', 'phongdaotao@gmail.com', 'de56a0a5377a2c4e333156c34912b38318cd77fe', '3-5-1993', 'Nam', 'Phòng dào tạo');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `giaovien`
+-- Chỉ mục cho bảng `giaovien`
 --
 ALTER TABLE `giaovien`
   ADD PRIMARY KEY (`id_gv`);
 
 --
--- Indexes for table `ketquathi`
+-- Chỉ mục cho bảng `ketquathi`
 --
 ALTER TABLE `ketquathi`
   ADD PRIMARY KEY (`stt`);
 
 --
--- Indexes for table `sinhvien`
+-- Chỉ mục cho bảng `sinhvien`
 --
 ALTER TABLE `sinhvien`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_cauhoi`
+-- Chỉ mục cho bảng `tbl_cauhoi`
 --
 ALTER TABLE `tbl_cauhoi`
   ADD PRIMARY KEY (`ma_ch`),
   ADD KEY `made` (`made`);
 
 --
--- Indexes for table `tbl_dethi`
+-- Chỉ mục cho bảng `tbl_dethi`
 --
 ALTER TABLE `tbl_dethi`
   ADD PRIMARY KEY (`made`);
 
 --
--- Indexes for table `user`
+-- Chỉ mục cho bảng `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `giaovien`
+-- AUTO_INCREMENT cho bảng `giaovien`
 --
 ALTER TABLE `giaovien`
-  MODIFY `id_gv` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20100045;
+  MODIFY `id_gv` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20100047;
 
 --
--- AUTO_INCREMENT for table `ketquathi`
+-- AUTO_INCREMENT cho bảng `ketquathi`
 --
 ALTER TABLE `ketquathi`
-  MODIFY `stt` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `stt` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `sinhvien`
+-- AUTO_INCREMENT cho bảng `sinhvien`
 --
 ALTER TABLE `sinhvien`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101000035;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101000022;
 
 --
--- AUTO_INCREMENT for table `tbl_cauhoi`
+-- AUTO_INCREMENT cho bảng `tbl_cauhoi`
 --
 ALTER TABLE `tbl_cauhoi`
-  MODIFY `ma_ch` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `ma_ch` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 
 --
--- AUTO_INCREMENT for table `tbl_dethi`
+-- AUTO_INCREMENT cho bảng `tbl_dethi`
 --
 ALTER TABLE `tbl_dethi`
-  MODIFY `made` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `made` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `tbl_cauhoi`
+-- Các ràng buộc cho bảng `tbl_cauhoi`
 --
 ALTER TABLE `tbl_cauhoi`
   ADD CONSTRAINT `tbl_cauhoi_ibfk_1` FOREIGN KEY (`made`) REFERENCES `tbl_dethi` (`made`);

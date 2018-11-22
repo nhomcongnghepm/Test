@@ -45,10 +45,6 @@
           </td>
       </tr>
     <tr>
-      <td align="right">Thời gian</td>
-      <td><input size=20 type="text" name="timer" value="<?php echo $timer?>"/></td>
-    </tr>
-    <tr>
       <td colspan="2" style="padding: 10px 0px 10px 0px" align="center"><label>
         <input type="submit" name="edit" id="edit" value="Cập nhật" />
       </label></td>
