@@ -65,7 +65,7 @@
                 $row = mysqli_fetch_row($sql);
                 return $row;
             }
-	}	
+	}
     // Hàm lấy dữ liệu
     public function fetch_assoc($sql = null, $type)
     {
@@ -265,7 +265,13 @@
                 return $sql;
             }
         }
-
+        public function showdiem($i,$d,$hocky){
+            if ($this->cn)
+            {
+                $sql="SELECT * FROM diemthi,tbl_dethi where diemthi.made=tbl_dethi.made and diemthi.hocky=$hocky LIMIT $i,$d";
+                return $sql;
+            }
+        }
 	public function laydethi($made){
             if ($this->cn)
             {
@@ -317,7 +323,14 @@
             return $sql;
         }
     }
-
+    public function kiemtraketquathi($id)
+    {
+        if($this->cn)
+        {
+            $sql="SELECT * FROM diemthi,tbl_dethi where id='$id'";
+            return $sql;
+        }
+    }
     public function doimatkhau($u,$new_pw){
             if ($this->cn)
             {
@@ -401,10 +414,10 @@
 		}
 	}
 
-	public function capnhatdethi($tende,$ngaythi,$giothi,$idmade,$date){
+	public function capnhatdethi($tende,$ngaythi,$hocky,$idmade,$date,$dotthi){
             if ($this->cn)
             {
-                $sql="UPDATE tbl_dethi SET `tende` ='".$tende."',`ngaythi` ='".$ngaythi."',`giothi` ='".$giothi."',`ngaydang` ='".$date."'where made='".$idmade."'";
+                $sql="UPDATE tbl_dethi SET `tende` ='".$tende."',`ngaythi` ='".$ngaythi."',`hocky` ='".$hocky."',`ngaydang` ='".$date."', `dotthi` ='".$dotthi."'where made='".$idmade."'";
                 return $sql;
             }
     }
@@ -417,14 +430,45 @@
 		}
 	}
 
-	public function themdethi($ngaythi,$giothi,$day,$tacgia,$a){
+	public function themdethi($ngaythi,$hocky,$day,$tacgia,$tende,$trangthai,$dotthi){
             if ($this->cn)
             {
-                $sql="INSERT INTO tbl_dethi(made,tende,ngaythi,giothi,tacgia,ngaydang,trangthai) VALUE('','$_POST[tende]','$ngaythi','$giothi','$tacgia','$day',$a)";
+                $sql="INSERT INTO tbl_dethi VALUE ('','$tende','$ngaythi','$hocky','$tacgia','$day','$trangthai','$dotthi')";
                 return $sql;
             }
     }
-
+    public function hienthide_duyet()
+    {
+        if($this->cn)
+        {
+            $tv3= "SELECT * FROM  tbl_dethi where trangthai='Đã duyệt'";
+            return $tv3;
+        }
+    }
+    public function laynoidungcauhoi()
+    {
+        if($this->cn)
+        {
+            $sql= "SELECT * FROM tbl_dethi,tbl_cauhoi where tbl_dethi.made=tbl_cauhoi.made and tbl_dethi.made='".$_POST['monselect']."' and tbl_dethi.hocky='".$_POST['hockyselect']."' and tbl_dethi.ngaythi='".$_POST['ngaythi']."'and dotthi='".$_POST['dotthi']."' LIMIT 0,10";
+            return $sql;
+        }
+    }
+    public function laynoidungcauhoi_sau($cau)
+    {
+        if($this->cn)
+        {
+            $sql= "SELECT * FROM tbl_dethi,tbl_cauhoi where tbl_dethi.made=tbl_cauhoi.made and tbl_dethi.made='".$_POST['monselect']."' and tbl_dethi.hocky='".$_POST['hockyselect']."' and tbl_dethi.ngaythi='".$_POST['ngaythi']."' and dotthi='".$_POST['dotthi']."' LIMIT ".$cau.",10";
+            return $sql;
+        }
+    }
+    public function themid_diemthi($id)
+    {
+        if($this->cn)
+        {
+            $sql="INSERT INTO diemthi(id) VALUE ($id)";
+            return $sql;
+        }
+    }
 	public function themuser($id,$ho,$ten,$username,$email,$pass_signup,$birthdate,$gender,$quyen){
 		if ($this->cn)
 		{

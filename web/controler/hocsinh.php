@@ -11,9 +11,11 @@ if(isset($_GET['menu'])){
         include ("lichthi.php");
     }
     if($_GET['menu']=='thi'){
-        include ("thi.php");
+        include ("Thi.php");
     }
-
+    if($_GET['menu']=='diemthi'){
+        include ("../view/diemthi.php");
+    }
 
 }else
     include "banghs.php";

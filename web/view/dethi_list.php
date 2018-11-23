@@ -47,7 +47,7 @@
 					<th><input type="checkbox" name="checkid[]" id="checkid" value="<?=$counts?>" onClick="CheckALL(<?=$counts?>);" /></th>
                     <th>Tên đề</th>
                     <th>Ngày Thi</th>
-                    <th>Giờ Thi</th>
+                    <th>Học kỳ</th>
 					<th>Tác giả</th>
                     <th>Trạng Thái đề thi</th>
 					<th>Chỉnh sửa</th>

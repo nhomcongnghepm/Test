@@ -33,7 +33,7 @@
     <div class="form-group">
         <label class="control-label col-sm-2"  for="myTel1">Giới tính</label>
         <div class="col-sm-10">
-            <input class="form-control" type="tel"readonly="readonly" value="<?php echo $row['Gioitinh'];?>" id="myTel1">
+            <input class="form-control" type="tel" readonly="readonly" value="<?php echo $row['Gioitinh'];?>" id="myTel1">
         </div>
     </div>
     <div class="form-group">

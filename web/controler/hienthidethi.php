@@ -22,7 +22,7 @@
 			<td>' . '<input type="checkbox" name="selector[]" value="' . $rows['made'] . '" />' . '</td>
 			<td>' . $rows['tende'] . '</td>
 			<td>' . $rows['ngaythi'] . '</td>
-			<td>' . $rows['giothi'] . '</td>
+			<td>' . $rows['hocky'] . '</td>
 			<td>' . $rows['tacgia'] . '</td>
 		    <td>' . $rows['trangthai'] . '</td>
 				<td><a href="?menu=dethi_edit&made='.$rows['made'].'"><img src="../assets/giaovien/images/home/u37.png" /></a></td>
