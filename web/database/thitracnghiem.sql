@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2018 at 06:49 PM
+-- Generation Time: Nov 24, 2018 at 05:59 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -43,8 +43,8 @@ CREATE TABLE `diemthi` (
 --
 
 INSERT INTO `diemthi` (`id_diem`, `id`, `made`, `ngaythi`, `dotthi`, `diem`, `hocky`) VALUES
-(1, '101000021 ', '58 ', '24/11/2018 ', '2 ', '0.5 ', '1'),
-(2, '101000021 ', '62 ', '24/11/2018 ', '2 ', '0.25 ', '1');
+(3, '101000021 ', '58 ', '24/11/2018 ', '2 ', '0.5 ', '1'),
+(4, '101000021 ', '62 ', '24/11/2018 ', '2 ', '0.25 ', '1');
 
 -- --------------------------------------------------------
 
@@ -161,8 +161,7 @@ INSERT INTO `tbl_cauhoi` (`ma_ch`, `noidung`, `lc1`, `lc2`, `lc3`, `lc4`, `dapan
 (116, '<p>Cho Parabol (P) c&oacute; phương tr&igrave;nh ch&iacute;nh tắc y<sup>2</sup>= 4x . Một đường thẳng đi qua ti&ecirc;u điểm F của (P) cắt (P) tại 2 điểm A v&agrave; B, Nếu A(1 ; -2) th&igrave; tọa độ của B bằng bao nhi&ecirc;u ?</p>', '(1;2)', '(4;4)', '(-1;2)', '(2;2)', '(1;2)', 58),
 (117, '<p>Đường Hyperbol (x<sup>2</sup>/20) - (y<sup>2</sup>/16) = 1&nbsp;c&oacute; ti&ecirc;u cự bằng :</p>', '12', '2', '4', '6', '12', 58),
 (118, '<p>Đường thẳng qua M(1 ; 1) v&agrave; cắt el&iacute;p (E) : 4x<sup>2</sup>+ 9y<sup>2</sup>&nbsp;= 36 tại hai điểm M1 , M2 sao cho MM1 = MM2 c&oacute; phương tr&igrave;nh l&agrave;</p>', '2x + 4y – 5 = 0', '4x + 9y – 13 = 0', 'x + y + 5 = 0', '16x – 15y + 100 = 0', '4x + 9y – 13 = 0', 58),
-(119, '<p>Khoảng c&aacute;ch từ điểm M(-1;1) đến đường thẳng 3x &ndash; 4y &ndash; 3 = 0 bằng bao nhi&ecirc;u?</p>', '2/5', '2', '4/5', '4/25', '2', 58),
-(120, '<p>&aacute;dasd</p>', '1', '2', '3', '4', '1', 62);
+(119, '<p>Khoảng c&aacute;ch từ điểm M(-1;1) đến đường thẳng 3x &ndash; 4y &ndash; 3 = 0 bằng bao nhi&ecirc;u?</p>', '2/5', '2', '4/5', '4/25', '2', 58);
 
 -- --------------------------------------------------------
 
@@ -178,16 +177,18 @@ CREATE TABLE `tbl_dethi` (
   `tacgia` varchar(50) CHARACTER SET utf8 NOT NULL,
   `ngaydang` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `trangthai` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `dotthi` int(10) NOT NULL
+  `dotthi` int(10) NOT NULL,
+  `linhvuc` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_dethi`
 --
 
-INSERT INTO `tbl_dethi` (`made`, `tende`, `ngaythi`, `hocky`, `tacgia`, `ngaydang`, `trangthai`, `dotthi`) VALUES
-(58, 'Toán', '24/11/2018', '1', 'Phan Tấn Bình', '23/11/18', 'Đã duyệt', 2),
-(62, 'Hóa', '24/11/2018', '1', 'Phan Tấn Bình', '24/11/18', 'Đã duyệt', 2);
+INSERT INTO `tbl_dethi` (`made`, `tende`, `ngaythi`, `hocky`, `tacgia`, `ngaydang`, `trangthai`, `dotthi`, `linhvuc`) VALUES
+(58, 'Toán', '1/1/2018', '1', 'Phan Tấn Bình', '24/11/18', 'Đã duyệt', 1, 'Toán'),
+(70, 'Toán_2', '3/4/2018', '1', 'Nguyễn Thanh Trường Giang', '24/11/18', 'Chưa duyệt', 1, 'Vật lý'),
+(71, 'Toán_2', '2/2/2018', '1', 'Nguyễn Thúy Vi', '24/11/18', 'Chưa duyệt', 1, 'Toán');
 
 -- --------------------------------------------------------
 
@@ -268,7 +269,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `diemthi`
 --
 ALTER TABLE `diemthi`
-  MODIFY `id_diem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_diem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `giaovien`
@@ -286,13 +287,13 @@ ALTER TABLE `sinhvien`
 -- AUTO_INCREMENT for table `tbl_cauhoi`
 --
 ALTER TABLE `tbl_cauhoi`
-  MODIFY `ma_ch` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `ma_ch` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 
 --
 -- AUTO_INCREMENT for table `tbl_dethi`
 --
 ALTER TABLE `tbl_dethi`
-  MODIFY `made` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `made` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- Constraints for dumped tables

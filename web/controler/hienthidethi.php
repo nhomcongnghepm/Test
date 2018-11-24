@@ -15,7 +15,12 @@
             $i = 0;
             $d=10;
         }
-            $sql=$db->showdethi($i,$d);
+$u=$_SESSION['user'];
+$sql=$db->laythongtin_giaovien($u);
+$query=$db->query($sql);
+$row=$db->lay_rows($query);
+$linhvuc=$row['bomon'];
+            $sql=$db->showdethi($i,$d,$linhvuc);
             $results=$db->query($sql);
 			while($rows = $db->lay_rows($results)) {
                 echo '<tr class="truongbomon">

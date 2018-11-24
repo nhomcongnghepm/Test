@@ -22,7 +22,7 @@
                         }
 
                         if($_GET['menu']=='dethi_list'){
-                            include ("dethi_list.php");
+                            include "dethi_list.php";
                         }elseif($_GET['menu']=='dethi_edit'){
                             include "dethi_edit.php";
                         }elseif($_GET['menu']=='dethi_saveedit'){

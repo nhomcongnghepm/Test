@@ -22,7 +22,7 @@ if(isset($_POST["edit"]))
 	$rs=$db->query($sql);
 	if($rs)
 	{
-		echo"<script>document.location.href='?menu=cauhoi_list' </script>";
+        echo "<script>alert('Cập nhật câu hỏi thành công!');window.location='?menu=cauhoi_list'</script>";
 	}
 	else
 	{

@@ -4,6 +4,9 @@ require_once '../modal/init.php';
 		$u=$_SESSION['user'];
  if(isset($_POST['ok']))
 {
+        $sql=$db->laythongtin_giaovien($u);
+        $query=$db->query($sql);
+        $row=$db->lay_rows($query);
         $sql3=$db->luutacgia($u);
         $c=$db->query($sql3);
         $rowws=$db->lay_rows($c);
@@ -14,8 +17,9 @@ require_once '../modal/init.php';
 		$hocky=$_POST['hocky'];
 		$trangthai='Chưa duyệt';
 		$tende=$_POST['tende'];
+		$linhvuc=$row['bomon'];
 		$dotthi=$_POST['dotthi'];
-		$sql4=$db->hienthidethi();
+		$sql4=$db->hienthidethi($linhvuc);
 		$dethi=$db->query($sql4);
 		$rows=$db->lay_rows($dethi);
 	if($_POST["tende"]==null||$_POST["day"]==day||$_POST["month"]==month||$_POST["year"]==year)
@@ -38,7 +42,7 @@ require_once '../modal/init.php';
 		{
 		  $ngaythi = $day . '/' . $month . '/' . $year;
 			$date=date("d/m/y");
-			$sql2=$db->themdethi($ngaythi,$hocky,$date,$tacgia,$tende,$trangthai,$dotthi);
+			$sql2=$db->themdethi($ngaythi,$hocky,$date,$tacgia,$tende,$trangthai,$dotthi,$linhvuc);
 			$a=$db->query($sql2);
 			if($a)
 			{

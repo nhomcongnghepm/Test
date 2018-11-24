@@ -222,10 +222,10 @@
                 return $sql;
             }
     }
-    public function showcauhoidethi($i,$d){
+    public function showcauhoidethi($i,$d,$linhvuc){
             if ($this->cn)
             {
-                    $sql = "SELECT * FROM tbl_cauhoi,tbl_dethi WHERE tbl_dethi.made=tbl_cauhoi.made LIMIT $i,$d";
+                    $sql = "SELECT * FROM tbl_cauhoi,tbl_dethi WHERE tbl_dethi.made=tbl_cauhoi.made and tbl_dethi.linhvuc='$linhvuc' LIMIT $i,$d";
                     return $sql;
             }
     }
@@ -236,17 +236,17 @@
                 return $sql;
             }
     }
-    public function hienthidethi(){
+    public function hienthidethi($linhvuc){
         if ($this->cn)
         {
-            $sql="SELECT * FROM tbl_dethi";
+            $sql="SELECT * FROM tbl_dethi where linhvuc='$linhvuc'";
             return $sql;
         }
     }
-        public function showdethi($i,$d){
+        public function showdethi($i,$d,$linhvuc){
             if ($this->cn)
             {
-                $sql="SELECT * FROM tbl_dethi LIMIT $i,$d";
+                $sql="SELECT * FROM tbl_dethi where linhvuc='$linhvuc' LIMIT $i,$d";
                 return $sql;
             }
         }
@@ -430,10 +430,10 @@
 		}
 	}
 
-	public function themdethi($ngaythi,$hocky,$day,$tacgia,$tende,$trangthai,$dotthi){
+	public function themdethi($ngaythi,$hocky,$day,$tacgia,$tende,$trangthai,$dotthi,$linhvuc){
             if ($this->cn)
             {
-                $sql="INSERT INTO tbl_dethi VALUE ('','$tende','$ngaythi','$hocky','$tacgia','$day','$trangthai','$dotthi')";
+                $sql="INSERT INTO tbl_dethi VALUE ('','$tende','$ngaythi','$hocky','$tacgia','$day','$trangthai','$dotthi','$linhvuc')";
                 return $sql;
             }
     }
