@@ -118,7 +118,7 @@ else if(!$user)
                 <img id="u9_img" class="img " src="../assets/hocsinh/images/home/u8.png"/>
                 <div id="u9_text" class="text ">
                     <img id="u27_img" class="img " src="../assets/hocsinh/images/home/u27.svg"/>
-                    <p><span>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; Xem bảng điểm</span></p>
+                    <a href="?menu=diemthi" ><p><span>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; Xem bảng điểm</span></p></a>
                 </div>
             </div>
 

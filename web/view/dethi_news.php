@@ -26,14 +26,25 @@
 		  <select  class="form-control" name="month"> <option value="month">Tháng <?php  thang();?></option></select>
 		  <select  class="form-control" name="year"> <option value="year">Năm <?php  nam();?></option></select>
 </td> <td>&nbsp;</td>
-<tr>
-   <br> <br />
-   			<td height="42" align="center" class="tbltitle">Thời gian thi:</td>
-	  <td><select  class="form-control" name="hour" > <option value="hour">Giờ <?php gio();?></option></select>
-		  <select  class="form-control" name="minutes"> <option value="minutes">Phút <?php  phut();?></option></select>
-		  <select  class="form-control" name="seconds"> <option value="seconds">Giây <?php  giay();?></option></select>
-      </td>
-  </tr>
+    <tr>
+        <br> <br />
+        <td height="42" align="center" class="tbltitle">Học kỳ:</td>
+        <td>  <select class="form-control" name="hocky" id="chondotthi">
+                <option value="1">Học kỳ 1</option>
+                <option value="2">Học kỳ 2</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <br> <br />
+        <td height="42" align="center" class="tbltitle">Đợt thi:</td>
+        <td>  <select class="form-control" name="dotthi" id="chondotthi">
+                <option value="1">Ca sáng</option>
+                <option value="2">Ca chiều</option>
+            </select>
+        </td>
+    </tr>
+
     <tr>
       <td colspan="2"align="center"  style="padding:10px 0px 10px 0px"><label>
         <input type="submit" name="ok" id="ok" value="Thêm đề thi" />

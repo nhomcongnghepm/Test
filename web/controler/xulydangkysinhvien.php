@@ -81,8 +81,8 @@ và có từ 6 đến 32 ký tự <a href='javascript: history.go(-1)'>Trở l�
 		$addmember1 =$db->themuser($id,$ho,$ten,$username,$email,$pass_signup,$birthdate,$gender,$c);
 		$db->query($addmember1);
 		
-     
-		if ($addmember)
+     	$addmember2=$db->themid_diemthi($id);
+		if ($addmember2)
             echo "<script>alert('Đăng ký thành công !');window.location='?menu=quanlyhocsinh'</script>";
 		else
 			echo "Có lỗi xảy ra trong quá trình đăng ký. <a href='dangky.php'>Thử lại</a>";

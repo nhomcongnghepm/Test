@@ -17,7 +17,7 @@
             <tr>
                 <th>Tên đề</th>
                 <th>Ngày Thi</th>
-                <th>Giờ Thi</th>
+                <th>Ca Thi</th>
             </tr>
             </thead>
             <tbody>
@@ -25,6 +25,16 @@
             </tbody>
         </table>
     </form>
+    <br>
+    <br>
+    <div class="nav navbar-right" id="DinhHuong" style="transform:translateY(-35px)" >
+        <ul class="nav  pager" >
+            <li class="previous" >
+                <a href="?menu=lichthi&page1prev=<?php echo $i?> style="background-color:#FFCCCC">&larr;Trước</a>
+            </li>
+            <li class="next"><a href="?menu=lichthi&page1=<?php echo $i?> style="background-color:#FFCCCC">Sau&rarr;</a></li>
+        </ul>
+    </div>
 </div>
 </body>
 </html>

@@ -7,10 +7,8 @@ if(isset($_POST["edit"]))
         $day = $_POST['day'];
         $month = $_POST['month'];
         $year = $_POST['year'];
-        $hour = $_POST['hour'];
-        $minutes = $_POST['minutes'];
-        $seconds = $_POST['seconds'];
-        $giothi = $hour .'h'. ':' . $minutes .'p'. ':' . $seconds.'s';
+        $hocky=$_POST['hocky'];
+        $dotthi=$_POST['dotthi'];
         $kiemtra = checkdate($month,$day,$year);
         $date=date("d/m/y");
         if ($_POST["tende"] == null || $_POST["day"] == day || $_POST["month"] == month || $_POST["year"] == year || $_POST["hour"] == hour || $_POST["minutes"] == minutes || $_POST["seconds"] == seconds)
@@ -22,7 +20,7 @@ if(isset($_POST["edit"]))
                 exit;
             } else {
                 $ngaythi = $day . '/' . $month . '/' . $year;
-				 $sql=$db->capnhatdethi($tende,$ngaythi,$giothi,$idmade,$date);
+				 $sql=$db->capnhatdethi($tende,$ngaythi,$hocky,$idmade,$date,$dotthi);
                  $a=$db->query($sql);
                 if($a) {
                     echo "<script>alert('Cập nhật thành công!');window.location='?menu=dethi_list'</script>";

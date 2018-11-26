@@ -2,10 +2,10 @@
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 21, 2018 lúc 07:11 PM
--- Phiên bản máy phục vụ: 10.1.35-MariaDB
--- Phiên bản PHP: 7.2.9
+-- Host: 127.0.0.1
+-- Generation Time: Nov 24, 2018 at 05:59 AM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,37 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `thitracnghiem`
+-- Database: `thitracnghiem`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `giaovien`
+-- Table structure for table `diemthi`
+--
+
+CREATE TABLE `diemthi` (
+  `id_diem` int(11) NOT NULL,
+  `id` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `made` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `ngaythi` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `dotthi` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `diem` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `hocky` varchar(30) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `diemthi`
+--
+
+INSERT INTO `diemthi` (`id_diem`, `id`, `made`, `ngaythi`, `dotthi`, `diem`, `hocky`) VALUES
+(3, '101000021 ', '58 ', '24/11/2018 ', '2 ', '0.5 ', '1'),
+(4, '101000021 ', '62 ', '24/11/2018 ', '2 ', '0.25 ', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `giaovien`
 --
 
 CREATE TABLE `giaovien` (
@@ -42,7 +66,7 @@ CREATE TABLE `giaovien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `giaovien`
+-- Dumping data for table `giaovien`
 --
 
 INSERT INTO `giaovien` (`id_gv`, `ho`, `ten`, `user`, `password`, `email`, `birthdate`, `Gioitinh`, `bomon`, `quyen`) VALUES
@@ -53,25 +77,7 @@ INSERT INTO `giaovien` (`id_gv`, `ho`, `ten`, `user`, `password`, `email`, `birt
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `ketquathi`
---
-
-CREATE TABLE `ketquathi` (
-  `stt` int(10) NOT NULL,
-  `ho` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `ten` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `birthdate` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `toan` int(10) NOT NULL,
-  `ly` int(10) NOT NULL,
-  `hoa` int(10) NOT NULL,
-  `anh` int(10) NOT NULL,
-  `tongdiem` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `sinhvien`
+-- Table structure for table `sinhvien`
 --
 
 CREATE TABLE `sinhvien` (
@@ -88,7 +94,7 @@ CREATE TABLE `sinhvien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `sinhvien`
+-- Dumping data for table `sinhvien`
 --
 
 INSERT INTO `sinhvien` (`id`, `ho`, `ten`, `user`, `password`, `email`, `birthdate`, `Gioitinh`, `tenlop`, `quyen`) VALUES
@@ -97,7 +103,7 @@ INSERT INTO `sinhvien` (`id`, `ho`, `ten`, `user`, `password`, `email`, `birthda
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_cauhoi`
+-- Table structure for table `tbl_cauhoi`
 --
 
 CREATE TABLE `tbl_cauhoi` (
@@ -112,7 +118,7 @@ CREATE TABLE `tbl_cauhoi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_cauhoi`
+-- Dumping data for table `tbl_cauhoi`
 --
 
 INSERT INTO `tbl_cauhoi` (`ma_ch`, `noidung`, `lc1`, `lc2`, `lc3`, `lc4`, `dapan`, `made`) VALUES
@@ -160,30 +166,34 @@ INSERT INTO `tbl_cauhoi` (`ma_ch`, `noidung`, `lc1`, `lc2`, `lc3`, `lc4`, `dapan
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_dethi`
+-- Table structure for table `tbl_dethi`
 --
 
 CREATE TABLE `tbl_dethi` (
   `made` int(11) NOT NULL,
   `tende` varchar(70) CHARACTER SET utf8 NOT NULL,
   `ngaythi` varchar(10) NOT NULL,
-  `giothi` varchar(10) NOT NULL,
+  `hocky` varchar(30) NOT NULL,
   `tacgia` varchar(50) CHARACTER SET utf8 NOT NULL,
   `ngaydang` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `trangthai` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `trangthai` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `dotthi` int(10) NOT NULL,
+  `linhvuc` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_dethi`
+-- Dumping data for table `tbl_dethi`
 --
 
-INSERT INTO `tbl_dethi` (`made`, `tende`, `ngaythi`, `giothi`, `tacgia`, `ngaydang`, `trangthai`) VALUES
-(58, 'Toán', '22/11/2018', '12h:40p:0s', 'Phan Tấn Bình', '22/11/18', 'Đã duyệt');
+INSERT INTO `tbl_dethi` (`made`, `tende`, `ngaythi`, `hocky`, `tacgia`, `ngaydang`, `trangthai`, `dotthi`, `linhvuc`) VALUES
+(58, 'Toán', '1/1/2018', '1', 'Phan Tấn Bình', '24/11/18', 'Đã duyệt', 1, 'Toán'),
+(70, 'Toán_2', '3/4/2018', '1', 'Nguyễn Thanh Trường Giang', '24/11/18', 'Chưa duyệt', 1, 'Vật lý'),
+(71, 'Toán_2', '2/2/2018', '1', 'Nguyễn Thúy Vi', '24/11/18', 'Chưa duyệt', 1, 'Toán');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -199,7 +209,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Đang đổ dữ liệu cho bảng `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `ho`, `ten`, `user`, `email`, `password`, `birthdate`, `Gioitinh`, `quyen`) VALUES
@@ -211,86 +221,86 @@ INSERT INTO `user` (`id`, `ho`, `ten`, `user`, `email`, `password`, `birthdate`,
 ('PDT92654', 'Phòng Đào ', 'Tạo', 'pdt123', 'phongdaotao@gmail.com', 'de56a0a5377a2c4e333156c34912b38318cd77fe', '3-5-1993', 'Nam', 'Phòng dào tạo');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `giaovien`
+-- Indexes for table `diemthi`
+--
+ALTER TABLE `diemthi`
+  ADD PRIMARY KEY (`id_diem`);
+
+--
+-- Indexes for table `giaovien`
 --
 ALTER TABLE `giaovien`
   ADD PRIMARY KEY (`id_gv`);
 
 --
--- Chỉ mục cho bảng `ketquathi`
---
-ALTER TABLE `ketquathi`
-  ADD PRIMARY KEY (`stt`);
-
---
--- Chỉ mục cho bảng `sinhvien`
+-- Indexes for table `sinhvien`
 --
 ALTER TABLE `sinhvien`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `tbl_cauhoi`
+-- Indexes for table `tbl_cauhoi`
 --
 ALTER TABLE `tbl_cauhoi`
   ADD PRIMARY KEY (`ma_ch`),
   ADD KEY `made` (`made`);
 
 --
--- Chỉ mục cho bảng `tbl_dethi`
+-- Indexes for table `tbl_dethi`
 --
 ALTER TABLE `tbl_dethi`
   ADD PRIMARY KEY (`made`);
 
 --
--- Chỉ mục cho bảng `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `giaovien`
+-- AUTO_INCREMENT for table `diemthi`
+--
+ALTER TABLE `diemthi`
+  MODIFY `id_diem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `giaovien`
 --
 ALTER TABLE `giaovien`
   MODIFY `id_gv` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20100047;
 
 --
--- AUTO_INCREMENT cho bảng `ketquathi`
---
-ALTER TABLE `ketquathi`
-  MODIFY `stt` int(10) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT cho bảng `sinhvien`
+-- AUTO_INCREMENT for table `sinhvien`
 --
 ALTER TABLE `sinhvien`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101000022;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_cauhoi`
+-- AUTO_INCREMENT for table `tbl_cauhoi`
 --
 ALTER TABLE `tbl_cauhoi`
   MODIFY `ma_ch` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_dethi`
+-- AUTO_INCREMENT for table `tbl_dethi`
 --
 ALTER TABLE `tbl_dethi`
-  MODIFY `made` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `made` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `tbl_cauhoi`
+-- Constraints for table `tbl_cauhoi`
 --
 ALTER TABLE `tbl_cauhoi`
   ADD CONSTRAINT `tbl_cauhoi_ibfk_1` FOREIGN KEY (`made`) REFERENCES `tbl_dethi` (`made`);

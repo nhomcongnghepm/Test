@@ -15,7 +15,7 @@
 	</tr>
 	<tr>
 	<td align="right">Tên đề</td>
-   <td> <input size=35 type="text" name="tende" value="<?php echo $tende?>"></td>
+        <td> <input size=35 type="text" name="tende" readonly="readonly" style="background-color:#CCC" value="<?php echo $tende?>"></td></tr>
   <tr>
     <?php include("../controler/function_thi.php") ?>
 		<td align="right">Ngày Thi: </td>
@@ -38,10 +38,19 @@
           </span></td>
   </tr>
       <tr>
-          <td align="right">Thời gian Thi: </td>
-          <td><select  class="form-control" name="hour" > <option value="hour">Giờ <?php gio();?></option></select>
-              <select  class="form-control" name="minutes"> <option value="minutes">Phút <?php  phut();?></option></select>
-              <select  class="form-control" name="seconds"> <option value="seconds">Giây <?php  giay();?></option></select>
+          <td align="right" class="tbltitle">Học kỳ:</td>
+          <td>  <select class="form-control" name="hocky" id="chondotthi">
+                  <option value="1">Học kỳ 1</option>
+                  <option value="2">Học kỳ 2</option>
+              </select>
+          </td>
+      </tr>
+      <tr>
+          <td align="right" class="tbltitle">Đợt thi:</td>
+          <td>  <select class="form-control" name="dotthi" id="chondotthi">
+                  <option value="1">Ca sáng</option>
+                  <option value="2">Ca chiều</option>
+              </select>
           </td>
       </tr>
     <tr>
