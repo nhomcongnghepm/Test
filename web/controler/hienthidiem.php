@@ -16,8 +16,13 @@ else {
     $i = 0;
     $d=10;
 }
+$u=$_SESSION['user'];
+$sql1=$db->laythongtin_hocsinh($u);
+$query=$db->query($sql1);
+$row=$db->lay_rows($query);
+$id=$row['id'];
 $hocky=$_SESSION['hocky'];
-$sql=$db->showdiem($i,$d,$hocky);
+$sql=$db->showdiem($id,$i,$d,$hocky);
 $results=$db->query($sql);
 
 while($rows =$db->lay_rows($results))

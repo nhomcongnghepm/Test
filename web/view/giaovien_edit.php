@@ -9,31 +9,31 @@
 <?php require_once '../controler/chinhsuagiaovien.php';?>
   <table width="750" border="0"  cellpadding="0" cellspacing="0" background="../assets/image/body.png">
     <tr>
-       <td bgcolor="#CCCCCC"  height="38px"colspan="2" align="center" class="style1">CẬP NHẬT THÔNG TIN GIÁO VIÊN</td>
+       <td bgcolor="#CCCCCC"  height="38px" colspan="2" align="center" class="style1">CẬP NHẬT THÔNG TIN GIÁO VIÊN</td>
     </tr>
    <tr>
 	<td width="20%"  align="right">Mã học sinh: </td>
     <td width="80%">&nbsp;&nbsp;<input size=30 type="text" name="id" readonly style="background-color:#CCC" value="<?php echo $id?>"/></td>
 	</tr>
+      <tr>
+          <td align="right">Tên môn giảng dạy</td>
+          <td><input size=35 type="text" readonly="readonly" style="background-color:#CCC" name="bomon" value="<?php  echo $bomon ?>"/></td>
+      </tr>
      <tr>
     <td align="right">Họ</td>
-    <td>&nbsp;&nbsp;<input size=35 type="text" name="ho" value="<?php echo $ho ?>"/></td>
+    <td><input size=35 type="text" name="ho" value="<?php echo $ho ?>"/></td>
   </tr>
   <tr>
     <td align="right">Tên</td>
-    <td>&nbsp;&nbsp;<input size=35 type="text" name="ten" value="<?php echo $ten ?>"/></td>
+    <td><input size=35 type="text" name="ten" value="<?php echo $ten ?>"/></td>
   </tr>
   <tr>
     <td align="right">Email</td>
-    <td>&nbsp;&nbsp;<input size=35 type="text" name="email" value="<?php  echo $email ?>"/></td>
-  </tr>
-  <tr>
-    <td align="right">Tên môn giảng dạy</td>
-    <td>&nbsp;&nbsp;<input size=35 type="text" name="bomon" value="<?php  echo $bomon ?>"/></td>
+    <td><input size=35 type="text" name="email" value="<?php  echo $email ?>"/></td>
   </tr>
   <tr>
     <td align="right">Quyền</td>
-    <td>&nbsp;&nbsp;<select name="quyen" class="form-control">
+    <td><select name="quyen" class="form-control">
            <option value="Giáo Viên">Giáo viên</option>
            <option value="Trưởng bộ môn">Trưởng bộ môn</option>
          </select></td>

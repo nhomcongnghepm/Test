@@ -66,22 +66,48 @@ và có từ 6 đến 32 ký tự <a href='javascript: history.go(-1)'>Trở l�
 		{
 			 echo "Email này đã có người dùng. Vui lòng chọn Email khác. <a href='javascript: history.go(-1)'>Trở lại</a>";
 			exit;
-		}		
-		$addmember = $db->themgiaovien($ho,$ten,$username,$pass_signup,$email,$birthdate,$gender,$bomon,$quyen);
-		$db->query($addmember);
-		
-		$sql=$db->hienthigiaovien();
-		$results=$db->query($sql);
-		while($row =$db->lay_rows($results))
-		{
-		$id=$row['id_gv'];
 		}
-		$addmember1=$db->themuser($id,$ho,$ten,$username,$email,$pass_signup,$birthdate,$gender,$quyen);
-		$db->query($addmember1);
-		if ($addmember1)
-            echo "<script>alert('Đăng ký thành công !');window.location='?menu=quanlygiaovien'</script>";
-		else
-			echo "Có lỗi xảy ra trong quá trình đăng ký. <a href='dangky.php'>Thử lại</a>";
+            $chars = "0123456789";
+            $size = strlen($char);
+            $str = substr(str_shuffle($chars), 0, 5);
+            for ($i = 0; $i < $length; $i++) {
+                $str .= $chars[rand(0, $size - 1)];
+            }
+            $my_string =$str;
+            $giaovien='GV'.$my_string;
+            $tbm='TBM'.$my_string;
+            if($quyen=="Giáo Viên") {
+            $addmember = $db->themgiaovien($giaovien,$ho, $ten, $username, $pass_signup, $email, $birthdate, $gender, $bomon, $quyen);
+            $db->query($addmember);
+
+            $sql = $db->hienthigiaovien();
+            $results = $db->query($sql);
+            while ($row = $db->lay_rows($results)) {
+                $id = $row['id_gv'];
+            }
+            $addmember1 = $db->themuser($id, $ho, $ten, $username, $email, $pass_signup, $birthdate, $gender, $quyen);
+            $db->query($addmember1);
+            if ($addmember1)
+                echo "<script>alert('Đăng ký thành công !');window.location='?menu=quanlygiaovien'</script>";
+            else
+                echo "Có lỗi xảy ra trong quá trình đăng ký. <a href='dangky.php'>Thử lại</a>";
+        }
+        else{
+            $addmember = $db->themgiaovien($tbm,$ho, $ten, $username, $pass_signup, $email, $birthdate, $gender, $bomon, $quyen);
+            $db->query($addmember);
+
+            $sql = $db->hienthigiaovien();
+            $results = $db->query($sql);
+            while ($row = $db->lay_rows($results)) {
+                $id = $row['id_gv'];
+            }
+            $addmember1 = $db->themuser($id, $ho, $ten, $username, $email, $pass_signup, $birthdate, $gender, $quyen);
+            $db->query($addmember1);
+            if ($addmember1)
+                echo "<script>alert('Đăng ký thành công !');window.location='?menu=quanlygiaovien'</script>";
+            else
+                echo "Có lỗi xảy ra trong quá trình đăng ký. <a href='dangky.php'>Thử lại</a>";
+		}
 	}
 	}
 ?>     

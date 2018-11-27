@@ -59,7 +59,7 @@ else if (isset($_POST['dangnhap']))
     	}
    		 else if($row['quyen']=="Phòng dào tạo")
     	{
-       	 echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='/pdt.php'>Vào trang phòng đào tạo</a>";
+            header('Location: pdt.php');
 		}
 		else header('Location: truongbomon.php');
     die();

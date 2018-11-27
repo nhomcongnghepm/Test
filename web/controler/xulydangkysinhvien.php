@@ -69,8 +69,15 @@ và có từ 6 đến 32 ký tự <a href='javascript: history.go(-1)'>Trở l�
 			 echo "Email này đã có người dùng. Vui lòng chọn Email khác. <a href='javascript: history.go(-1)'>Trở lại</a>";
 			exit;
 		}
-
-		$addmember =$db->themhocsinh($ho,$ten,$username,$email,$pass_signup,$birthdate,$gender,$lop,$c);
+            $chars = "0123456789";
+            $size = strlen($char);
+            $str = substr(str_shuffle($chars), 0, 5);
+            for ($i = 0; $i < $length; $i++) {
+                $str .= $chars[rand(0, $size - 1)];
+            }
+            $my_string =$str;
+            $hocsinh='HS'.$my_string;
+		$addmember =$db->themhocsinh($hocsinh,$ho,$ten,$username,$email,$pass_signup,$birthdate,$gender,$lop,$c);
 		$db->query($addmember);
 		$sql=$db->hienthihocsinh();
 		$results=$db->query($sql);
@@ -78,11 +85,10 @@ và có từ 6 đến 32 ký tự <a href='javascript: history.go(-1)'>Trở l�
 		{
 		$id=$row['id'];
 		}
-		$addmember1 =$db->themuser($id,$ho,$ten,$username,$email,$pass_signup,$birthdate,$gender,$c);
+		$addmember1 =$db->themuser($hocsinh,$ho,$ten,$username,$email,$pass_signup,$birthdate,$gender,$c);
 		$db->query($addmember1);
 		
-     	$addmember2=$db->themid_diemthi($id);
-		if ($addmember2)
+		if ($addmember1)
             echo "<script>alert('Đăng ký thành công !');window.location='?menu=quanlyhocsinh'</script>";
 		else
 			echo "Có lỗi xảy ra trong quá trình đăng ký. <a href='dangky.php'>Thử lại</a>";

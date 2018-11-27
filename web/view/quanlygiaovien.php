@@ -72,9 +72,9 @@
 <div class="nav navbar-right" id="DinhHuong" style="transform:translateY(-35px)" >
     <ul class="nav  pager" >
         <li class="previous" >
-            <a href="?menu=quanlygiaovien&page1prev=<?php echo $i?>">&larr;Trước</a>
+            <a href="?menu=quanlygiaovien&page1prev=<?php echo $i?>" style=" background-color:#ffcccc"="">&larr;Trước</a>
         </li>
-        <li class="next"><a href="?menu=quanlygiaovien&page1=<?php echo $i?>">Sau&rarr;</a></li>
+        <li class="next"><a href="?menu=quanlygiaovien&page1=<?php echo $i?>" style=" background-color:#ffcccc"="">Sau&rarr;</a></li>
     </ul>
 </div>
   </body>

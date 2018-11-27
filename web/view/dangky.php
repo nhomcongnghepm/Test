@@ -28,8 +28,13 @@
      <div class="form-group"><input class="form-control"  name="username" placeholder="Tên đăng nhập" type="text" id="username"></div>
      <div class="form-group"><input class="form-control"  name="email" placeholder="Email" type="email"></div>
      <div class="form-group"><input class="form-control"  name="pwd1" placeholder="Mật khẩu" type="password"> <input class="form-control" id="pwd2" name="pwd2" placeholder="Nhập lại mật khẩu" type="password"></div>
-          <div class="form-group"><input class="form-control"  name="bomon" placeholder="Giáo viên bộ môn: " type="text"></div>
-    <label for=""> Ngày sinh</label> 
+        <label for="">Mời bạn hãy chọn quyền cho giáo viên</label>
+        <select name="bomon" class="form-control">
+            <option value="Toán">Toán</option>
+            <option value="Vật lý">Lý</option>
+            <option value="Hóa">Hóa</option>
+            <option value="Tiếng Anh">Tiếng Anh</option>
+        </select>    <label for=""> Ngày sinh</label>
     <div class="row"> 
     <?php include("../controler/function.php") ?>
      <div class="col-xs-4 col-md-4"> <select  class="form-control" name="day" placeholder="day"> <option value="day">Ngày <?php day();?></option></select> 

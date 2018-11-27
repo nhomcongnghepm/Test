@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2018 at 05:59 AM
+-- Generation Time: Nov 27, 2018 at 07:58 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `diemthi` (
-  `id_diem` int(11) NOT NULL,
+  `id_diem` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `id` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `made` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `ngaythi` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
@@ -43,8 +43,8 @@ CREATE TABLE `diemthi` (
 --
 
 INSERT INTO `diemthi` (`id_diem`, `id`, `made`, `ngaythi`, `dotthi`, `diem`, `hocky`) VALUES
-(3, '101000021 ', '58 ', '24/11/2018 ', '2 ', '0.5 ', '1'),
-(4, '101000021 ', '62 ', '24/11/2018 ', '2 ', '0.25 ', '1');
+('L41527', 'HS13257', '70 ', '28/11/2018 ', '1 ', '0.25 ', '1'),
+('T63097', 'HS13257', '58 ', '28/11/2018 ', '1 ', '0.5 ', '1');
 
 -- --------------------------------------------------------
 
@@ -53,7 +53,7 @@ INSERT INTO `diemthi` (`id_diem`, `id`, `made`, `ngaythi`, `dotthi`, `diem`, `ho
 --
 
 CREATE TABLE `giaovien` (
-  `id_gv` int(10) NOT NULL,
+  `id_gv` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `ho` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `ten` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `user` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
@@ -70,9 +70,10 @@ CREATE TABLE `giaovien` (
 --
 
 INSERT INTO `giaovien` (`id_gv`, `ho`, `ten`, `user`, `password`, `email`, `birthdate`, `Gioitinh`, `bomon`, `quyen`) VALUES
-(20100042, 'Phan Tấn', 'Bình', 'binh123', '8bd1c0165694ac2669228e73843d26', 'tanbinh@gmail.com', '3-4-1992', 'Nam', 'Toán', 'Giáo Viên'),
-(20100044, 'Nguyễn Thanh Trường', 'Giang', 'giang123', '4e031bb475963ba73ebf552f78ae1c', 'giang@gmail.com', '16-2-2003', 'Nam', 'Vật lý', 'Trưởng bộ môn'),
-(20100046, 'Nguyễn', 'Thúy Vi', 'vi12345', '615b746283ad0a3d19ee42a0bd9403', 'thuyvi@gmail.com', '6-9-1990', 'Nữ', 'Toán', 'Trưởng bộ môn');
+('GV16508', 'Phan Tấn', 'Bình', 'binh123', '8bd1c0165694ac2669228e73843d26', 'tanbinh@gmail.com', '3-4-1992', 'Nam', 'Toán', 'Giáo Viên'),
+('GV36508', 'Nguyễn Trung', 'Hậu', 'hau1234', 'f73a4dacb52090b82683aa17aed882', 'hau@gmail.com', '18-10-1994', 'Nam', 'Toán', 'Giáo Viên'),
+('TBM36508', 'Nguyễn', 'Thúy Vi', 'vi12345', '615b746283ad0a3d19ee42a0bd9403', 'thuyvi@gmail.com', '6-9-1990', 'Nữ', 'Toán', 'Trưởng bộ môn'),
+('TBM76508', 'Nguyễn Thanh Trường', 'Giang', 'giang123', '4e031bb475963ba73ebf552f78ae1c', 'giang@gmail.com', '16-2-2003', 'Nam', 'Vật lý', 'Trưởng bộ môn');
 
 -- --------------------------------------------------------
 
@@ -81,7 +82,7 @@ INSERT INTO `giaovien` (`id_gv`, `ho`, `ten`, `user`, `password`, `email`, `birt
 --
 
 CREATE TABLE `sinhvien` (
-  `id` int(10) NOT NULL,
+  `id` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `ho` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `ten` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `user` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
@@ -98,7 +99,8 @@ CREATE TABLE `sinhvien` (
 --
 
 INSERT INTO `sinhvien` (`id`, `ho`, `ten`, `user`, `password`, `email`, `birthdate`, `Gioitinh`, `tenlop`, `quyen`) VALUES
-(101000021, 'Thạch Cảnh', 'Bình', 'canhbinh12', 'c69f340ced75efd4373913b8ffcee96d2dd717ac', 'canhbinh@gmail.com', '17-3-2006', 'Nam', '12A1', 'Học Sinh');
+('HS13257', 'Thạch Cảnh', 'Bình', 'canhbinh12', 'c69f340ced75efd4373913b8ffcee96d2dd717ac', 'canhbinh@gmail.com', '17-3-2006', 'Nam', '12A1', 'Học Sinh'),
+('HS45127', 'Đào Ngọc Gia', 'Anh', 'giaanh123', 'bd753b80609e4f10d98a4655e55a1c296feb797b', 'giaanh123@gmail.com', '17-3-2006', 'Nam', '12A2', 'Học Sinh');
 
 -- --------------------------------------------------------
 
@@ -161,7 +163,8 @@ INSERT INTO `tbl_cauhoi` (`ma_ch`, `noidung`, `lc1`, `lc2`, `lc3`, `lc4`, `dapan
 (116, '<p>Cho Parabol (P) c&oacute; phương tr&igrave;nh ch&iacute;nh tắc y<sup>2</sup>= 4x . Một đường thẳng đi qua ti&ecirc;u điểm F của (P) cắt (P) tại 2 điểm A v&agrave; B, Nếu A(1 ; -2) th&igrave; tọa độ của B bằng bao nhi&ecirc;u ?</p>', '(1;2)', '(4;4)', '(-1;2)', '(2;2)', '(1;2)', 58),
 (117, '<p>Đường Hyperbol (x<sup>2</sup>/20) - (y<sup>2</sup>/16) = 1&nbsp;c&oacute; ti&ecirc;u cự bằng :</p>', '12', '2', '4', '6', '12', 58),
 (118, '<p>Đường thẳng qua M(1 ; 1) v&agrave; cắt el&iacute;p (E) : 4x<sup>2</sup>+ 9y<sup>2</sup>&nbsp;= 36 tại hai điểm M1 , M2 sao cho MM1 = MM2 c&oacute; phương tr&igrave;nh l&agrave;</p>', '2x + 4y – 5 = 0', '4x + 9y – 13 = 0', 'x + y + 5 = 0', '16x – 15y + 100 = 0', '4x + 9y – 13 = 0', 58),
-(119, '<p>Khoảng c&aacute;ch từ điểm M(-1;1) đến đường thẳng 3x &ndash; 4y &ndash; 3 = 0 bằng bao nhi&ecirc;u?</p>', '2/5', '2', '4/5', '4/25', '2', 58);
+(119, '<p>Khoảng c&aacute;ch từ điểm M(-1;1) đến đường thẳng 3x &ndash; 4y &ndash; 3 = 0 bằng bao nhi&ecirc;u?</p>', '2/5', '2', '4/5', '4/25', '2', 58),
+(120, '<p>&aacute;dsad</p>', 'đá', 'ád', 'ád', 'ád', 'đá', 70);
 
 -- --------------------------------------------------------
 
@@ -186,8 +189,8 @@ CREATE TABLE `tbl_dethi` (
 --
 
 INSERT INTO `tbl_dethi` (`made`, `tende`, `ngaythi`, `hocky`, `tacgia`, `ngaydang`, `trangthai`, `dotthi`, `linhvuc`) VALUES
-(58, 'Toán', '1/1/2018', '1', 'Phan Tấn Bình', '24/11/18', 'Đã duyệt', 1, 'Toán'),
-(70, 'Toán_2', '3/4/2018', '1', 'Nguyễn Thanh Trường Giang', '24/11/18', 'Chưa duyệt', 1, 'Vật lý'),
+(58, 'Toán', '28/11/2018', '1', 'Phan Tấn Bình', '24/11/18', 'Đã duyệt', 1, 'Toán'),
+(70, 'Lý', '28/11/2018', '1', 'Nguyễn Thanh Trường Giang', '24/11/18', 'Đã duyệt', 1, 'Vật lý'),
 (71, 'Toán_2', '2/2/2018', '1', 'Nguyễn Thúy Vi', '24/11/18', 'Chưa duyệt', 1, 'Toán');
 
 -- --------------------------------------------------------
@@ -213,12 +216,14 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `ho`, `ten`, `user`, `email`, `password`, `birthdate`, `Gioitinh`, `quyen`) VALUES
-('101000021', 'Thạch Cảnh', 'Bình', 'canhbinh12', 'canhbinh@gmail.com', 'c69f340ced75efd4373913b8ffcee96d2dd717ac', '17-3-2006', 'Nam', 'Học Sinh'),
-('20100042', 'Phan Tấn', 'Bình', 'binh123', 'tanbinh@gmail.com', '42b702f32c19bcfa66b18f53630512357c4fa283', '3-4-1992', 'Nam', 'Giáo Viên'),
-('20100044', 'Nguyễn Thanh Trường', 'Giang', 'giang123', 'giang@gmail.com', '4e031bb475963ba73ebf552f78ae1c43283af8b8', '16-2-2003', 'Nam', 'Trưởng bộ môn'),
-('20100046', 'Nguyễn', 'Thúy Vi', 'vi12345', 'thuyvi@gmail.com', '615b746283ad0a3d19ee42a0bd940328faad4cdb', '6-9-1990', 'Nữ', 'Trưởng bộ môn'),
-('AD03972', 'Đặng Thành ', 'Đạt', 'admin', 'admin@gmail.com', '2ec10e4f7cd2159e7ea65d2454f68287ecf81251', '1-7-1997', 'Nam', 'Admin'),
-('PDT92654', 'Phòng Đào ', 'Tạo', 'pdt123', 'phongdaotao@gmail.com', 'de56a0a5377a2c4e333156c34912b38318cd77fe', '3-5-1993', 'Nam', 'Phòng dào tạo');
+('AD47015', 'Đặng Thành', 'Đạt', 'admin', 'thanhdat010797@gmail.com', '2ec10e4f7cd2159e7ea65d2454f68287ecf81251', '1-7-1997', 'Nam', 'Admin'),
+('GV16508', 'Phan Tấn', 'Bình', 'binh123', 'tanbinh@gmail.com', '42b702f32c19bcfa66b18f53630512357c4fa283', '3-4-1992', 'Nam', 'Giáo Viên'),
+('GV36508', 'Nguyễn Trung', 'Hậu', 'hau1234', 'hau@gmail.com', 'f73a4dacb52090b82683aa17aed8822ff446592f', '18-10-1994', 'Nam', 'Giáo Viên'),
+('HS13257', 'Thạch Cảnh', 'Bình', 'canhbinh12', 'canhbinh@gmail.com', 'c69f340ced75efd4373913b8ffcee96d2dd717ac', '17-3-2006', 'Nam', 'Học Sinh'),
+('HS45127', 'Đào Ngọc Gia', 'Anh', 'giaanh123', 'giaanh123@gmail.com', 'bd753b80609e4f10d98a4655e55a1c296feb797b', '17-3-2006', 'Nam', 'Học Sinh'),
+('PDT21754', 'Ma Đình ', 'Cường', 'pdt123', 'pdt@gmail.com', 'de56a0a5377a2c4e333156c34912b38318cd77fe', '1-3-1996', 'Nam', 'Phòng dào tạo'),
+('TBM36508', 'Nguyễn', 'Thúy Vi', 'vi12345', 'thuyvi@gmail.com', '615b746283ad0a3d19ee42a0bd940328faad4cdb', '6-9-1990', 'Nữ', 'Trưởng bộ môn'),
+('TBM76508', 'Nguyễn Thanh Trường', 'Giang', 'giang123', 'giang@gmail.com', '4e031bb475963ba73ebf552f78ae1c43283af8b8', '16-2-2003', 'Nam', 'Trưởng bộ môn');
 
 --
 -- Indexes for dumped tables
@@ -266,28 +271,10 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `diemthi`
---
-ALTER TABLE `diemthi`
-  MODIFY `id_diem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `giaovien`
---
-ALTER TABLE `giaovien`
-  MODIFY `id_gv` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20100047;
-
---
--- AUTO_INCREMENT for table `sinhvien`
---
-ALTER TABLE `sinhvien`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101000022;
-
---
 -- AUTO_INCREMENT for table `tbl_cauhoi`
 --
 ALTER TABLE `tbl_cauhoi`
-  MODIFY `ma_ch` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
+  MODIFY `ma_ch` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- AUTO_INCREMENT for table `tbl_dethi`

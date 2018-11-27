@@ -237,9 +237,37 @@
             }
     }
     public function hienthidethi($linhvuc){
+        if ($this->cn) {
+            $sql = "SELECT * FROM tbl_dethi where linhvuc='$linhvuc'";
+            return $sql;
+        }
+    }
+    public function  tonghopdiem($hocky,$i,$d)
+    {
+       if($this->cn) {
+           $sql="SELECT * FROM diemthi,tbl_dethi,sinhvien WHERE diemthi.made = tbl_dethi.made and diemthi.id = sinhvien.id and diemthi.hocky=$hocky GROUP BY diemthi.diem LIMIT $i,$d" ;
+           return $sql;
+        }
+    }
+        public function hocsinh_hienthidethi(){
+            if ($this->cn)
+            {
+                $sql="SELECT * FROM tbl_dethi";
+                return $sql;
+            }
+        }
+    public function hienthidethi_pdt($i,$d,$hocky){
         if ($this->cn)
         {
-            $sql="SELECT * FROM tbl_dethi where linhvuc='$linhvuc'";
+            $sql="SELECT * FROM tbl_dethi where hocky=$hocky LIMIT $i,$d ";
+            return $sql;
+        }
+    }
+    public function kiemtradethi($made)
+    {
+        if($this->cn)
+        {
+            $sql="SELECT * FROM tbl_dethi where made=$made";
             return $sql;
         }
     }
@@ -265,10 +293,10 @@
                 return $sql;
             }
         }
-        public function showdiem($i,$d,$hocky){
+        public function showdiem($id,$i,$d,$hocky){
             if ($this->cn)
             {
-                $sql="SELECT * FROM diemthi,tbl_dethi where diemthi.made=tbl_dethi.made and diemthi.hocky=$hocky LIMIT $i,$d";
+                $sql="SELECT * FROM diemthi,tbl_dethi where diemthi.id=$id and diemthi.made=tbl_dethi.made and diemthi.hocky=$hocky LIMIT $i,$d";
                 return $sql;
             }
         }
@@ -422,10 +450,10 @@
             }
     }
 
-	public function themgiaovien($ho,$ten,$username,$pass_signup,$email,$birthdate,$gender,$bomon,$quyen){
+	public function themgiaovien($id,$ho,$ten,$username,$pass_signup,$email,$birthdate,$gender,$bomon,$quyen){
 		if ($this->cn)
 		{
-			$sql = "INSERT INTO giaovien VALUE 	('','{$ho}','{$ten}','{$username}','{$pass_signup}','{$email}','{$birthdate}','{$gender}','{$bomon}','{$quyen}')";			
+			$sql = "INSERT INTO giaovien VALUE 	('$id','{$ho}','{$ten}','{$username}','{$pass_signup}','{$email}','{$birthdate}','{$gender}','{$bomon}','{$quyen}')";
 			return $sql;
 		}
 	}
@@ -477,10 +505,10 @@
 		}
 	}
 
-	public function themhocsinh($ho,$ten,$username,$email,$pass_signup,$birthdate,$gender,$lop,$a){
+	public function themhocsinh($id,$ho,$ten,$username,$email,$pass_signup,$birthdate,$gender,$lop,$a){
             if ($this->cn)
             {
-                $sql="INSERT INTO sinhvien VALUE ('','{$ho}','{$ten}','{$username}','{$pass_signup}','{$email}','{$birthdate}','{$gender}','$lop','$a')";
+                $sql="INSERT INTO sinhvien VALUE ('$id','{$ho}','{$ten}','{$username}','{$pass_signup}','{$email}','{$birthdate}','{$gender}','$lop','$a')";
                 return $sql;
             }
     }
