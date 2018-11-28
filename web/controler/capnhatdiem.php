@@ -48,7 +48,7 @@ if($kiemtra['linhvuc']=='Toán') {
         echo "0";
     }
 }else if($kiemtra['linhvuc']=='Tiếng Anh') {
-    $sql = "insert into diemthi(id_diem,id,made,ngaythi,dotthi,diem,hocky) value('$toan','$id_hs','$id_mon','$ngaythi','$dotthi','$diem','$hocky')";
+    $sql = "insert into diemthi(id_diem,id,made,ngaythi,dotthi,diem,hocky) value('$anh','$id_hs','$id_mon','$ngaythi','$dotthi','$diem','$hocky')";
     $query = $db->query($sql);
     if ($query) {
         echo "1";

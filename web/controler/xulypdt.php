@@ -19,7 +19,7 @@ if(isset($_GET['menu'])){
     }else if($_GET['menu']=='quanlydethi'){
         include("quanlydethi.php");
     }else if($_GET['menu']=='dangthongbao'){
-        include("dangthongbao.php");
+        include("../view/dangthongbao.php");
     }else if($_GET['menu']=='xemdethi_listpdt'){
         include("xemdethi_listpdt.php");
     }

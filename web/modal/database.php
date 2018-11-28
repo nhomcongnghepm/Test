@@ -245,7 +245,7 @@
     public function  tonghopdiem($hocky,$i,$d)
     {
        if($this->cn) {
-           $sql="SELECT * FROM diemthi,tbl_dethi,sinhvien WHERE diemthi.made = tbl_dethi.made and diemthi.id = sinhvien.id and diemthi.hocky=$hocky GROUP BY diemthi.diem LIMIT $i,$d" ;
+           $sql="SELECT * FROM diemthi,tbl_dethi,sinhvien WHERE diemthi.made = tbl_dethi.made and diemthi.id = sinhvien.id and diemthi.hocky=$hocky GROUP BY diemthi.id LIMIT $i,$d" ;
            return $sql;
         }
     }
@@ -296,9 +296,34 @@
         public function showdiem($id,$i,$d,$hocky){
             if ($this->cn)
             {
-                $sql="SELECT * FROM diemthi,tbl_dethi where diemthi.id=$id and diemthi.made=tbl_dethi.made and diemthi.hocky=$hocky LIMIT $i,$d";
+                    $sql="SELECT * FROM diemthi,tbl_dethi where diemthi.id='$id' and diemthi.made=tbl_dethi.made and diemthi.hocky=$hocky LIMIT $i,$d";
                 return $sql;
             }
+        }
+        public function tonghopdiem_2($hocky)
+        {
+            $sql="SELECT diemthi.diem as toan, diemthi.id FROM diemthi,sinhvien WHERE diemthi.id_diem LIKE 'T%' and hocky=$hocky GROUP BY id";
+            return $sql;
+        }
+        public function tonghopdiem_3($hocky)
+        {
+            $sql="SELECT diemthi.diem as ly,diemthi.id FROM diemthi,sinhvien WHERE diemthi.id_diem LIKE 'L%' and hocky=$hocky GROUP BY id";
+            return $sql;
+        }
+        public function tonghopdiem_4($hocky)
+    {
+        $sql="SELECT diemthi.diem as hoa,diemthi.id FROM diemthi,sinhvien WHERE diemthi.id_diem LIKE 'H%' and hocky=$hocky GROUP BY id";
+        return $sql;
+    }
+        public function tonghopdiem_5($hocky)
+        {
+            $sql="SELECT diemthi.diem as anh,diemthi.id FROM diemthi,sinhvien WHERE diemthi.id_diem LIKE 'A%' and hocky=$hocky GROUP BY id";
+            return $sql;
+        }
+        public function trungbinh($hocky)
+        {
+            $sql="SELECT ROUND(AVG(diem),2) AS trungbinh FROM diemthi where hocky=$hocky GROUP BY id";
+            return $sql;
         }
 	public function laydethi($made){
             if ($this->cn)
@@ -355,7 +380,7 @@
     {
         if($this->cn)
         {
-            $sql="SELECT * FROM diemthi,tbl_dethi where id='$id'";
+            $sql="SELECT * FROM diemthi,tbl_dethi where diemthi.id='$id'";
             return $sql;
         }
     }

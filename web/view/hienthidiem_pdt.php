@@ -10,8 +10,6 @@
     <script type="text/javascript" src="../assets/hocsinh/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div style="margin:20px 70px 10px; font-size:14px;">
-    <font size="2" face="Tahoma"><b>Học Sinh<img src="../assets/image/bl3.gif" border="0" /> Xem bảng điểm</b></font></div>
 <hr size="1" color="#cadadd" style="margin:15px auto;" />
 <div class='wrapper'>
     <form action="?menu=user_delete" method="post">
@@ -24,8 +22,12 @@
                 <th>Giới Tính</th>
                 <th>Ngày thi</th>
                 <th>Học kỳ</th>
-                <th>Tên đề</th>
-                <th>Điểm</th>
+                <th>Toán</th>
+                <th>Lý</th>
+                <th>Hóa</th>
+                <th>Tiếng Anh</th>
+                <th>Trung Bình</th>
+                <th>Xếp Loại</th>
             </tr>
             </thead>
             <tbody>
@@ -33,15 +35,6 @@
             require_once '../controler/hienthidiem_pdt.php';
             ?>
             </tbody>
-            <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th>Trung bình</th>
-            </tr>
         </table>
     </form>
 </div>

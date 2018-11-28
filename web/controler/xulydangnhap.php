@@ -15,7 +15,7 @@ if ($user)
             header('Location: truongbomon.php');
         }
         else if($rows['quyen']=='Phòng dào tạo') {
-            header('Location: phongdaotao.php');
+            header('Location: pdt.php');
         }
         else  header('Location: admin.php');
 }

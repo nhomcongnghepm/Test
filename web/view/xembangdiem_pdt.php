@@ -24,8 +24,12 @@
                 <th>Giới Tính</th>
                 <th>Ngày thi</th>
                 <th>Học kỳ</th>
-                <th>Tên đề</th>
-                <th>Điểm</th>
+                <th>Toán</th>
+                <th>Lý</th>
+                <th>Hóa</th>
+                <th>Tiếng Anh</th>
+                <th>Trung Bình</th>
+                <th>Xếp Loại</th>
             </tr>
             </thead>
             <tbody>
@@ -41,7 +45,7 @@
 <div class="nav navbar-right" id="DinhHuong" style="transform:translateY(-35px)" >
     <ul class="nav  pager" >
         <li class="previous" >
-            <a href="?menu=quanlybangdiem" style=" background-color:#ffcccc"="">&larr;Quay lại trang bảng điểm</a>
+            <a href="?menu=quanlydiemthi" style=" background-color:#ffcccc"="">&larr;Quay lại trang bảng điểm</a>
         </li>
         <li class="previous" >
             <a href="?menu=xembangdiem_pdt&page1prev=<?php echo $i?>" style=" background-color:#ffcccc"="">&larr;Trước</a>
