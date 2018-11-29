@@ -16,8 +16,8 @@
         <table cellpadding="1" cellspacing="1" id="resultTable">
             <thead>
             <tr>
-                <th>Mã số sinh viên</th>
-                <th>Họ tên sinh viên</th>
+                <th>Mã số học sinh</th>
+                <th>Họ tên học sinh</th>
                 <th>Ngày Sinh</th>
                 <th>Giới Tính</th>
                 <th>Ngày thi</th>

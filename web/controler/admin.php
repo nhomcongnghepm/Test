@@ -39,11 +39,11 @@
 							include("dethi_news.php");
 						}
 						if($_GET['menu']=='quanlyhocsinh'){
-							include ("quanlyhocsinh.php");
+							include ("quanlyhocsinh_admin.php");
 						}elseif($_GET['menu']=='hocsinh_edit'){
-							include "hocsinh_edit.php";
+							include "hocsinh_edit_admin.php";
 						}elseif($_GET['menu']=='hocsinh_saveedit'){
-							include "hocsinh_saveedit.php";
+							include "hocsinh_savedit_admin.php";
 						}else if($_GET['menu']=='hocsinh_delete'){
 							include("hocsinh_delete.php");
 						}else if($_GET['menu']=='hocsinh_news'){
@@ -51,11 +51,11 @@
 						}
 						
 						if($_GET['menu']=='quanlygiaovien'){
-							include ("quanlygiaovien.php");
+							include ("quanlygiaovien_admin.php");
 						}elseif($_GET['menu']=='giaovien_edit'){
-							include "giaovien_edit.php";
+							include "giaovien_edit_admin.php";
 						}elseif($_GET['menu']=='giaovien_saveedit'){
-							include "giaovien_saveedit.php";
+							include "giaovien_savedit_admin.php";
 						}else if($_GET['menu']=='giaovien_delete'){
 							include("giaovien_delete.php");
 						}else if($_GET['menu']=='giaovien_news'){

@@ -12,7 +12,7 @@
        <td bgcolor="#CCCCCC"  height="38px" colspan="2" align="center" class="style1">CẬP NHẬT THÔNG TIN GIÁO VIÊN</td>
     </tr>
    <tr>
-	<td width="20%"  align="right">Mã học sinh: </td>
+	<td width="20%"  align="right">Mã giáo viên(Trưởng bộ môn): </td>
     <td width="80%">&nbsp;&nbsp;<input size=30 type="text" name="id" readonly style="background-color:#CCC" value="<?php echo $id?>"/></td>
 	</tr>
       <tr>

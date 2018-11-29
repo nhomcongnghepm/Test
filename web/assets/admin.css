@@ -100,6 +100,7 @@
 		height: 150px;
 		background: url(../assets/image/header.png) no-repeat;
 		text-indent: -9999999px;
+		margin-top:-50px;
 	}
 
 	/*Begin Menu*/

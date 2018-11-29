@@ -278,7 +278,13 @@
                 return $sql;
             }
         }
-
+        public function showlichthi($i,$d){
+            if ($this->cn)
+            {
+                $sql="SELECT * FROM tbl_dethi  LIMIT $i,$d";
+                return $sql;
+            }
+        }
     public function hienthiuser(){
             if ($this->cn)
             {
@@ -427,6 +433,13 @@
 			 return $sql;
 		}
 	}
+        public function capnhatgiaovien_admin($pass,$id){
+            if ($this->cn)
+            {
+                $sql="UPDATE giaovien SET `password` ='".$pass."'where id_gv='".$id."'";
+                return $sql;
+            }
+        }
         public function doithongtingiaovien($ho,$ten,$email,$birthdate,$gender,$u){
             if ($this->cn)
             {
@@ -450,6 +463,13 @@
                 return $sql;
             }
     }
+        public function capnhathocsinh_admin($pass,$id){
+            if ($this->cn)
+            {
+                $sql="UPDATE sinhvien SET `password`='".$pass."' where id='".$id."'";
+                return $sql;
+            }
+        }
 
 	public function capnhatcauhoi($idch,$noidung,$lc1,$lc2,$lc3,$lc4,$dapan){
             if ($this->cn)
@@ -466,7 +486,13 @@
 			return $sql;
 		}
 	}
-
+        public function capnhatuser_admin($pass,$id){
+            if ($this->cn)
+            {
+                $sql="UPDATE user SET `password`='".$pass."' where id='".$id."'";
+                return $sql;
+            }
+        }
 	public function capnhatdethi($tende,$ngaythi,$hocky,$idmade,$date,$dotthi){
             if ($this->cn)
             {
