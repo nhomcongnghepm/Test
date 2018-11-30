@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="../assets/pdt/files/home/styles.css" type="text/css" rel="stylesheet"/>
     <link href="../assets/pdt/resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
     <link href="../assets/pdt/resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
     <link href="../assets/pdt/data/styles.css" type="text/css" rel="stylesheet"/>
@@ -49,10 +50,7 @@ else if(!$user)
 
 <div id="base" class="">
 
-    <!-- Unnamed (Group) -->
     <div id="u0" class="ax_default" data-left="24" data-top="36" data-width="1278" data-height="156">
-
-        <!-- Rectangle (Rectangle) -->
         <div id="u1" class="ax_default" data-label="Rectangle">
             <div id="u1_div" class=""></div>
         </div>
@@ -78,7 +76,7 @@ else if(!$user)
                 <div id="u6" class="ax_default table_cell">
                     <img id="u6_img" class="img " src="../assets/pdt/images/home/u6.png"/>
                     <div id="u6_text" class="text ">
-                        <a href="../controler/xulydangxuat.php"  >   <p><span>Đăng xuất</span></p></a>
+                        <a href="?menu=dethi_list" >  <p><span>Quản lí đề thi</span></p></a>
                     </div>
                 </div>
 
@@ -110,7 +108,7 @@ else if(!$user)
                 <div id="u10" class="ax_default table_cell">
                     <img id="u10_img" class="img " src="../assets/pdt/images/home/u6.png"/>
                     <div id="u10_text" class="text ">
-                        <a href="?menu=quanlyethi" >  <p><span>Quản lí đề thi</span></p></a>
+                        <a href="?menu=dangthongbao">  <p><span>Đăng thông báo</span></p></a>
                     </div>
                 </div>
 
@@ -118,12 +116,11 @@ else if(!$user)
                 <div id="u11" class="ax_default table_cell">
                     <img id="u11_img" class="img " src="../assets/pdt/images/home/u11.png"/>
                     <div id="u11_text" class="text ">
-                        <a href="?menu=dangthongbao">  <p><span>Đăng thông báo</span></p></a>
+                        <a href="../controler/xulydangxuat.php"  >   <p><span>Đăng xuất</span></p></a>
                     </div>
                 </div>
             </div>
         </div>
-
         <!-- Unnamed (Rectangle) -->
         <div id="u12" class="ax_default label">
             <div id="u12_div" class=""></div>
@@ -133,6 +130,12 @@ else if(!$user)
         </div>
     </div>
 
+    <div style='margin:200px 0 5px 1380px; padding:0;width:200px; right:0; top:0;'>
+        <img border='0' height='665' src='../assets/image/banner.gif' width='200'/></a>
+    </div>
+<div style='margin:181px 0 5px 0px; padding:0;width:200px; right:0; top:0;'>
+    <img border='0' height='500' src='../assets/image/banner2.jpg' width='1900'/></a>
+</div></div>
     <!-- Unnamed (Group) -->
     <div id="u13" class="ax_default" data-left="0" data-top="1553" data-width="1356" data-height="252">
 
@@ -190,7 +193,6 @@ else if(!$user)
                         <p><span>G+</span></p>
                     </div>
                 </div>
-
                 <!-- G+ (Rectangle) -->
                 <div id="u23" class="ax_default" data-label="G+">
                     <div id="u23_div" class=""></div>

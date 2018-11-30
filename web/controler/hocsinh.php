@@ -16,7 +16,9 @@ if(isset($_GET['menu'])){
     if($_GET['menu']=='diemthi'){
         include ("../view/diemthi.php");
     }
-
+    else if($_GET['menu']=='xembangdiem'){
+        include("xembangdiem.php");
+    }
 }else
     include "banghs.php";
 ?>

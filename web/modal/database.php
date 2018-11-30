@@ -237,9 +237,37 @@
             }
     }
     public function hienthidethi($linhvuc){
+        if ($this->cn) {
+            $sql = "SELECT * FROM tbl_dethi where linhvuc='$linhvuc'";
+            return $sql;
+        }
+    }
+    public function  tonghopdiem($hocky,$i,$d)
+    {
+       if($this->cn) {
+           $sql="SELECT * FROM diemthi,tbl_dethi,sinhvien WHERE diemthi.made = tbl_dethi.made and diemthi.id = sinhvien.id and diemthi.hocky=$hocky GROUP BY diemthi.id LIMIT $i,$d" ;
+           return $sql;
+        }
+    }
+        public function hocsinh_hienthidethi(){
+            if ($this->cn)
+            {
+                $sql="SELECT * FROM tbl_dethi";
+                return $sql;
+            }
+        }
+    public function hienthidethi_pdt($i,$d,$hocky){
         if ($this->cn)
         {
-            $sql="SELECT * FROM tbl_dethi where linhvuc='$linhvuc'";
+            $sql="SELECT * FROM tbl_dethi where hocky=$hocky LIMIT $i,$d ";
+            return $sql;
+        }
+    }
+    public function kiemtradethi($made)
+    {
+        if($this->cn)
+        {
+            $sql="SELECT * FROM tbl_dethi where made=$made";
             return $sql;
         }
     }
@@ -250,7 +278,13 @@
                 return $sql;
             }
         }
-
+        public function showlichthi($i,$d){
+            if ($this->cn)
+            {
+                $sql="SELECT * FROM tbl_dethi  LIMIT $i,$d";
+                return $sql;
+            }
+        }
     public function hienthiuser(){
             if ($this->cn)
             {
@@ -258,6 +292,13 @@
                 return $sql;
             }
     }
+        public function hienthiuser_admin($u){
+            if ($this->cn)
+            {
+                $sql="SELECT * FROM user where user='$u'";
+                return $sql;
+            }
+        }
         public function showuser($i,$d){
             if ($this->cn)
             {
@@ -265,12 +306,37 @@
                 return $sql;
             }
         }
-        public function showdiem($i,$d,$hocky){
+        public function showdiem($id,$i,$d,$hocky){
             if ($this->cn)
             {
-                $sql="SELECT * FROM diemthi,tbl_dethi where diemthi.made=tbl_dethi.made and diemthi.hocky=$hocky LIMIT $i,$d";
+                    $sql="SELECT * FROM diemthi,tbl_dethi where diemthi.id='$id' and diemthi.made=tbl_dethi.made and diemthi.hocky=$hocky LIMIT $i,$d";
                 return $sql;
             }
+        }
+        public function tonghopdiem_2($hocky)
+        {
+            $sql="SELECT diemthi.diem as toan, diemthi.id FROM diemthi,sinhvien WHERE diemthi.id_diem LIKE 'T%' and hocky=$hocky GROUP BY id";
+            return $sql;
+        }
+        public function tonghopdiem_3($hocky)
+        {
+            $sql="SELECT diemthi.diem as ly,diemthi.id FROM diemthi,sinhvien WHERE diemthi.id_diem LIKE 'L%' and hocky=$hocky GROUP BY id";
+            return $sql;
+        }
+        public function tonghopdiem_4($hocky)
+    {
+        $sql="SELECT diemthi.diem as hoa,diemthi.id FROM diemthi,sinhvien WHERE diemthi.id_diem LIKE 'H%' and hocky=$hocky GROUP BY id";
+        return $sql;
+    }
+        public function tonghopdiem_5($hocky)
+        {
+            $sql="SELECT diemthi.diem as anh,diemthi.id FROM diemthi,sinhvien WHERE diemthi.id_diem LIKE 'A%' and hocky=$hocky GROUP BY id";
+            return $sql;
+        }
+        public function trungbinh($hocky)
+        {
+            $sql="SELECT ROUND(AVG(diem),2) AS trungbinh FROM diemthi where hocky=$hocky GROUP BY id";
+            return $sql;
         }
 	public function laydethi($made){
             if ($this->cn)
@@ -327,7 +393,7 @@
     {
         if($this->cn)
         {
-            $sql="SELECT * FROM diemthi,tbl_dethi where id='$id'";
+            $sql="SELECT * FROM diemthi,tbl_dethi where diemthi.id='$id'";
             return $sql;
         }
     }
@@ -374,6 +440,13 @@
 			 return $sql;
 		}
 	}
+        public function capnhatgiaovien_admin($pass,$id){
+            if ($this->cn)
+            {
+                $sql="UPDATE giaovien SET `password` ='".$pass."'where id_gv='".$id."'";
+                return $sql;
+            }
+        }
         public function doithongtingiaovien($ho,$ten,$email,$birthdate,$gender,$u){
             if ($this->cn)
             {
@@ -397,6 +470,13 @@
                 return $sql;
             }
     }
+        public function capnhathocsinh_admin($pass,$id){
+            if ($this->cn)
+            {
+                $sql="UPDATE sinhvien SET `password`='".$pass."' where id='".$id."'";
+                return $sql;
+            }
+        }
 
 	public function capnhatcauhoi($idch,$noidung,$lc1,$lc2,$lc3,$lc4,$dapan){
             if ($this->cn)
@@ -413,7 +493,13 @@
 			return $sql;
 		}
 	}
-
+        public function capnhatuser_admin($pass,$id){
+            if ($this->cn)
+            {
+                $sql="UPDATE user SET `password`='".$pass."' where id='".$id."'";
+                return $sql;
+            }
+        }
 	public function capnhatdethi($tende,$ngaythi,$hocky,$idmade,$date,$dotthi){
             if ($this->cn)
             {
@@ -422,10 +508,10 @@
             }
     }
 
-	public function themgiaovien($ho,$ten,$username,$pass_signup,$email,$birthdate,$gender,$bomon,$quyen){
+	public function themgiaovien($id,$ho,$ten,$username,$pass_signup,$email,$birthdate,$gender,$bomon,$quyen){
 		if ($this->cn)
 		{
-			$sql = "INSERT INTO giaovien VALUE 	('','{$ho}','{$ten}','{$username}','{$pass_signup}','{$email}','{$birthdate}','{$gender}','{$bomon}','{$quyen}')";			
+			$sql = "INSERT INTO giaovien VALUE 	('$id','{$ho}','{$ten}','{$username}','{$pass_signup}','{$email}','{$birthdate}','{$gender}','{$bomon}','{$quyen}')";
 			return $sql;
 		}
 	}
@@ -477,10 +563,10 @@
 		}
 	}
 
-	public function themhocsinh($ho,$ten,$username,$email,$pass_signup,$birthdate,$gender,$lop,$a){
+	public function themhocsinh($id,$ho,$ten,$username,$email,$pass_signup,$birthdate,$gender,$lop,$a){
             if ($this->cn)
             {
-                $sql="INSERT INTO sinhvien VALUE ('','{$ho}','{$ten}','{$username}','{$pass_signup}','{$email}','{$birthdate}','{$gender}','$lop','$a')";
+                $sql="INSERT INTO sinhvien VALUE ('$id','{$ho}','{$ten}','{$username}','{$pass_signup}','{$email}','{$birthdate}','{$gender}','$lop','$a')";
                 return $sql;
             }
     }

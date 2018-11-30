@@ -25,7 +25,7 @@
 	if(xmlhttp.readyState == 4 && xmlhttp.status == 200){ //gia tri 4 và 200 la mat định
 	
 	if(xmlhttp.responseText.trim()=="1"){ document.getElementById('True').innerHTML = " <label>Trong thời gian thi, nhấn nút Bắt đầu để thi!!!</label><br><input type='submit' class='btn btn-primary btn-lg' target='_blank' value='Bắt đầu' />  ";}
-	if(xmlhttp.responseText.trim()=="0") document.getElementById('True').innerHTML = "   <label>Chưa tới ngày thi!!!</label>";
+	if(xmlhttp.responseText.trim()=="0") document.getElementById('True').innerHTML = "   <label>Hiện không phải trong thời gian thi!!!</label>";
 	
             }
 			

@@ -15,9 +15,9 @@ if ($user)
             header('Location: truongbomon.php');
         }
         else if($rows['quyen']=='Phòng dào tạo') {
-            header('Location: phongdaotao.php');
+            header('Location: pdt.php');
         }
-        else  header('Location: admin.php');
+        else  header('Location: ../gentelella-master/production/admin.php');
 }
 else if (isset($_POST['dangnhap']))
 {
@@ -48,7 +48,7 @@ else if (isset($_POST['dangnhap']))
         $db->close();
 	}
 	if($row['quyen']=="Admin") {
-		header('Location: admin.php');   		 }
+		header('Location: ../gentelella-master/production/admin.php');   		 }
     	else if($row['quyen']=="Học Sinh")
     	{
             header('Location: hocsinh.php');
@@ -59,7 +59,7 @@ else if (isset($_POST['dangnhap']))
     	}
    		 else if($row['quyen']=="Phòng dào tạo")
     	{
-       	 echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='/pdt.php'>Vào trang phòng đào tạo</a>";
+            header('Location: pdt.php');
 		}
 		else header('Location: truongbomon.php');
     die();

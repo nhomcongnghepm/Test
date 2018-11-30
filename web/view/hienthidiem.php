@@ -35,10 +35,7 @@
 <br>
 <div class="nav navbar-right" id="DinhHuong" style="transform:translateY(-35px)" >
     <ul class="nav  pager" >
-        <li class="previous" >
-            <a href="?menu=quanlytaikhoan&page1prev=<?php echo $i?>">&larr;Trước</a>
-        </li>
-        <li class="next"><a href="?menu=quanlytaikhoan&page1=<?php echo $i?>">Sau&rarr;</a></li>
+        <li class="next"><a href="?menu=xembangdiem" style=" background-color:#ffcccc"="">Xem bảng điểm chi tiết</a></li>
     </ul>
 </div>
 </body>

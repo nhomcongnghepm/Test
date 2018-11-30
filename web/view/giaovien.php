@@ -41,9 +41,9 @@ if($user) {
         echo "<script>alert('Bạn không có quyền vào trang này !');window.location='hocsinh.php'</script>";
     }
     else if($rows['quyen']=='Phòng dào tạo') {
-        echo "<script>alert('Bạn không có quyền vào trang này !');window.location='phongdaotao.php'</script>";
+        echo "<script>alert('Bạn không có quyền vào trang này !');window.location='pdt.php'</script>";
     } else  if($rows['quyen']=='Admin') {
-        echo "<script>alert('Bạn không có quyền vào trang này !');window.location='admin.php'</script>";
+        echo "<script>alert('Bạn không có quyền vào trang này !');window.location='../gentelella-master/production/admin.php'</script>";
     }
 }
 else if(!$user)

@@ -62,7 +62,6 @@
 	/* close commented backslash hack */
 	body {
 		font: 12px/2 "Helvetica Neue", Helvetica, Arial, sans-serif;
-		background: url(../assets/image/bg.png);
 		margin: 0;
 	}
 
@@ -101,6 +100,7 @@
 		height: 150px;
 		background: url(../assets/image/header.png) no-repeat;
 		text-indent: -9999999px;
+		margin-top:-50px;
 	}
 
 	/*Begin Menu*/

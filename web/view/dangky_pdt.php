@@ -3,13 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Đăng Ký</title>
-<link rel="stylesheet" href="../assets/bootstrap-3.3.6/dist/css/bootstrap.min.css"><script src="../assets/bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="../assets/dangky.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="../../assets/bootstrap-3.3.6/dist/css/bootstrap.min.css"><script src="../../assets/bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../assets/dangky.css">
 <body>
 <br>
 <div style="margin:20px 70px 10px; font-size:14px;">
-<font size="2" face="Tahoma"><b>Quản lý tài khoản <img src="../assets/image/bl3.gif" border="0" />Thêm tài khoản</b></font></div>
+<font size="2" face="Tahoma"><b>Quản lý tài khoản <img src="../../assets/image/bl3.gif" border="0" />Thêm tài khoản</b></font></div>
   <div class="container"> 
  <div class="row"> 
   <div class="col-xs-12 col-sm-12 col-md-4 well well-sm col-md-offset-4"> 

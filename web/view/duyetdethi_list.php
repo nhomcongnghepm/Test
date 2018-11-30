@@ -41,7 +41,7 @@
     <br>
     <div class="nav navbar-right" id="DinhHuong" style="transform:translateY(-35px)" >
         <ul class="nav  pager" >
-            <li class="next"><a href="?menu=xemchitietde">Xem chi tiết đề</a></li>
+            <li class="next"><a href="?menu=xemchitietde" style=" background-color:#ffcccc"="">Xem chi tiết đề</a></li>
         </ul>
     </div>
 </div>

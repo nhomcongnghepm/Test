@@ -16,7 +16,7 @@ else {
     $i = 0;
     $d=10;
 }
-$sql =$db->showdethi($i,$d);
+$sql =$db->showlichthi($i,$d);
 $results=$db->query($sql);
 while($rows = $db->lay_rows($results)) {
     echo '<tr class="teacher">

@@ -34,7 +34,7 @@
         });
     </script>
 </head>
-<body>  
+<body>
 <div style="margin:20px 70px 10px; font-size:14px;">
 <font size="2" face="Tahoma"><b>HỌC SINH <img src="../assets/image/bl3.gif" border="0" /> QUẢN LÝ HỌC SINH</b></font></div>
 <hr size="1" color="#cadadd" style="margin:15px auto;" />
@@ -71,9 +71,9 @@
 <div class="nav navbar-right" id="DinhHuong" style="transform:translateY(-35px)" >
     <ul class="nav  pager" >
         <li class="previous" >
-            <a href="?menu=quanlyhocsinh&page1prev=<?php echo $i?>">&larr;Trước</a>
+            <a href="?menu=quanlyhocsinh&page1prev=<?php echo $i?>" style=" background-color:#ffcccc"="">&larr;Trước</a>
         </li>
-        <li class="next"><a href="?menu=quanlyhocsinh&page1=<?php echo $i?>">Sau&rarr;</a></li>
+        <li class="next"><a href="?menu=quanlyhocsinh&page1=<?php echo $i?>" style=" background-color:#ffcccc"="">Sau&rarr;</a></li>
     </ul>
 </div>
   </body>
