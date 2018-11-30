@@ -292,6 +292,13 @@
                 return $sql;
             }
     }
+        public function hienthiuser_admin($u){
+            if ($this->cn)
+            {
+                $sql="SELECT * FROM user where user='$u'";
+                return $sql;
+            }
+        }
         public function showuser($i,$d){
             if ($this->cn)
             {

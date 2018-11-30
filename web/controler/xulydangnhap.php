@@ -17,7 +17,7 @@ if ($user)
         else if($rows['quyen']=='Phòng dào tạo') {
             header('Location: pdt.php');
         }
-        else  header('Location: admin.php');
+        else  header('Location: ../gentelella-master/production/admin.php');
 }
 else if (isset($_POST['dangnhap']))
 {
@@ -48,7 +48,7 @@ else if (isset($_POST['dangnhap']))
         $db->close();
 	}
 	if($row['quyen']=="Admin") {
-		header('Location: admin.php');   		 }
+		header('Location: ../gentelella-master/production/admin.php');   		 }
     	else if($row['quyen']=="Học Sinh")
     	{
             header('Location: hocsinh.php');

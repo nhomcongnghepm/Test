@@ -1,15 +1,15 @@
-<link rel="stylesheet" href="../assets/style.css" type="text/css" media="screen" charset="utf-8">
-<script type="text/javascript" src="../assets/tiny_mce/tiny_mce.js"></script>
-<script type="text/javascript" src="../assets/tiny_mce/int.load.js"></script>
-<link rel="stylesheet" href="../assets/chinhsuacauhoi.css" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="../../assets/style.css" type="text/css" media="screen" charset="utf-8">
+<script type="text/javascript" src="../../assets/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src="../../assets/tiny_mce/int.load.js"></script>
+<link rel="stylesheet" href="../../assets/chinhsuacauhoi.css" type="text/css" media="screen" charset="utf-8">
 <div style="margin:20px 70px 10px; font-size:14px;">
-    <font size="2" face="Tahoma"><b><a href="">GIÁO VIÊN</a><img src="../assets/image/bl3.gif" border="0" /> Cập nhật THÔNG TIN GIÁO VIÊN</b></font></div>
+    <font size="2" face="Tahoma"><b><a href="">GIÁO VIÊN</a><img src="../../assets/image/bl3.gif" border="0" /> Cập nhật THÔNG TIN GIÁO VIÊN</b></font></div>
 <hr size="1" color="#cadadd" style="margin:15px auto;" />
 <form action="" method="post" class="form1">
     <?php require_once '../controler/chinhsuagiaovien.php';?>
     <table width="750" border="0"  cellpadding="0" cellspacing="0" background="../assets/image/body.png">
         <tr>
-            <td bgcolor="#CCCCCC"  height="38px"colspan="2" align="center" class="style1">CẬP NHẬT THÔNG TIN HỌC SINH</td>
+            <td bgcolor="#CCCCCC"  height="38px"colspan="2" align="center" class="style1">CẬP NHẬT THÔNG TIN GIÁO VIÊN</td>
         </tr>
         <tr>
             <td width="20%"  align="right">Mã giáo viên/(Trưởng bộ môn): </td>

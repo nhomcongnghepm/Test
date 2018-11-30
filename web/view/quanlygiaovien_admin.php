@@ -4,13 +4,12 @@
     <title>Test</title>
     </title>
     <!--sa poip up-->
-    <link href="../assets/taikhoan.css" media="screen" rel="stylesheet" type="text/css" />
-    <script src="../assets/js/jquery.js" type="text/javascript"></script>
-    <script src="../assets/js/facebox.js" type="text/javascript"></script>
-    <link href="../assets/hocsinh/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../assets/hocsinh/css/sinhvien.css">
-    <script type="text/javascript" src="../assets/hocsinh/js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="../assets/hocsinh/js/bootstrap.min.js"></script>
+    <link href="../../assets/taikhoan.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="../../assets/js/jquery.js" type="text/javascript"></script>
+    <script src="../../assets/js/facebox.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../assets/hocsinh/css/sinhvien.css">
+    <script type="text/javascript" src="../../assets/hocsinh/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../../assets/hocsinh/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $("#resultTable thead tr th:first input:checkbox").click(function() {
@@ -36,7 +35,7 @@
 </head>
 <body>
 <div style="margin:20px 70px 10px; font-size:14px;">
-    <font size="2" face="Tahoma"><b>GIÁO VIÊN <img src="../assets/image/bl3.gif" border="0" /> QUẢN LÝ GIÁO VIÊN</b></font></div>
+    <font size="2" face="Tahoma"><b>GIÁO VIÊN <img src="../../assets/image/bl3.gif" border="0" /> QUẢN LÝ GIÁO VIÊN</b></font></div>
 <hr size="1" color="#cadadd" style="margin:15px auto;" />
 <div class='wrapper'>
     <form action="?menu=giaovien_delete" method="post">
