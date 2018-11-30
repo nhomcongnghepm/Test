@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="../assets/pdt/files/home/styles.css" type="text/css" rel="stylesheet"/>
     <link href="../assets/pdt/resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
     <link href="../assets/pdt/resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
     <link href="../assets/pdt/data/styles.css" type="text/css" rel="stylesheet"/>
@@ -120,7 +121,6 @@ else if(!$user)
                 </div>
             </div>
         </div>
-
         <!-- Unnamed (Rectangle) -->
         <div id="u12" class="ax_default label">
             <div id="u12_div" class=""></div>
@@ -130,6 +130,12 @@ else if(!$user)
         </div>
     </div>
 
+    <div style='margin:200px 0 5px 1380px; padding:0;width:200px; right:0; top:0;'>
+        <img border='0' height='665' src='../assets/image/banner.gif' width='200'/></a>
+    </div>
+<div style='margin:181px 0 5px 0px; padding:0;width:200px; right:0; top:0;'>
+    <img border='0' height='500' src='../assets/image/banner2.jpg' width='1900'/></a>
+</div></div>
     <!-- Unnamed (Group) -->
     <div id="u13" class="ax_default" data-left="0" data-top="1553" data-width="1356" data-height="252">
 

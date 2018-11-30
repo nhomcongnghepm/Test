@@ -5,7 +5,7 @@
     <form action="" method="post" class="">
         <br><table width="600" border="0"  cellpadding="0" cellspacing="0" background="../assets/image/body.png">
             <tr>
-                <td bgcolor="#CCCCCC"  height="38px"colspan="3" align="center" class="style1">Duyệt đề thi</td>
+                <td bgcolor="#CCCCCC"  height="38px"colspan="3" align="center" class="style1">Đề thi</td>
             </tr>
             <tr>
                 <td align="right" class="style1"><div align="center">Mời bạn hãy chọn học kỳ <span style="color:red;font-size:22px">* </span>
