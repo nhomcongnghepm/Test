@@ -458,7 +458,7 @@
         public function doithongtinhocsinh($ho,$ten,$email,$birthdate,$gender,$u){
             if ($this->cn)
             {
-                $sql="UPDATE hocsinh SET `ho` ='".$ho."',`ten` ='".$ten."',`email` ='".$email."',`birthdate` ='".$birthdate."',`Gioitinh` ='".$gender."' where user='$u'";
+                $sql="UPDATE sinhvien SET `ho` ='".$ho."',`ten` ='".$ten."',`email` ='".$email."',`birthdate` ='".$birthdate."',`Gioitinh` ='".$gender."' where user='$u'";
                 return $sql;
             }
         }
