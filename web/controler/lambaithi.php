@@ -45,6 +45,11 @@
                             <label >Ngày thi:</label>
                             <input class="form-control" name="ngaythi" value="<?php echo $currentDate;?>" readonly="readonly" id="chonngaythi"></input>
                           </li >
+                              </li >
+                              <li class="col-md-2">
+                                  <label >Giờ thi:</label>
+                                  <input class="form-control" name="giothi" value="<?php echo $startTime;?>" readonly="readonly" id="chongiothi"></input>
+                              </li >
 						    <li class="col-md-2">
                             <label >Chọn kỳ thi:</label>
                             <select class="form-control" name="dotthi" id="chondotthi">
@@ -59,6 +64,7 @@
                                       <option value="2">Học kỳ 2</option>
                                   </select>
                               </li >
+                              <br>
                           <li  class="col-md-3 col-md-offset-1"  >
                             <div type="button" id="NutKiemTra" class="btn btn-info btn-lg" onclick="load_ajax(<?php echo $_SESSION['id'] ?>)" >Kiểm tra</div>
                           </li>

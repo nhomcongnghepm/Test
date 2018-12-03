@@ -25,7 +25,14 @@
 	  <td><select  class="form-control" name="day"> <option value="day">Ngày <?php day();?></option></select>
 		  <select  class="form-control" name="month"> <option value="month">Tháng <?php  thang();?></option></select>
 		  <select  class="form-control" name="year"> <option value="year">Năm <?php  nam();?></option></select>
-</td> <td>&nbsp;</td>
+      </td> </tr>
+    <tr>
+        <br> <br />
+        <td height="42" align="center" class="tbltitle">Ngày Thi:</td>
+        <td><select  class="form-control" name="gio"> <option value="gio">Giờ <?php gio();?></option></select>
+            <select  class="form-control" name="phut"> <option value="phut">Phút <?php  phut();?></option></select>
+            <select  class="form-control" name="giay"> <option value="giay">Giây <?php  giay();?></option></select>
+        </td> </tr>
     <tr>
         <br> <br />
         <td height="42" align="center" class="tbltitle">Học kỳ:</td>

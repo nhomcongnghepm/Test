@@ -20,7 +20,6 @@
                              <th>NGƯỜI GỬI</th>
                                <th>Thời Gian</th>
                              <th>Nội Dung</th>
-                               <th>XEM CHI TIẾT</th>
                            </tr>
                          </thead>
                          <tbody>

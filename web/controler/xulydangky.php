@@ -80,14 +80,9 @@ và có từ 6 đến 32 ký tự <a href='javascript: history.go(-1)'>Trở l�
             $addmember = $db->themgiaovien($giaovien,$ho, $ten, $username, $pass_signup, $email, $birthdate, $gender, $bomon, $quyen);
             $db->query($addmember);
 
-            $sql = $db->hienthigiaovien();
-            $results = $db->query($sql);
-            while ($row = $db->lay_rows($results)) {
-                $id = $row['id_gv'];
-            }
-            $addmember1 = $db->themuser($id, $ho, $ten, $username, $email, $pass_signup, $birthdate, $gender, $quyen);
-            $db->query($addmember1);
-            if ($addmember1)
+            $addmember1 = $db->themuser($giaovien, $ho, $ten, $username, $email, $pass_signup, $birthdate, $gender, $quyen);
+            $b=$db->query($addmember1);
+            if ($b)
                 echo "<script>alert('Đăng ký thành công !');window.location='?menu=quanlygiaovien'</script>";
             else
                 echo "Có lỗi xảy ra trong quá trình đăng ký. <a href='dangky.php'>Thử lại</a>";
@@ -96,14 +91,9 @@ và có từ 6 đến 32 ký tự <a href='javascript: history.go(-1)'>Trở l�
             $addmember2 = $db->themgiaovien($tbm,$ho, $ten, $username, $pass_signup, $email, $birthdate, $gender, $bomon, $quyen);
             $db->query($addmember2);
 
-            $sql2 = $db->hienthigiaovien();
-            $results2 = $db->query($sql2);
-            while ($row1 = $db->lay_rows($results2)) {
-                $id = $row1['id_gv'];
-            }
-            $addmember3 = $db->themuser($id, $ho, $ten, $username, $email, $pass_signup, $birthdate, $gender, $quyen);
-            $db->query($addmember3);
-            if ($addmember3)
+            $addmember3 = $db->themuser($tbm, $ho, $ten, $username, $email, $pass_signup, $birthdate, $gender, $quyen);
+            $a=$db->query($addmember3);
+            if ($a)
                 echo "<script>alert('Đăng ký thành công !');window.location='?menu=quanlygiaovien'</script>";
             else
                 echo "Có lỗi xảy ra trong quá trình đăng ký. <a href='dangky.php'>Thử lại</a>";

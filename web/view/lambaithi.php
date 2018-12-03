@@ -11,7 +11,7 @@ $row=$db->lay_rows($query);
 $kiemtra=$db->kiemtraketquathi($row['id']);
 $query1=$db->query($kiemtra);
 $row1=$db->lay_rows($query1);
-if($row1['made']==$_POST['monselect']&&$row1['ngaythi']==$_POST['ngaythi']&&$row1['dotthi']==$_POST['dotthi']&&$row1['hocky']==$_POST['hockyselect']) {
+if($row1['made']==$_POST['monselect']and $row1['ngaythi']==$_POST['ngaythi']and $row1['dotthi']==$_POST['dotthi']and $row1['hocky']==$_POST['hockyselect']) {
     echo "<script>alert('Bạn đã thi xong mời bạn vào xem kết quả !');window.location='hocsinh.php'</script>";
     exit;
 }
@@ -293,7 +293,7 @@ for(var i=0;i<40;i++)
                         </ul>
                   </div>
                   <div class="modal-footer">
-                      <a href="../controler/xoacookie.php" class="btn btn-primary" >close</a>
+                      <a href="../controler/xulydangxuat.php" class="btn btn-primary" >close</a>
                   </div>
               </div>
             </div>

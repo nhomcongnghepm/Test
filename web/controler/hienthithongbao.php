@@ -9,7 +9,6 @@ while(($rows3 =$db->lay_rows($query))!= NULL)
         <td><?php echo $rows3['nguoigui']?></td>
         <td><?php echo $rows3['thoigian']?></td>
         <td><?php echo $rows3['noidung']?></td>
-        <td> <a href="#" id="ChiTiet<?php echo $rows3['id'] ?>" class="btn-link" >chi tiết<a></td>
     </tr>
 
     <?php

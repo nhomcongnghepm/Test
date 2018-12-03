@@ -18,6 +18,7 @@
                 <th>Tên đề</th>
                 <th>Ngày Thi</th>
                 <th>Ca Thi</th>
+                <th>Giờ Thi</th>
             </tr>
             </thead>
             <tbody>

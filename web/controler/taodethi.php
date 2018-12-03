@@ -14,15 +14,18 @@ require_once '../modal/init.php';
 		$day = $_POST['day'];
         $month = $_POST['month'];
         $year = $_POST['year'];
+        $gio = $_POST['gio'];
+        $phut = $_POST['phut'];
+        $giay = $_POST['giay'];
 		$hocky=$_POST['hocky'];
-		$trangthai='Chưa duyệt';
+        $trangthai='Chưa duyệt';
 		$tende=$_POST['tende'];
 		$linhvuc=$row['bomon'];
 		$dotthi=$_POST['dotthi'];
 		$sql4=$db->hienthidethi($linhvuc);
 		$dethi=$db->query($sql4);
 		$rows=$db->lay_rows($dethi);
-	if($_POST["tende"]==null||$_POST["day"]==day||$_POST["month"]==month||$_POST["year"]==year)
+	if($_POST["tende"]==null||$_POST["day"]==day||$_POST["month"]==month||$_POST["year"]==year||$_POST["gio"]==gio||$_POST["giay"]==giay||$_POST["phut"]==phut)
 	{
 		echo 'Bạn vui lòng nhập đầy đủ thông tin';
 		exit;
@@ -40,9 +43,22 @@ require_once '../modal/init.php';
 		}
 		else
 		{
+            if($gio<10)
+            {
+                $day='0'.$day;
+            }
+            if($phut<10)
+            {
+                $phut='0'.$phut;
+            }
+            if($giay<10)
+            {
+                $giay='0'.$giay;
+            }
 		  $ngaythi = $day . '/' . $month . '/' . $year;
-			$date=date("d/m/y");
-			$sql2=$db->themdethi($ngaythi,$hocky,$date,$tacgia,$tende,$trangthai,$dotthi,$linhvuc);
+            $giothi = $gio . ':' . $phut . ':' . $giay;
+            $date=date("d/m/y");
+			$sql2=$db->themdethi($ngaythi,$hocky,$date,$tacgia,$tende,$trangthai,$dotthi,$linhvuc,$giothi);
 			$a=$db->query($sql2);
 			if($a)
 			{

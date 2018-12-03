@@ -38,6 +38,26 @@
           </span></td>
   </tr>
       <tr>
+         <td align="right">Giờ Thi: </td>
+          <td><span class="tbltitle">
+            <select  class="form-control" name="gio">
+              <option value="gio">Giờ
+                  <?php gio();?>
+              </option>
+            </select>
+          <select  class="form-control" name="phut">
+              <option value="phut">Phút
+                  <?php  phut();?>
+            </option>
+          </select>
+          <select  class="form-control" name="giay">
+            <option value="giay">Giây
+                <?php  giay();?>
+            </option>
+          </select>
+          </span></td>
+      </tr>
+      <tr>
           <td align="right" class="tbltitle">Học kỳ:</td>
           <td>  <select class="form-control" name="hocky" id="chondotthi">
                   <option value="1">Học kỳ 1</option>

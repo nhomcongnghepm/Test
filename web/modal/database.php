@@ -1,4 +1,5 @@
 <?php
+	error_reporting(0);
 	class database{
 		// Khai báo các biến dưới dạng private
     private $hostname = 'localhost',
@@ -291,20 +292,6 @@
                 return $sql;
             }
     }
-        public function dangthongbao($chude,$noidungtb,$tacgia,$thoigian){
-            if ($this->cn)
-            {
-                $sql = "insert into thong_bao(id,chude,noidung,nguoigui,thoigian) value('','$chude','$noidungtb','$tacgia','$thoigian')";
-                return $sql;
-            }
-        }
-        public function hienthithongbao(){
-            if ($this->cn)
-            {
-                $sql="SELECT * FROM thong_bao group by id";
-                return $sql;
-            }
-        }
         public function hienthiuser_admin($u){
             if ($this->cn)
             {
@@ -406,7 +393,7 @@
     {
         if($this->cn)
         {
-            $sql="SELECT * FROM diemthi,tbl_dethi where diemthi.id='$id'";
+            $sql="SELECT * FROM diemthi,tbl_dethi where diemthi.id='$id' and tbl_dethi.made=diemthi.made group by diemthi.made";
             return $sql;
         }
     }
@@ -513,10 +500,10 @@
                 return $sql;
             }
         }
-	public function capnhatdethi($tende,$ngaythi,$hocky,$idmade,$date,$dotthi){
+	public function capnhatdethi($tende,$ngaythi,$hocky,$idmade,$date,$dotthi,$giothi){
             if ($this->cn)
             {
-                $sql="UPDATE tbl_dethi SET `tende` ='".$tende."',`ngaythi` ='".$ngaythi."',`hocky` ='".$hocky."',`ngaydang` ='".$date."', `dotthi` ='".$dotthi."'where made='".$idmade."'";
+                $sql="UPDATE tbl_dethi SET `tende` ='".$tende."',`ngaythi` ='".$ngaythi."',`hocky` ='".$hocky."',`ngaydang` ='".$date."', `dotthi` ='".$dotthi."' , `giothi` ='".$giothi."' where made='".$idmade."'";
                 return $sql;
             }
     }
@@ -529,10 +516,10 @@
 		}
 	}
 
-	public function themdethi($ngaythi,$hocky,$day,$tacgia,$tende,$trangthai,$dotthi,$linhvuc){
+	public function themdethi($ngaythi,$hocky,$day,$tacgia,$tende,$trangthai,$dotthi,$linhvuc,$giothi){
             if ($this->cn)
             {
-                $sql="INSERT INTO tbl_dethi VALUE ('','$tende','$ngaythi','$hocky','$tacgia','$day','$trangthai','$dotthi','$linhvuc')";
+                $sql="INSERT INTO tbl_dethi VALUE ('','$tende','$ngaythi','$hocky','$tacgia','$day','$trangthai','$dotthi','$linhvuc','$giothi')";
                 return $sql;
             }
     }
@@ -550,6 +537,15 @@
         {
             $sql= "SELECT * FROM tbl_dethi,tbl_cauhoi where tbl_dethi.made=tbl_cauhoi.made and tbl_dethi.made='".$_POST['monselect']."' and tbl_dethi.hocky='".$_POST['hockyselect']."' and tbl_dethi.ngaythi='".$_POST['ngaythi']."'and dotthi='".$_POST['dotthi']."' LIMIT 0,10";
             return $sql;
+        }
+    }
+    public function kiemtralichthi()
+    {
+        if($this->cn)
+        {
+            $tv3= "SELECT * FROM tbl_dethi
+where tbl_dethi.made="."'".$_GET['mamon'] ."'"." and tbl_dethi.dotthi="."'".$_GET['dotthi']."'"." and tbl_dethi.ngaythi="."'".$_GET['lanthi']."'"." and tbl_dethi.hocky="."'".$_GET['hocky']."' GROUP BY tbl_dethi.made";
+            return $tv3;
         }
     }
     public function laynoidungcauhoi_sau($cau)
@@ -623,7 +619,6 @@
             $delete.="'".$value."',";
         }
         $delete .= "'')";
-        echo $delete;
         return $delete;
     }
     public function  user_delete($id){
@@ -633,7 +628,6 @@
             $delete.="'".$value."',";
         }
         $delete .= "'')";
-        echo $delete;
         return $delete;
     }
     public function hocsinh_delete($id){
@@ -643,8 +637,7 @@
             $delete.="'".$value."',";
         }
         $delete .= "'')";
-        echo $delete;
-        return $delete;
+         return $delete;
     }
     public function dethi_delete($made){
         $delete= "delete from tbl_dethi where made in(";
@@ -665,5 +658,12 @@
         $delete .= "'')";
         return $delete;
     }
+	 public function hienthithongbao(){
+            if ($this->cn)
+            {
+                $sql="SELECT * FROM thong_bao group by id";
+                return $sql;
+            }
+        }
 }
 ?>

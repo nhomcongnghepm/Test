@@ -23,6 +23,7 @@ while($rows = $db->lay_rows($results)) {
 			<td>' . $rows['tende'] . '</td>
 			<td>' . $rows['ngaythi'] . '</td>
 			<td>' . $rows['dotthi'] . '</td>
+			<td>'.$rows['giothi'].'</td>
 					</tr>';
 }
 ?>
