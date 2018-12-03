@@ -77,14 +77,6 @@
                         <a href="?menu=thongbao" >  <p><span>Thông báo</span></p></a>
                     </div>
                 </div>
-
-                <!-- Unnamed (Menu Item) -->
-                <div id="u10" class="ax_default table_cell">
-                    <img id="u10_img" class="img " src="../assets/trangchu/images/home/u10.png"/>
-                    <div id="u10_text" class="text ">
-                        <a href="?menu=lienhe" > <p><span>Liên hệ</span></p></a>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -95,7 +87,7 @@
             <div id="u12" class="ax_default" data-label="Link">
                 <div id="u12_div" class=""></div>
                 <div id="u12_text" class="text ">
-                    <p><span>Đăng nhập</span></p>
+                    <a href="dangnhap.php" > <p><span>Đăng nhập</span></p></a>
                 </div>
             </div>
 
