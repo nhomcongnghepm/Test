@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2018 at 10:42 AM
+-- Generation Time: Dec 03, 2018 at 05:08 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -43,22 +43,10 @@ CREATE TABLE `diemthi` (
 --
 
 INSERT INTO `diemthi` (`id_diem`, `id`, `made`, `ngaythi`, `dotthi`, `diem`, `hocky`) VALUES
-('A02385', 'HS45127 ', '73 ', '28/11/2018 ', '1 ', '0.25 ', '1'),
-('A10925', 'HS13257 ', '73 ', '28/11/2018 ', '1 ', '9', '1'),
-('A40375', 'HS13984 ', '73 ', '28/11/2018 ', '1 ', '0.25 ', '1'),
-('A45039', 'HS47839 ', '73 ', '28/11/2018 ', '1 ', '0.25 ', '1'),
-('H07254', 'HS45127 ', '72 ', '28/11/2018 ', '1 ', '9', '1'),
-('H14086', 'HS13984 ', '72 ', '28/11/2018 ', '1 ', '0.25 ', '1'),
-('H75841', 'HS47839 ', '72 ', '28/11/2018 ', '1 ', '0.25 ', '1'),
-('H86950', 'HS13257 ', '72 ', '28/11/2018 ', '1 ', '8', '1'),
-('L23419', 'HS45127 ', '70 ', '28/11/2018 ', '1 ', '0.725 ', '1'),
-('L41527', 'HS13257', '70 ', '28/11/2018 ', '1 ', '9', '1'),
-('L62975', 'HS13984 ', '70 ', '28/11/2018 ', '1 ', '0.25 ', '1'),
-('L78246', 'HS47839 ', '70 ', '28/11/2018 ', '1 ', '0.25 ', '1'),
-('T02156', 'HS47839 ', '58 ', '28/11/2018 ', '1 ', '4', '1'),
-('T35920', 'HS13984 ', '58 ', '28/11/2018 ', '1 ', '0.5 ', '1'),
-('T63097', 'HS13257', '58 ', '28/11/2018 ', '1 ', '10', '1'),
-('T82307', 'HS45127 ', '58 ', '28/11/2018 ', '1 ', '0.75 ', '1');
+('A69750', 'HS13257 ', '78 ', '3/12/2018 ', '1 ', '0.25 ', '1'),
+('H25614', 'HS13257 ', '77 ', '3/12/2018 ', '1 ', '0.25 ', '1'),
+('L83674', 'HS13257 ', '76 ', '3/12/2018 ', '1 ', '0.25 ', '1'),
+('T97861', 'HS13257 ', '58 ', '3/12/2018 ', '1 ', '0.5 ', '1');
 
 -- --------------------------------------------------------
 
@@ -85,10 +73,9 @@ CREATE TABLE `giaovien` (
 
 INSERT INTO `giaovien` (`id_gv`, `ho`, `ten`, `user`, `password`, `email`, `birthdate`, `Gioitinh`, `bomon`, `quyen`) VALUES
 ('GV16508', 'Phan Tấn', 'Bình', 'binh123', '8bd1c0165694ac2669228e73843d26', 'tanbinh@gmail.com', '3-4-1992', 'Nam', 'Toán', 'Giáo Viên'),
-('GV36508', 'Nguyễn Trung', 'Hậu', 'hau1234', 'f73a4dacb52090b82683aa17aed882', 'hau@gmail.com', '18-10-1994', 'Nam', 'Anh', 'Giáo Viên'),
+('GV36508', 'Nguyễn Trung', 'Hậu', 'hau1234', 'f73a4dacb52090b82683aa17aed882', 'hau@gmail.com', '18-10-1994', 'Nam', 'Tiếng Anh', 'Trưởng bộ môn'),
 ('TBM36508', 'Nguyễn', 'Thúy Vi', 'vi12345', '615b746283ad0a3d19ee42a0bd9403', 'thuyvi@gmail.com', '6-9-1990', 'Nữ', 'Hóa', 'Trưởng bộ môn'),
-('TBM76508', 'Nguyễn Thanh Trường', 'Giang', 'giang123', '4e031bb475963ba73ebf552f78ae1c', 'giang@gmail.com', '16-2-2003', 'Nam', 'Vật lý', 'Trưởng bộ môn'),
-('TBM81647', 'Hô Văn ', 'Hiếu', 'hieu_b12', 'c04a049763cc0094e57c507b9a3c10', 'hieu_b12@gmail.com', '18-9-1996', 'Nam', 'Tiếng Anh', 'Trưởng bộ môn');
+('TBM76508', 'Nguyễn Thanh Trường', 'Giang', 'giang123', '4e031bb475963ba73ebf552f78ae1c', 'giang@gmail.com', '16-2-2003', 'Nam', 'Vật lý', 'Trưởng bộ môn');
 
 -- --------------------------------------------------------
 
@@ -114,8 +101,8 @@ CREATE TABLE `sinhvien` (
 --
 
 INSERT INTO `sinhvien` (`id`, `ho`, `ten`, `user`, `password`, `email`, `birthdate`, `Gioitinh`, `tenlop`, `quyen`) VALUES
-('HS13257', 'Thạch Cảnh', 'Bình', 'canhbinh12', 'c69f340ced75efd4373913b8ffcee96d2dd717ac', 'canhbinh@gmail.com', '17-3-2006', 'Nam', '12A1', 'Học Sinh'),
-('HS13984', 'Nguyễn Hữu', 'Quốc', 'quoc123', '4e41da2aad3e04408f9b52b2c43f7fdcafafa1b0', 'quoc@gmail.com', '14-5-2002', 'Nam', '12A5', 'Học Sinh'),
+('HS13257', 'Thạch Cảnh', 'Bình', 'canhbinh12', '6117650746fc20e39da707a9b448b9a7e44108b1', 'canhbinh@gmail.com', '1-2-1991', 'Nam', '12A1', 'Học Sinh'),
+('HS13984', 'Nguyễn Hữu', 'Quốc', 'quoc123', '651d603cc29bacfcc184703b7fd2d8daf212ec2c', 'quoc@gmail.com', '14-5-2002', 'Nam', '12A5', 'Học Sinh'),
 ('HS45127', 'Đào Ngọc Gia', 'Anh', 'giaanh123', 'bd753b80609e4f10d98a4655e55a1c296feb797b', 'giaanh123@gmail.com', '17-3-2006', 'Nam', '12A2', 'Học Sinh'),
 ('HS47839', 'Đoàn Tô Thanh', 'Bình', 'thanhbinh123', '361fce041655af29b7fd5106d77b1faedd1eba5c', 'thanhbinh123@gmail.com', '17-5-2004', 'Nam', '12A8', 'Học Sinh');
 
@@ -181,9 +168,9 @@ INSERT INTO `tbl_cauhoi` (`ma_ch`, `noidung`, `lc1`, `lc2`, `lc3`, `lc4`, `dapan
 (117, '<p>Đường Hyperbol (x<sup>2</sup>/20) - (y<sup>2</sup>/16) = 1&nbsp;c&oacute; ti&ecirc;u cự bằng :</p>', '12', '2', '4', '6', '12', 58),
 (118, '<p>Đường thẳng qua M(1 ; 1) v&agrave; cắt el&iacute;p (E) : 4x<sup>2</sup>+ 9y<sup>2</sup>&nbsp;= 36 tại hai điểm M1 , M2 sao cho MM1 = MM2 c&oacute; phương tr&igrave;nh l&agrave;</p>', '2x + 4y – 5 = 0', '4x + 9y – 13 = 0', 'x + y + 5 = 0', '16x – 15y + 100 = 0', '4x + 9y – 13 = 0', 58),
 (119, '<p>Khoảng c&aacute;ch từ điểm M(-1;1) đến đường thẳng 3x &ndash; 4y &ndash; 3 = 0 bằng bao nhi&ecirc;u?</p>', '2/5', '2', '4/5', '4/25', '2', 58),
-(120, '<p>&aacute;dsad</p>', 'đá', 'ád', 'ád', 'ád', 'đá', 70),
-(121, '<p>adasd</p>', 'ádasd', 'áds', 'ádas', 'ád', 'ádasd', 72),
-(122, '<p>adas</p>', 'đá', 'ád', 'ád', 'ád', 'đá', 73);
+(123, '<p>&aacute;da</p>', 'dsd', 'sds', 'sdsd', 'sds', 'dsd', 76),
+(124, '<p>&aacute;d</p>', 'ád', 'ád', 'ád', 'ád', 'ád', 77),
+(125, '<p>sad</p>', 'ád', 'ád', 'ád', 'ád', 'ád', 78);
 
 -- --------------------------------------------------------
 
@@ -200,18 +187,19 @@ CREATE TABLE `tbl_dethi` (
   `ngaydang` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `trangthai` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `dotthi` int(10) NOT NULL,
-  `linhvuc` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `linhvuc` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `giothi` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_dethi`
 --
 
-INSERT INTO `tbl_dethi` (`made`, `tende`, `ngaythi`, `hocky`, `tacgia`, `ngaydang`, `trangthai`, `dotthi`, `linhvuc`) VALUES
-(58, 'Toán', '28/11/2018', '1', 'Phan Tấn Bình', '24/11/18', 'Đã duyệt', 1, 'Toán'),
-(70, 'Lý', '28/11/2018', '1', 'Nguyễn Thanh Trường Giang', '24/11/18', 'Đã duyệt', 1, 'Vật lý'),
-(72, 'Hóa', '28/11/2018', '1', 'Nguyễn Thúy Vi', '28/11/18', 'Đã duyệt', 1, 'Hóa'),
-(73, 'Tiếng Anh', '28/11/2018', '1', 'Hô Văn  Hiếu', '28/11/18', 'Đã duyệt', 1, 'Tiếng Anh');
+INSERT INTO `tbl_dethi` (`made`, `tende`, `ngaythi`, `hocky`, `tacgia`, `ngaydang`, `trangthai`, `dotthi`, `linhvuc`, `giothi`) VALUES
+(58, 'Toán', '3/12/2018', '1', 'Phan Tấn Bình', '24/11/18', 'Đã duyệt', 1, 'Toán', '22:20:00'),
+(76, 'Lý', '3/12/2018', '1', 'Nguyễn Thanh Trường Giang', '03/12/18', 'Đã duyệt', 1, 'Vật lý', '22:30:00'),
+(77, 'Hóa', '3/12/2018', '1', 'Nguyễn Thúy Vi', '03/12/18', 'Đã duyệt', 1, 'Hóa', '22:20:00'),
+(78, 'Anh', '3/12/2018', '1', 'Nguyễn Trung Hậu', '03/12/18', 'Đã duyệt', 1, 'Tiếng Anh', '22:30:00');
 
 -- --------------------------------------------------------
 
@@ -223,15 +211,16 @@ CREATE TABLE `thong_bao` (
   `id` int(10) NOT NULL,
   `chude` text COLLATE utf8_unicode_ci NOT NULL,
   `noidung` text COLLATE utf8_unicode_ci NOT NULL,
-  `nguoigui` varchar(30) COLLATE utf8_unicode_ci NOT NULL
+  `nguoigui` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `thoigian` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `thong_bao`
 --
 
-INSERT INTO `thong_bao` (`id`, `chude`, `noidung`, `nguoigui`) VALUES
-(5, 'Dời lịch thi', 'Lịch thi được dời đến 7/12/2018', 'Ma Đình Cường');
+INSERT INTO `thong_bao` (`id`, `chude`, `noidung`, `nguoigui`, `thoigian`) VALUES
+(6, 'Dời lịch Thi', 'Lịch thi bị dời đến 3/12/2018', 'Ma Đình Cường', '2018-12-03 13:25:49');
 
 -- --------------------------------------------------------
 
@@ -258,15 +247,14 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `ho`, `ten`, `user`, `email`, `password`, `birthdate`, `Gioitinh`, `quyen`) VALUES
 ('AD47015', 'Đặng Thành', 'Đạt', 'admin', 'thanhdat010797@gmail.com', '2ec10e4f7cd2159e7ea65d2454f68287ecf81251', '1-7-1997', 'Nam', 'Admin'),
 ('GV16508', 'Phan Tấn', 'Bình', 'binh123', 'tanbinh@gmail.com', '42b702f32c19bcfa66b18f53630512357c4fa283', '3-4-1992', 'Nam', 'Giáo Viên'),
-('GV36508', 'Nguyễn Trung', 'Hậu', 'hau1234', 'hau@gmail.com', 'f73a4dacb52090b82683aa17aed8822ff446592f', '18-10-1994', 'Nam', 'Giáo Viên'),
-('HS13257', 'Thạch Cảnh', 'Bình', 'canhbinh12', 'canhbinh@gmail.com', 'c69f340ced75efd4373913b8ffcee96d2dd717ac', '17-3-2006', 'Nam', 'Học Sinh'),
-('HS13984', 'Nguyễn Hữu', 'Quốc', 'quoc123', 'quoc@gmail.com', '4e41da2aad3e04408f9b52b2c43f7fdcafafa1b0', '14-5-2002', 'Nam', 'Học Sinh'),
+('GV36508', 'Nguyễn Trung', 'Hậu', 'hau1234', 'hau@gmail.com', 'f73a4dacb52090b82683aa17aed8822ff446592f', '18-10-1994', 'Nam', 'Trưởng bộ môn'),
+('HS13257', 'Thạch Cảnh', 'Bình', 'canhbinh12', 'canhbinh@gmail.com', '6117650746fc20e39da707a9b448b9a7e44108b1', '1-2-1991', 'Nam', 'Học Sinh'),
+('HS13984', 'Nguyễn Hữu', 'Quốc', 'quoc123', 'quoc@gmail.com', '651d603cc29bacfcc184703b7fd2d8daf212ec2c', '14-5-2002', 'Nam', 'Học Sinh'),
 ('HS45127', 'Đào Ngọc Gia', 'Anh', 'giaanh123', 'giaanh123@gmail.com', 'bd753b80609e4f10d98a4655e55a1c296feb797b', '17-3-2006', 'Nam', 'Học Sinh'),
 ('HS47839', 'Đoàn Tô Thanh', 'Bình', 'thanhbinh123', 'thanhbinh123@gmail.com', '361fce041655af29b7fd5106d77b1faedd1eba5c', '17-5-2004', 'Nam', 'Học Sinh'),
 ('PDT21754', 'Ma Đình ', 'Cường', 'pdt123', 'pdt@gmail.com', 'de56a0a5377a2c4e333156c34912b38318cd77fe', '1-3-1996', 'Nam', 'Phòng dào tạo'),
 ('TBM36508', 'Nguyễn', 'Thúy Vi', 'vi12345', 'thuyvi@gmail.com', '615b746283ad0a3d19ee42a0bd940328faad4cdb', '6-9-1990', 'Nữ', 'Trưởng bộ môn'),
-('TBM76508', 'Nguyễn Thanh Trường', 'Giang', 'giang123', 'giang@gmail.com', '4e031bb475963ba73ebf552f78ae1c43283af8b8', '16-2-2003', 'Nam', 'Trưởng bộ môn'),
-('TBM81647', 'Hô Văn ', 'Hiếu', 'hieu_b12', 'hieu_b12@gmail.com', 'c04a049763cc0094e57c507b9a3c10f260fb42c7', '18-9-1996', 'Nam', 'Trưởng bộ môn');
+('TBM76508', 'Nguyễn Thanh Trường', 'Giang', 'giang123', 'giang@gmail.com', '4e031bb475963ba73ebf552f78ae1c43283af8b8', '16-2-2003', 'Nam', 'Trưởng bộ môn');
 
 --
 -- Indexes for dumped tables
@@ -323,19 +311,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `tbl_cauhoi`
 --
 ALTER TABLE `tbl_cauhoi`
-  MODIFY `ma_ch` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
+  MODIFY `ma_ch` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
 
 --
 -- AUTO_INCREMENT for table `tbl_dethi`
 --
 ALTER TABLE `tbl_dethi`
-  MODIFY `made` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `made` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT for table `thong_bao`
 --
 ALTER TABLE `thong_bao`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
