@@ -1,5 +1,4 @@
 <?php
-	error_reporting(0);
 	class database{
 		// Khai báo các biến dưới dạng private
     private $hostname = 'localhost',
@@ -292,6 +291,20 @@
                 return $sql;
             }
     }
+        public function dangthongbao($chude,$noidungtb,$tacgia,$thoigian){
+            if ($this->cn)
+            {
+                $sql = "insert into thong_bao(id,chude,noidung,nguoigui,thoigian) value('','$chude','$noidungtb','$tacgia','$thoigian')";
+                return $sql;
+            }
+        }
+        public function hienthithongbao(){
+            if ($this->cn)
+            {
+                $sql="SELECT * FROM thong_bao group by id";
+                return $sql;
+            }
+        }
         public function hienthiuser_admin($u){
             if ($this->cn)
             {
@@ -458,7 +471,7 @@
         public function doithongtinhocsinh($ho,$ten,$email,$birthdate,$gender,$u){
             if ($this->cn)
             {
-                $sql="UPDATE hocsinh SET `ho` ='".$ho."',`ten` ='".$ten."',`email` ='".$email."',`birthdate` ='".$birthdate."',`Gioitinh` ='".$gender."' where user='$u'";
+                $sql="UPDATE sinhvien SET `ho` ='".$ho."',`ten` ='".$ten."',`email` ='".$email."',`birthdate` ='".$birthdate."',`Gioitinh` ='".$gender."' where user='$u'";
                 return $sql;
             }
         }

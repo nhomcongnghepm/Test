@@ -8,10 +8,11 @@ if(isset($_POST['ok'])) {
     $tacgia = $rowws['ho'] . ''. $rowws['ten'];
     $chude = $_POST['chude'];
     $noidungtb = $_POST['noidungtb'];
-    $sl = "insert into thong_bao(id,chude,noidung,nguoigui) value('','$chude','$noidungtb','$tacgia')";
+    $thoigian= date('Y-m-d H:i:s');
+    $sl =$db->dangthongbao($chude,$noidungtb,$tacgia,$thoigian);
     $a = $db->query($sl);
     if ($a) {
-        echo "<script language='javascript'>alert('thêm thanh cong');";
+        echo "<script language='javascript'>alert('Thêm thành công');";
         echo "location.href='../view/pdt.php';</script>";
     }
 }

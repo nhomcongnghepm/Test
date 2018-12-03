@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2018 at 10:42 AM
+-- Generation Time: Dec 03, 2018 at 07:59 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -114,8 +114,8 @@ CREATE TABLE `sinhvien` (
 --
 
 INSERT INTO `sinhvien` (`id`, `ho`, `ten`, `user`, `password`, `email`, `birthdate`, `Gioitinh`, `tenlop`, `quyen`) VALUES
-('HS13257', 'Thạch Cảnh', 'Bình', 'canhbinh12', 'c69f340ced75efd4373913b8ffcee96d2dd717ac', 'canhbinh@gmail.com', '17-3-2006', 'Nam', '12A1', 'Học Sinh'),
-('HS13984', 'Nguyễn Hữu', 'Quốc', 'quoc123', '4e41da2aad3e04408f9b52b2c43f7fdcafafa1b0', 'quoc@gmail.com', '14-5-2002', 'Nam', '12A5', 'Học Sinh'),
+('HS13257', 'Thạch Cảnh', 'Bình', 'canhbinh12', '6117650746fc20e39da707a9b448b9a7e44108b1', 'canhbinh@gmail.com', '2-1-1997', 'Nam', '12A1', 'Học Sinh'),
+('HS13984', 'Nguyễn Hữu', 'Quốc', 'quoc123', '651d603cc29bacfcc184703b7fd2d8daf212ec2c', 'quoc@gmail.com', '14-5-2002', 'Nam', '12A5', 'Học Sinh'),
 ('HS45127', 'Đào Ngọc Gia', 'Anh', 'giaanh123', 'bd753b80609e4f10d98a4655e55a1c296feb797b', 'giaanh123@gmail.com', '17-3-2006', 'Nam', '12A2', 'Học Sinh'),
 ('HS47839', 'Đoàn Tô Thanh', 'Bình', 'thanhbinh123', '361fce041655af29b7fd5106d77b1faedd1eba5c', 'thanhbinh123@gmail.com', '17-5-2004', 'Nam', '12A8', 'Học Sinh');
 
@@ -223,15 +223,16 @@ CREATE TABLE `thong_bao` (
   `id` int(10) NOT NULL,
   `chude` text COLLATE utf8_unicode_ci NOT NULL,
   `noidung` text COLLATE utf8_unicode_ci NOT NULL,
-  `nguoigui` varchar(30) COLLATE utf8_unicode_ci NOT NULL
+  `nguoigui` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `thoigian` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `thong_bao`
 --
 
-INSERT INTO `thong_bao` (`id`, `chude`, `noidung`, `nguoigui`) VALUES
-(5, 'Dời lịch thi', 'Lịch thi được dời đến 7/12/2018', 'Ma Đình Cường');
+INSERT INTO `thong_bao` (`id`, `chude`, `noidung`, `nguoigui`, `thoigian`) VALUES
+(6, 'Dời lịch Thi', 'Lịch thi bị dời đến 3/12/2018', 'Ma Đình Cường', '2018-12-03 13:25:49');
 
 -- --------------------------------------------------------
 
@@ -259,8 +260,8 @@ INSERT INTO `user` (`id`, `ho`, `ten`, `user`, `email`, `password`, `birthdate`,
 ('AD47015', 'Đặng Thành', 'Đạt', 'admin', 'thanhdat010797@gmail.com', '2ec10e4f7cd2159e7ea65d2454f68287ecf81251', '1-7-1997', 'Nam', 'Admin'),
 ('GV16508', 'Phan Tấn', 'Bình', 'binh123', 'tanbinh@gmail.com', '42b702f32c19bcfa66b18f53630512357c4fa283', '3-4-1992', 'Nam', 'Giáo Viên'),
 ('GV36508', 'Nguyễn Trung', 'Hậu', 'hau1234', 'hau@gmail.com', 'f73a4dacb52090b82683aa17aed8822ff446592f', '18-10-1994', 'Nam', 'Giáo Viên'),
-('HS13257', 'Thạch Cảnh', 'Bình', 'canhbinh12', 'canhbinh@gmail.com', 'c69f340ced75efd4373913b8ffcee96d2dd717ac', '17-3-2006', 'Nam', 'Học Sinh'),
-('HS13984', 'Nguyễn Hữu', 'Quốc', 'quoc123', 'quoc@gmail.com', '4e41da2aad3e04408f9b52b2c43f7fdcafafa1b0', '14-5-2002', 'Nam', 'Học Sinh'),
+('HS13257', 'Thạch Cảnh', 'Bình', 'canhbinh12', 'canhbinh@gmail.com', '6117650746fc20e39da707a9b448b9a7e44108b1', '2-1-1997', 'Nam', 'Học Sinh'),
+('HS13984', 'Nguyễn Hữu', 'Quốc', 'quoc123', 'quoc@gmail.com', '651d603cc29bacfcc184703b7fd2d8daf212ec2c', '14-5-2002', 'Nam', 'Học Sinh'),
 ('HS45127', 'Đào Ngọc Gia', 'Anh', 'giaanh123', 'giaanh123@gmail.com', 'bd753b80609e4f10d98a4655e55a1c296feb797b', '17-3-2006', 'Nam', 'Học Sinh'),
 ('HS47839', 'Đoàn Tô Thanh', 'Bình', 'thanhbinh123', 'thanhbinh123@gmail.com', '361fce041655af29b7fd5106d77b1faedd1eba5c', '17-5-2004', 'Nam', 'Học Sinh'),
 ('PDT21754', 'Ma Đình ', 'Cường', 'pdt123', 'pdt@gmail.com', 'de56a0a5377a2c4e333156c34912b38318cd77fe', '1-3-1996', 'Nam', 'Phòng dào tạo'),
@@ -335,7 +336,7 @@ ALTER TABLE `tbl_dethi`
 -- AUTO_INCREMENT for table `thong_bao`
 --
 ALTER TABLE `thong_bao`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

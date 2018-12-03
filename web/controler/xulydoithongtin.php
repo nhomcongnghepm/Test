@@ -38,12 +38,12 @@ require_once '../modal/init.php';
 		}
 
 		$sql=$db->capnhatthongtin($ho,$ten,$email,$birthdate,$gender,$u);
-		$db->query($sql);
+		$a=$db->query($sql);
 		$sql1=$db->doithongtingiaovien($ho,$ten,$email,$birthdate,$gender,$u);
-		$db->query($sql1);
+		$b=$db->query($sql1);
 		$sql2=$db->doithongtinhocsinh($ho,$ten,$email,$birthdate,$gender,$u);
-		$db->query($sql2);
-		if($sql)
+		$c=$db->query($sql2);
+		if($c)
 		{
             echo "<script>alert('Cập nhật thông tin thành công !');window.location='?menu=capnhatthongtin'</script>";
 		}
