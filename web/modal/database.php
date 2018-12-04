@@ -515,7 +515,14 @@
 			return $sql;
 		}
 	}
-
+    public function dangthongbao($chude,$noidungtb,$tacgia,$thoigian)
+    {
+        if($this->cn)
+        {
+            $sl = "insert into thong_bao(id,chude,noidung,nguoigui,thoigian) value('','$chude','$noidungtb','$tacgia','$thoigian')";
+            return $sl;
+        }
+    }
 	public function themdethi($ngaythi,$hocky,$day,$tacgia,$tende,$trangthai,$dotthi,$linhvuc,$giothi){
             if ($this->cn)
             {

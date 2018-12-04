@@ -45,7 +45,7 @@ require_once '../modal/init.php';
 		{
             if($gio<10)
             {
-                $day='0'.$day;
+                $gio='0'.$gio;
             }
             if($phut<10)
             {

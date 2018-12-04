@@ -24,7 +24,7 @@ if(isset($_POST["edit"]))
             } else {
             if($gio<10)
             {
-                $day='0'.$day;
+                $gio='0'.$gio;
             }
             if($phut<10)
             {
